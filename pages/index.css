@@ -7,6 +7,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
 }
 
 .page__section {
@@ -73,7 +74,7 @@
     border-radius: 50%;
     object-fit: cover;
     background-position: center;
-    margin: 24px;
+    margin-right: 24px;
 }
 
 .card {
@@ -86,6 +87,7 @@
 
 .cards {
     /* fonts*/
+    margin-top: 30px;
 }
 
 .card__list {
