@@ -80,6 +80,12 @@
     margin-right: 24px;
 }
 
+@media screen and (max-width: 479px) {
+    .profile__image {
+        margin: 0;
+    }
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -147,7 +153,6 @@
 
     .profile__add-button {
         margin: 0;
-        width: 100%;
-
+        width: calc(100% - 22px);
     }
 }
