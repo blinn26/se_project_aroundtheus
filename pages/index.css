@@ -44,7 +44,7 @@
 }
 
 .profile__add-button {
-    background: transparent url(../images/Add\ Button.png) center no-repeat;
+    background: transparent url(../images/Add\ Button.svg) center no-repeat;
     height: 50px;
     width: 150px;
     margin-left: auto;
@@ -90,6 +90,8 @@
     display: flex;
     flex-direction: column;
     list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
 
 }
 
