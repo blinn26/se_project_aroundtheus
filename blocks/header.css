@@ -14,9 +14,9 @@
 
 @media screen and (max-width: 479px) {
     .header {
-        margin-left: 27px;
-        margin-right: 167px;
-        margin-top: 28px;
-        background-color: violet;
+        margin-left: 29px;
+        margin-right: 157px;
+        margin-top: 22px;
+        background-color: silver;
     }
 }
