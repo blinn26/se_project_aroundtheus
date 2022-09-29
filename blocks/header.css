@@ -1,5 +1,9 @@
 .header {
     margin-top: 45px;
+    margin-left: 200px;
+    height: 33px;
+    width: 173px;
+
 }
 
 
@@ -8,15 +12,19 @@
         margin-left: 27px;
         margin-right: 167px;
         margin-top: 28px;
-        background-color: burlywood;
+        background-color: pink;
+        height: 24px;
+        width: 126px;
     }
 }
 
 @media screen and (max-width: 479px) {
     .header {
-        margin-left: 29px;
-        margin-right: 157px;
-        margin-top: 22px;
-        background-color: silver;
+        margin-left: 27px;
+        margin-right: 167px;
+        margin-top: 28px;
+        background-color: yellow;
+        height: 24px;
+        width: 126px;
     }
 }
