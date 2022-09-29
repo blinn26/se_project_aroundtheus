@@ -1,3 +1,22 @@
 .header {
     margin-top: 45px;
 }
+
+
+@media screen and (max-width: 750px) {
+    .header {
+        margin-left: 27px;
+        margin-right: 167px;
+        margin-top: 28px;
+        background-color: burlywood;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .header {
+        margin-left: 27px;
+        margin-right: 167px;
+        margin-top: 28px;
+        background-color: violet;
+    }
+}

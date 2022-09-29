@@ -12,6 +12,7 @@
         "description description";
     grid-template-columns: minmax(auto, 373px) auto;
     font-family: "Inter" sans-serif;
+    align-items: flex-end;
 }
 
 .profile__edit-button {
