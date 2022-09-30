@@ -3,13 +3,12 @@
     color: white;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
     font-family: "Inner", sans-serif;
+    flex-direction: column;
 }
 
 .page__section {
     max-width: 880px;
-    width: 100%;
     position: relative;
     margin: 0 auto;
 }

@@ -4,6 +4,7 @@
     height: 33px;
     width: 173px;
 
+
 }
 
 
@@ -12,7 +13,7 @@
         margin-left: 27px;
         margin-right: 167px;
         margin-top: 28px;
-        background-color: pink;
+        background-color: rgb(7, 176, 244);
         height: 24px;
         width: 126px;
     }
@@ -23,7 +24,18 @@
         margin-left: 27px;
         margin-right: 167px;
         margin-top: 28px;
-        background-color: yellow;
+        background-color: rgb(236, 15, 148);
+        height: 24px;
+        width: 126px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        margin-left: 27px;
+        margin-right: 167px;
+        margin-top: 28px;
+        background-color: greenyellow;
         height: 24px;
         width: 126px;
     }
