@@ -7,8 +7,7 @@
 
 }
 
-
-@media screen and (max-width: 750px) {
+.header @media screen and (max-width: 800px) {
     .header {
         margin-left: 27px;
         margin-right: 167px;
@@ -16,10 +15,13 @@
         background-color: rgb(7, 176, 244);
         height: 24px;
         width: 126px;
+
     }
+
 }
 
-@media screen and (max-width: 479px) {
+
+@media screen and (max-width: 480px) {
     .header {
         margin-left: 27px;
         margin-right: 167px;

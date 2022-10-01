@@ -33,7 +33,7 @@
 
 .profile__edit-button :hover {
     opacity: 0.6;
-    color: fuchsia;
+
 
 
 
@@ -48,14 +48,14 @@
     padding: 0;
     border-color: white;
     cursor: pointer;
-    transition: 00.6s;
+    transition: 0.6s;
 
 
 }
 
 .profile__add-button :hover {
     opacity: 0.6;
-    background-color: yellow;
+    background-color: fuchsia;
 
 }
 
@@ -86,9 +86,8 @@
     margin-right: 24px;
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 800px) {
     .profile {
-        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
@@ -104,6 +103,16 @@
         font-weight: 400;
     }
 
+    .profile__image {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        background-position: center;
+        margin-right: 24px;
+    }
+
+
 
 }
 
@@ -112,7 +121,6 @@
 
 @media screen and (max-width: 480px) {
     .profile {
-        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
@@ -148,14 +156,22 @@
         grid-area: title;
         font-family: "Inter", sans-serif;
         margin: 0;
+
     }
+
+    .profile__image {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        background-position: center;
+        margin-right: 24px;
+    }
+
+
 }
 
-@media screen and (max-width: 479px) {
-    .profile__image {
-        margin: 0;
-    }
-}
+
 
 @media screen and (max-width: 320px) {
 
@@ -190,7 +206,7 @@
 
     .profile__image {
         margin-bottom: 26.25px;
-        margin-right: 0;
+
         margin-top: 38.25px;
 
     }
