@@ -3,11 +3,16 @@
     margin-left: 200px;
     height: 33px;
     width: 173px;
-
+    transition: 0.6s;
+    cursor: pointer;
 
 }
 
-.header @media screen and (max-width: 800px) {
+.header :hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 800px) {
     .header {
         margin-left: 27px;
         margin-right: 167px;
