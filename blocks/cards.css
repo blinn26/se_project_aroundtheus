@@ -9,6 +9,7 @@
 
 .cards {
     margin-top: 30px;
+
 }
 
 .card__list {
@@ -17,6 +18,8 @@
     grid-template-columns: repeat(auto-fit, 282px);
     grid-gap: 17px 17px;
     padding: 0;
+
+
 
 }
 
@@ -36,15 +39,21 @@
     padding-right: 20px;
     align-items: center;
     justify-content: space-between;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+
+
 }
 
 .card__like-button {
-    background: transparent url(../images/like-inactive.svg) center no-repeat;
+    background: transparent url(../images/heart-logo.svg) center no-repeat;
     width: 21px;
     height: 18px;
     border: none;
     cursor: pointer;
-    transition: 0.8s;
+    transition: 0.7s;
 }
 
 .card__like-button:hover {
