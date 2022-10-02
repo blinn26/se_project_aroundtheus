@@ -50,12 +50,12 @@
     align-items: center;
 }
 
-.cards__list {
+.cards {
     padding-top: 30.25px;
 
 }
 
-.cards {
+.cards__list {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
