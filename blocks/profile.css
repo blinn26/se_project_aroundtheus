@@ -58,7 +58,7 @@
 
 .profile__add-button :hover {
     opacity: 0.6;
-    background-color: fuchsia;
+
 
 }
 
@@ -123,17 +123,14 @@
         margin-right: 24px;
     }
 
-
-
 }
-
-
-
 
 @media screen and (max-width: 480px) {
     .profile {
         align-items: center;
         justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .profile__info {
@@ -176,7 +173,7 @@
         border-radius: 50%;
         object-fit: cover;
         background-position: center;
-        margin-right: 24px;
+        margin-left: 24px;
     }
 
 
