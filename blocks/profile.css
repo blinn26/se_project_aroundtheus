@@ -27,6 +27,7 @@
     cursor: pointer;
     transition: 0.6s;
     border-color: white;
+    margin-right: 0;
 
 
 
@@ -52,6 +53,7 @@
     transition: 0.6s;
 
 
+
 }
 
 .profile__add-button :hover {
@@ -67,14 +69,18 @@
     grid-area: title;
     margin: 0;
     font-family: "Inter", sans-serif;
+    height: 39px;
 }
 
 .profile__description {
     font-size: 18px;
-    line-height: 22px;
     font-weight: 400;
     grid-area: description;
     margin: 0;
+    width: 415px;
+    height: 22px;
+    margin-top: 16px;
+
 
 }
 
@@ -85,7 +91,11 @@
     object-fit: cover;
     background-position: center;
     margin-right: 24px;
+    margin-top: 36.25px;
+
 }
+
+
 
 @media screen and (max-width: 800px) {
     .profile {
