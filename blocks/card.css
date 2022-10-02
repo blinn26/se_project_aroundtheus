@@ -50,14 +50,14 @@
     align-items: center;
 }
 
-.cards {
+.card__list {
     padding-top: 30.25px;
+
 }
 
-.card__list {
+.cards {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
     grid-gap: 17px 17px;
     padding: 0;
-}
