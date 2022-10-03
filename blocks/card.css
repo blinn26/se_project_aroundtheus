@@ -5,7 +5,7 @@
     background-color: white;
     color: black;
     width: 282px;
-    height: 361px;
+
 }
 
 
@@ -48,17 +48,4 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.cards {
-    padding-top: 30.25px;
-
-}
-
-.cards__list {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 282px);
-    grid-gap: 17px 17px;
-    padding: 0;
 }

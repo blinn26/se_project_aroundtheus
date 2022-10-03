@@ -1,7 +1,6 @@
 .header {
     margin-top: 45px;
     margin-left: 200px;
-    height: 33px;
     width: 173px;
     transition: 0.7s;
     cursor: pointer;
@@ -17,30 +16,8 @@
         margin-left: 27px;
         margin-right: 167px;
         margin-top: 28px;
-        height: 24px;
         width: 126px;
 
     }
 
-}
-
-
-@media screen and (max-width: 480px) {
-    .header {
-        margin-left: 27px;
-        margin-right: 167px;
-        margin-top: 28px;
-        height: 24px;
-        width: 126px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .header {
-        margin-left: 27px;
-        margin-right: 167px;
-        margin-top: 28px;
-        height: 24px;
-        width: 126px;
-    }
 }

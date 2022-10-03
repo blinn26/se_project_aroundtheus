@@ -69,7 +69,7 @@
     grid-area: title;
     margin: 0;
     font-family: "Inter", sans-serif;
-    height: 39px;
+
 }
 
 .profile__description {
@@ -78,7 +78,6 @@
     grid-area: description;
     margin: 0;
     width: 415px;
-    height: 22px;
     margin-top: 16px;
 
 
@@ -99,37 +98,25 @@
 
 @media screen and (max-width: 768px) {
     .profile {
-        align-items: center;
         justify-content: center;
     }
 
     .profile__title {
         font-size: 22px;
-        font-weight: 500;
 
     }
 
     .profile__description {
         font-size: 14px;
-        font-weight: 400;
+
     }
 
-    .profile__image {
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        background-position: center;
-        margin-right: 24px;
-    }
+    .profile__image {}
 
 }
 
 @media screen and (max-width: 480px) {
     .profile {
-        align-items: center;
-        justify-content: center;
-        display: flex;
         flex-wrap: wrap;
     }
 
@@ -160,21 +147,12 @@
 
     .profile__title {
         line-height: 48px;
-        font-weight: 500;
         grid-area: title;
-        font-family: "Inter", sans-serif;
-        margin: 0;
+
 
     }
 
-    .profile__image {
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        background-position: center;
-        margin-left: 24px;
-    }
+    .profile__image {}
 
 
 }
@@ -185,21 +163,19 @@
 
     .profile {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
 
     }
 
     .profile__title {
-        font-weight: 500;
+
         font-size: 22px;
         line-height: 27px;
 
     }
 
     .profile__description {
-        width: 100%;
-        text-align: center;
+
         font-size: 14px;
         line-height: 17px;
         margin-top: 14px;
@@ -219,10 +195,5 @@
 
     }
 
-    .profile__edit-button {
-        margin-left: 10px;
-        width: 18px;
-        height: 18px;
-        margin-top: 0;
-    }
+    .profile__edit-button {}
 }
