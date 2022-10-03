@@ -1,7 +1,7 @@
 .card {
     flex-direction: column;
-    list-style: none;
     border-radius: 10px;
+    list-style: none;
     background-color: white;
     color: black;
     width: 282px;
@@ -23,6 +23,7 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
+
 }
 
 .card__like-button {
