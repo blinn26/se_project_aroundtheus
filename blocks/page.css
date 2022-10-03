@@ -3,7 +3,7 @@
     color: white;
     display: flex;
     min-height: 100vh;
-    font-family: "Inner", sans-serif;
+    font-family: "Inter", sans-serif;
     flex-direction: column;
 }
 
