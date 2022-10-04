@@ -25,6 +25,6 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 **Github**
 
-- [Link to Github](https://github.com/blinn26/se_project_aroundtheus.git)
+- [Link to Github](https://blinn26.github.io/se_project_aroundtheus/)
 
 Edited by Ben Linn
