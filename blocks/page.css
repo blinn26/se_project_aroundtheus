@@ -4,7 +4,7 @@
     display: flex;
     min-height: 100vh;
     font-family: "Inter", sans-serif;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .page__section {
