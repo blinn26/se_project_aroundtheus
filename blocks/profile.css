@@ -48,9 +48,10 @@
     margin-left: auto;
     grid-area: button;
     padding: 0;
-    border-color: white;
     cursor: pointer;
     transition: 0.6s;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
 
 
 
