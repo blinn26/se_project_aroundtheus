@@ -126,6 +126,8 @@
 @media screen and (max-width: 480px) {
     .profile {
         flex-wrap: wrap;
+
+
     }
 
     .profile__info {
@@ -157,12 +159,15 @@
     .profile__title {
         line-height: 48px;
         grid-area: title;
+        font-size: 22px;
 
 
     }
 
     .profile__image {
         margin-right: 0;
+        margin-bottom: 26.25px;
+        margin-top: 38.25px;
     }
 
 
