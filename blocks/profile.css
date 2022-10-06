@@ -99,8 +99,7 @@
     border-radius: 50%;
     object-fit: cover;
     background-position: center;
-    margin-right: 24px;
-    margin-top: 36.25px;
+    margin: 0 30px 0 0;
 
 }
 
@@ -154,9 +153,9 @@
 
     }
 
-    .profile__image {
+    /* .profile__image {
         margin-top: 0;
-    }
+    } */
 
 }
 
@@ -235,10 +234,10 @@
     }
 
 
-    .profile__image {
-        margin: 0 10px 0 0;
+    /* .profile__image {
+        margin: 0 0 26px 0;
 
-    }
+    } */
 
     .profile__edit-button {
         margin-top: 0px;
