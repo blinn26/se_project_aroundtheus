@@ -114,7 +114,7 @@
         grid-template-rows: 1fr 1fr 1fr;
     } */
     .profile__image {
-        margin: 0 10px 0 0;
+        margin-top: 0;
     }
 
     .profile__info {
@@ -151,8 +151,12 @@
         font-size: 27px;
         line-height: 33px;
 
+
     }
 
+    .profile__image {
+        margin-top: 0;
+    }
 
 }
 
@@ -160,8 +164,7 @@
     .profile {
         flex-wrap: wrap;
         justify-content: center;
-
-
+        padding-top: 38px;
     }
 
     .profile__info {
@@ -199,12 +202,8 @@
     }
 
     .profile__image {
-        margin-right: 0;
-        margin-bottom: 26.25px;
-        margin-top: 38.25px;
+        margin: 0 0 26px 0;
     }
-
-
 }
 
 
@@ -237,8 +236,7 @@
 
 
     .profile__image {
-        margin-bottom: 26.25px;
-        margin-top: 38.25px;
+        margin: 0 10px 0 0;
 
     }
 

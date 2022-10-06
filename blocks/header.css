@@ -26,19 +26,17 @@
 
 @media screen and (max-width: 480px) {
     .header {
-        margin-top: 28px;
-
+        margin-top: 0;
     }
 
     .header__logo {
-        padding-left: 19px;
+        padding-left: 27px;
         padding-right: 19px;
         width: 126px;
         height: 24px;
         margin-bottom: 32px;
-        margin: top 32px;
+        margin-top: 28px;
     }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -48,7 +46,7 @@
 
     .header__logo {
         margin-top: 28px;
-        margin-left: 27px;
+        margin-left: 0;
         margin-bottom: 32px;
     }
 
