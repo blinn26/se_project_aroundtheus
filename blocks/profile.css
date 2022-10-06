@@ -86,7 +86,9 @@
     margin: 0;
     /* width: 415px; */
     margin-top: 16px;
+    text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
 
 
 }
@@ -211,6 +213,8 @@
 
     .profile {
         flex-direction: column;
+        padding-left: 19px;
+        padding-right: 19px;
 
 
     }
