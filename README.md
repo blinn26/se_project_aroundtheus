@@ -7,13 +7,14 @@
 - Figma
 - Images
 - Github
+- JavaScript
 
 **Description Functionality**
 
-Responsive design and overflowing text.
+Responsive design,overflowing text and Introduction to JavaScript.
 
 **Technologies and Techniques Used**
-Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting and More.
+Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and More.
 
 **Figma**
 
