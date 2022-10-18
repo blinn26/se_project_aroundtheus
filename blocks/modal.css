@@ -1,0 +1,7 @@
+.modal {
+    background-color: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    font-family: "Inter" Arial, sans-serif;
+    box-sizing: border-box;
+    visibility: hidden;
+}
