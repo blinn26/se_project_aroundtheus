@@ -28,4 +28,8 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 - [Link to Github](https://blinn26.github.io/se_project_aroundtheus/)
 
+**JavaScript**
+
+The pop up design of a log in feature is based on the implementations of JavaScript. Using containers, modal and scripts to intergrate this portion with our project!
+
 Edited by Ben Linn
