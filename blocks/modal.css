@@ -1,8 +1,23 @@
 .modal {
-    background-color: black;
-    display: flex;
-    height: 100vh;
+    display: none;
+    /* height: 100vh; */
+    /* width: 100%; */
+    background: rgba(0, 0, 0, 0.5);
+    /* position: absolute; */
+    /* top: 195px; */
     font-family: "Inter", Arial, sans-serif;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* z-index: 1; */
+    /* position fixed  - use postion along with top,bottom, left, right*/
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -12,8 +27,18 @@
     max-width: 430px;
     height: 330px;
     margin: 0 auto;
-    position: relative;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+}
+
+.modal__opened {
+    /* transition: visibility os o.5s, opacity 0.5s linear;
+    display: block;
+    opacity: 1;
+    visibility: visibile;
+    pointer-events: all; */
+    display: flex;
 }
 
 .modal__close-button {
@@ -24,6 +49,7 @@
     top: -40px;
     right: -40px;
     border: 0;
+    cursor: pointer;
 
 }
 
@@ -97,8 +123,4 @@
 
 .modal__form {
     padding: 0;
-}
-
-.modal__opened {
-    display: block;
 }
