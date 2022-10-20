@@ -48,28 +48,28 @@
     flex-direction: column;
     display: flex;
     width: 358px;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
     margin-left: 36px;
     margin-right: 36px;
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
+    color: #000000;
+
 
 }
 
 
 .modal__input-line {
     margin-bottom: 29.74px;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
-    padding-bottom: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 13px 0;
+    opacity: 1;
 }
 
 .modal__input-description {
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
-    padding-bottom: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 13px 0;
+    opacity: 1;
 
 }
 
