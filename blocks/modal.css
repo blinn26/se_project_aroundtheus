@@ -124,3 +124,46 @@
 .modal__form {
     padding: 0;
 }
+
+@media screen and (max-width: 480px) {
+    .modal {
+        align-items: center;
+    }
+
+    .modal__container {
+        Width: 282px;
+        Height: 322px;
+        margin-left: 19px;
+        border-radius: 10px;
+    }
+
+    .modal__input {
+        Width: 282px;
+        height: 22px;
+        margin-bottom: 75px;
+        margin-left: 22px;
+    }
+
+    .modal__input {
+        width: 238px;
+        padding-bottom: 13px;
+        margin-left: 22px;
+        height: 14px;
+    }
+
+    .modal__save-button {
+        width: 238px;
+        height: 46px;
+        margin: 0 auto;
+        margin-top: 40px;
+
+    }
+
+    .modal__close-button {
+        height: 26px;
+        width: 26px;
+        position: absolute;
+        left: 264.63px;
+    }
+
+}
