@@ -140,8 +140,6 @@
 
     .modal__title {
         font-size: 18px;
-        margin-left: 22px;
-        margin-right: 22px;
         height: 22px;
     }
 
@@ -154,10 +152,6 @@
     .modal__input {
         width: 238px;
         font-size: 14px;
-        margin-left: 22px;
-        margin-right: 22px;
-
-
     }
 
 
