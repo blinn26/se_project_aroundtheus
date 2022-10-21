@@ -113,7 +113,9 @@
     opacity: 0.8;
 }
 
-.modal__form {}
+.modal__form {
+    padding: 0;
+}
 
 @media screen and (max-width: 480px) {
     .modal {
