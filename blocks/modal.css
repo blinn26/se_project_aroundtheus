@@ -31,6 +31,8 @@
     display: flex;
     opacity: 1;
     pointer-events: all;
+    background: rgba(0, 0, 0, 0.50);
+
 }
 
 .modal__close-button {
@@ -134,7 +136,7 @@
     .modal {
         justify-content: center;
         align-items: center;
-        padding-bottom: 25px;
+        /* padding-bottom: 25px; */
 
     }
 
@@ -174,20 +176,20 @@
     .modal__input {
         width: 238px;
         font-size: 14px;
-        padding-bottom: 13px;
+        padding-bottom: 13px 0;
     }
 
 
     .modal__input-line {
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
 
     }
 
     .modal__input-description {
-        padding-bottom: 13px;
+        /* padding-bottom: 13px;
         padding-top: 45px;
         padding-right: 0;
-        padding-left: 0;
+        padding-left: 0; */
 
     }
 
