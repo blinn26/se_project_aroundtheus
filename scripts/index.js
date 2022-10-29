@@ -1,3 +1,5 @@
+// Cards for HTML 
+
 const initialCards = [
   {
     name: 'Yosemite Valley',
@@ -26,7 +28,7 @@ const initialCards = [
 ];
 
 
-// Cards for HTML  
+ // const commands, functions, strings and eventListeners!
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -45,10 +47,8 @@ initialCards.forEach(function (cardData) {
   
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
-  
   // find .card__image
   const imageEl = cardEl.querySelector(".card__image");
-  
   // find card__title
   const cardTitle = cardEl.querySelector(".card__description-list");
   // replace image src
@@ -60,10 +60,6 @@ initialCards.forEach(function (cardData) {
   // append to the list
   cardListEl.appendChild(cardEl);
 });
-
-function closeModal() {
-  modal.classList.remove(".modal__opened");
-}
 
 function openModal() {
   titleInputvalue.value = profileTitle.textContent;
@@ -78,17 +74,23 @@ function formSubmitHandler(event) {
   profileTitle.textContent = titleInputvalue.value;
   profileDescription.textcontent = descriptionInputValue.value;
   closeModal();
+}
+function closeModal() {
+  modal.classList.remove(".modal__opened");
 
 }
-profileEditButton.addEventListener("click", () => {
-  modal.classList.add("modal__opened")
-})
-profileEditButton.addEventListener("click", () => {
-  modal.classList.add("modal__opened")
-})
-profileModalCloseButton.addEventListener("click", () => {
-  modal.classList.remove("modal__opened")
-})
-editForm.addEventListener("submit", formSubmitHandler);
-profileEditButton.addEventListener("click", openModal);
-profileModalCloseButton.addEventListener("click", closeModal);
+
+
+  profileEditButton.addEventListener("click", () => {
+    modal.classList.add("modal__opened")
+  })
+  profileEditButton.addEventListener("click", () => {
+    modal.classList.add("modal__opened")
+  })
+  profileModalCloseButton.addEventListener("click", () => {
+    modal.classList.remove("modal__opened")
+  })
+  editForm.addEventListener("submit", formSubmitHandler);
+
+  profileEditButton.addEventListener("click", openModal);
+  profileModalCloseButton.addEventListener("click", closeModal);
