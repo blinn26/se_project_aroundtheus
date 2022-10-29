@@ -37,7 +37,7 @@ const profileModalCloseButton = document.querySelector(".modal__close-button");
 const editForm = document.querySelector(".modal__form");
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
-const titleInputvalue = editForm.querySelector(".modal__input-line");
+const titleInputValue = editForm.querySelector(".modal__input-line");
 const descriptionInputValue = editForm.querySelector(".modal__input-description");
 const cardListEl = document.querySelector(".cards__list");
 
@@ -62,7 +62,7 @@ initialCards.forEach(function (cardData) {
 });
 
 function openModal() {
-  titleInputvalue.value = profileTitle.textContent;
+  profileContent.textValue = titleInputValue.value;
   descriptionInputValue.value = profileDescription.textContent;
 
   modal.classList.add(".modal__opened");
@@ -71,8 +71,8 @@ function openModal() {
 function formSubmitHandler(event) {
   event.preventDefault();
 
-  profileTitle.textContent = titleInputvalue.value;
-  profileDescription.textcontent = descriptionInputValue.value;
+  profileTitle.textContent = titleInputValue.value;
+  profileDescription.textContent = descriptionInputValue.value;
   closeModal();
 }
 function closeModal() {
