@@ -32,4 +32,6 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 The pop up design of a log in feature is based on the implementations of JavaScript. Using containers, modal and scripts to intergrate this portion with our project!
 
+Now with JavaScript working with DOM and learning how to use JS in my HTML and CSS and combine them all together to get a better user experience!
+
 Edited by Ben Linn
