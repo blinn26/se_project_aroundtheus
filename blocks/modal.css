@@ -65,6 +65,7 @@
     margin-right: 64px; */
     padding-left: 36px;
     width: 330px;
+    padding-top: 34px;
 }
 
 
@@ -168,6 +169,7 @@
         height: 22px;
         width: 238px;
         padding-left: 22px;
+        padding-top: 25px;
     }
 
     .modal__close-button {
@@ -175,6 +177,7 @@
         width: 26px;
         left: 264.63px;
         align-self: center;
+
     }
 
     .modal__input {
