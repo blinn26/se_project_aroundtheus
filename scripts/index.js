@@ -79,18 +79,6 @@ function closeModal() {
   modal.classList.remove("modal__opened");
 
 }
-
-
-  profileEditButton.addEventListener("click", () => {
-    modal.classList.add("modal__opened")
-  })
-  profileEditButton.addEventListener("click", () => {
-    modal.classList.add("modal__opened")
-  })
-  profileModalCloseButton.addEventListener("click", () => {
-    modal.classList.remove("modal__opened")
-  })
   editForm.addEventListener("submit", formSubmitHandler);
-
   profileEditButton.addEventListener("click", openModal);
   profileModalCloseButton.addEventListener("click", closeModal);
