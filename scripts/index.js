@@ -62,10 +62,10 @@ initialCards.forEach(function (cardData) {
 });
 
 function openModal() {
-  profileContent.textValue = titleInputValue.value;
+  titleInputValue.value = profileTitle.textContent;
   descriptionInputValue.value = profileDescription.textContent;
 
-  modal.classList.add(".modal__opened");
+  modal.classList.add("modal__opened");
 }
 
 function formSubmitHandler(event) {
@@ -76,7 +76,7 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
-  modal.classList.remove(".modal__opened");
+  modal.classList.remove("modal__opened");
 
 }
 
