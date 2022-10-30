@@ -34,4 +34,4 @@ The pop up design of a log in feature is based on the implementations of JavaScr
 
 Now with JavaScript working with DOM and learning how to use JS in my HTML and CSS and combine them all together to get a better user experience!
 
-Edited by Ben Linn
+**Edited by Ben Linn**
