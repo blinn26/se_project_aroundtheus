@@ -108,3 +108,12 @@ function renderCard(data) {
   cardListEl.appendChild(cardEl);
 } */
 
+// function createCard(cardEl) {
+//   const cardEl = cardTemplate.cloneNode(true);
+//   cardListEl.appendChild(cardEl);
+//   return cardEl;
+// }
+// function renderCard(cardEl) {
+//   const cardEl = createCard(data);
+//   cardListEl.appendChild(cardEl);
+// }
