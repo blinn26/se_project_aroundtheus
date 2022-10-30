@@ -42,7 +42,7 @@ const profileInputValue = profileEditForm.querySelector(".modal__input-descripti
 const cardListEl = document.querySelector(".cards__list");
 
 function createCard({ image, title }) { // data is an object 
- // const templateNode = document.getElementById(here_is_a_variable_with_teplate_selector);
+  // const templateNode = document.getElementById(here_is_a_variable_with_teplate_selector);
   // take a node from templateNode
   /*
   * fill templateNode with values
@@ -58,7 +58,7 @@ function renderCard({ what, where }) {
 //user event handler -> createCard -> renderCard
 
 initialCards.forEach(cardData => {
-// clone template
+  // clone template
   const cardEl = cardTemplate.cloneNode(true);
   // find .card__image
   const imageEl = cardEl.querySelector(".card__image");
@@ -74,6 +74,7 @@ initialCards.forEach(cardData => {
   cardListEl.appendChild(cardEl);
 
   createCard(cardData);
+
 });
 
 function openModal() {
@@ -106,3 +107,4 @@ profileModalCloseButton.addEventListener("click", closeModal);
 function renderCard(data) {
   cardListEl.appendChild(cardEl);
 } */
+
