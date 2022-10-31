@@ -41,66 +41,66 @@ const profileLineInputValue = profileEditForm.querySelector(".modal__input-line"
 const profileInputValue = profileEditForm.querySelector(".modal__input-description");
 const cardListEl = document.querySelector(".cards__list");
 
-function createCard({ image, title }) { // data is an object 
+function createCard({ name,link }) { // data is an object 
   // const templateNode = document.getElementById(here_is_a_variable_with_teplate_selector);
   // take a node from templateNode
   /*
   * fill templateNode with values
   * call renderCard({ what: template of the node with filled values, where: whre do we need to render it? this is our <UL>});
   */
-}
+  
+    // clone template
+    const cardEl = cardTemplate.cloneNode(true);
+    // find .card__image
+    const imageEl = cardEl.querySelector(".card__image");
+    // find card__title
+    const cardTitle = cardEl.querySelector(".card__description-list");
+    // replace image src
+    imageEl.src = link;
+    // replace image a
+    imageEl.alt = name;
+    // replace title
+    cardTitle.textContent = name;
 
-function renderCard({ what, where }) {
-  where.appendChild(what);
-}
+    return cardEl;
+  }
 
-// loop -> createCard -> renderCard
-//user event handler -> createCard -> renderCard
+  function renderCard(cardData) {
+   const cardEl = createCard(cardData)
+   
+    // append to the list
+    cardListEl.appendChild(cardEl);
+  }
 
-initialCards.forEach(cardData => {
-  // clone template
-  const cardEl = cardTemplate.cloneNode(true);
-  // find .card__image
-  const imageEl = cardEl.querySelector(".card__image");
-  // find card__title
-  const cardTitle = cardEl.querySelector(".card__description-list");
-  // replace image src
-  imageEl.src = cardData.link;
-  // replace image alt
-  imageEl.alt = cardData.name;
-  // replace title
-  cardTitle.textContent = cardData.name;
-  // append to the list
-  cardListEl.appendChild(cardEl);
+  // loop -> createCard -> renderCard
+  //user event handler -> createCard -> renderCard
 
-  createCard(cardData);
+  initialCards.forEach(renderCard);
 
-});
+  function openModal() {
+    profileLineInputValue.value = profileTitle.textContent;
+    profileInputValue.value = profileDescription.textContent;
 
-function openModal() {
-  profileLineInputValue.value = profileTitle.textContent;
-  profileInputValue.value = profileDescription.textContent;
+    profileModal.classList.add("modal__opened");
+  }
 
-  profileModal.classList.add("modal__opened");
-}
+  function formSubmitHandler(event) {
+    event.preventDefault();
 
-function formSubmitHandler(event) {
-  event.preventDefault();
+    profileTitle.textContent = profileLineInputValue.value;
+    profileDescription.textContent = profileInputValue.value;
+    closeModal();
+  }
+  function closeModal() {
+    profileModal.classList.remove("modal__opened");
 
-  profileTitle.textContent = profileLineInputValue.value;
-  profileDescription.textContent = profileInputValue.value;
-  closeModal();
-}
-function closeModal() {
-  profileModal.classList.remove("modal__opened");
-
-}
-profileEditForm.addEventListener("submit", formSubmitHandler);
-profileEditButton.addEventListener("click", openModal);
-profileModalCloseButton.addEventListener("click", closeModal);
+  }
+  profileEditForm.addEventListener("submit", formSubmitHandler);
+  profileEditButton.addEventListener("click", openModal);
+  profileModalCloseButton.addEventListener("click", closeModal);
 
 
-/* const cardEl = createCard(data); 
+/* const cardEl = createCard(data);
   {
     return cardEl;
   }
