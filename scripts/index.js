@@ -1,4 +1,6 @@
-// Cards for HTML 
+/* -------------------------------------------------------------------------- */
+/*                               Cards For HTML                               */
+/* -------------------------------------------------------------------------- */
 
 const initialCards = [
   {
@@ -27,8 +29,9 @@ const initialCards = [
   },
 ];
 
-
-// const commands, functions, strings and eventListeners!
+/* -------------------------------------------------------------------------- */
+/*           const commands, functions, strings and eventListeners!           */
+/* -------------------------------------------------------------------------- */
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -99,15 +102,16 @@ function createCard({ name,link }) { // data is an object
   profileEditButton.addEventListener("click", openModal);
   profileModalCloseButton.addEventListener("click", closeModal);
 
-
-/* const cardEl = createCard(data);
-  {
-    return cardEl;
-  }
-function renderCard(data) {
-  cardListEl.appendChild(cardEl);
-} */
-
+initialCards.forEach(function (object) {
+  console.log(object);
+});
+//const cardEl = createCard(data);
+  //{
+   // return cardEl;
+  //}
+//function renderCard(data) {
+ // cardListEl.appendChild(cardEl);
+//} 
 // function createCard(cardEl) {
 //   const cardEl = cardTemplate.cloneNode(true);
 //   cardListEl.appendChild(cardEl);
