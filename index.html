@@ -32,7 +32,11 @@
             <button class="profile__edit-button" type="button"></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button
+            class="profile__add-button"
+            id="add-button"
+            type="button"
+          ></button>
         </section>
         <!-- ----------------------------------------------------------------------- -->
         <!--                        Cards and Footer Section                         -->
@@ -82,19 +86,19 @@
     <div class="modal" id="add-modal">
       <div class="modal__container">
         <button class="modal__close-button" type="button"></button>
-        <h3 class="modal__title">Edit profile</h3>
+        <h3 class="modal__title">New Place</h3>
         <form class="modal__form">
           <input
             class="modal__input modal__input-line"
             type="text"
-            name="name"
-            placeholder="Name"
+            name="title"
+            placeholder="Title"
           />
           <input
             class="modal__input modal__input-description"
             type="text"
-            name="description"
-            placeholder="About"
+            name="link"
+            placeholder="Image Link"
           />
           <button class="modal__save-button" type="submit">Save</button>
         </form>
