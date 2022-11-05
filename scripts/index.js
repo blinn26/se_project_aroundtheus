@@ -35,7 +35,8 @@ const initialCards = [
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const profileEditButton = document.querySelector(".profile__edit-button");
-const profileModal = document.querySelector(".modal");
+const profileEditModal = document.querySelector("#edit-modal");
+const cardAddModal = document.querySelector("#add-modal");
 const profileModalCloseButton = document.querySelector(".modal__close-button");
 const profileEditForm = document.querySelector(".modal__form");
 const profileTitle = document.querySelector(".profile__title ");
@@ -43,6 +44,7 @@ const profileDescription = document.querySelector(".profile__description");
 const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
 const profileInputValue = profileEditForm.querySelector(".modal__input-description");
 const cardListEl = document.querySelector(".cards__list");
+
 
 function createCard({ name,link }) { // data is an object 
   // const templateNode = document.getElementById(here_is_a_variable_with_teplate_selector);
@@ -84,7 +86,7 @@ function createCard({ name,link }) { // data is an object
     profileLineInputValue.value = profileTitle.textContent;
     profileInputValue.value = profileDescription.textContent;
 
-    profileModal.classList.add("modal__opened");
+    profileEditModal.classList.add("modal__opened");
   }
 
   function formSubmitHandler(event) {
@@ -95,16 +97,13 @@ function createCard({ name,link }) { // data is an object
     closeModal();
   }
   function closeModal() {
-    profileModal.classList.remove("modal__opened");
+    profileEditModal.classList.remove("modal__opened");
 
   }
   profileEditForm.addEventListener("submit", formSubmitHandler);
   profileEditButton.addEventListener("click", openModal);
   profileModalCloseButton.addEventListener("click", closeModal);
 
-initialCards.forEach(function (object) {
-  console.log(object);
-});
 //const cardEl = createCard(data);
   //{
    // return cardEl;
