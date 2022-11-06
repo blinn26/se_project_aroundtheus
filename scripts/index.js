@@ -30,7 +30,7 @@ const initialCards = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*           const commands, functions, strings and eventListeners!           */
+/*                       Const Commands Query Selectors                       */
 /* -------------------------------------------------------------------------- */
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
@@ -45,78 +45,54 @@ const profileLineInputValue = profileEditForm.querySelector(".modal__input-line"
 const profileInputValue = profileEditForm.querySelector(".modal__input-description");
 const cardListEl = document.querySelector(".cards__list");
 
+/* -------------------------------------------------------------------------- */
+/*                            Card Commands for JS                            */
+/* -------------------------------------------------------------------------- */
+function createCard({ name, link }) {
+  // clone template
+  const cardEl = cardTemplate.cloneNode(true);
+  // find .card__image
+  const imageEl = cardEl.querySelector(".card__image");
+  // find card__title
+  const cardTitle = cardEl.querySelector(".card__description-list");
+  // replace image src
+  imageEl.src = link;
+  // replace image a
+  imageEl.alt = name;
+  // replace title
+  cardTitle.textContent = name;
+  return cardEl;
+}
+function renderCard(cardData) {
+  const cardEl = createCard(cardData)
+  // append to the list
+  cardListEl.appendChild(cardEl);
+}
+// loop -> createCard -> renderCard
+//user event handler -> createCard -> renderCard
+initialCards.forEach(renderCard);
 
-function createCard({ name,link }) { // data is an object 
-  // const templateNode = document.getElementById(here_is_a_variable_with_teplate_selector);
-  // take a node from templateNode
-  /*
-  * fill templateNode with values
-  * call renderCard({ what: template of the node with filled values, where: whre do we need to render it? this is our <UL>});
-  */
-  
-    // clone template
-    const cardEl = cardTemplate.cloneNode(true);
-    // find .card__image
-    const imageEl = cardEl.querySelector(".card__image");
-    // find card__title
-    const cardTitle = cardEl.querySelector(".card__description-list");
-    // replace image src
-    imageEl.src = link;
-    // replace image a
-    imageEl.alt = name;
-    // replace title
-    cardTitle.textContent = name;
+function openModal() {
+  profileLineInputValue.value = profileTitle.textContent;
+  profileInputValue.value = profileDescription.textContent;
 
-    return cardEl;
-  }
+  profileEditModal.classList.add("modal__opened");
+  /* cardAddModal.classList.add("modal__opened"); */
+}
+function formSubmitHandler(event) {
+  event.preventDefault();
 
-  function renderCard(cardData) {
-   const cardEl = createCard(cardData)
-   
-    // append to the list
-    cardListEl.appendChild(cardEl);
-  }
+  profileTitle.textContent = profileLineInputValue.value;
+  profileDescription.textContent = profileInputValue.value;
+  closeModal();
+}
+function closeModal() {
+  profileEditModal.classList.remove("modal__opened");
+ /*  cardAddModal.classList.remove("modal__opened"); */
 
-  // loop -> createCard -> renderCard
-  //user event handler -> createCard -> renderCard
+}
+profileEditForm.addEventListener("submit", formSubmitHandler);
+profileEditButton.addEventListener("click", openModal);
+profileModalCloseButton.addEventListener("click", closeModal);
 
-  initialCards.forEach(renderCard);
 
-  function openModal() {
-    profileLineInputValue.value = profileTitle.textContent;
-    profileInputValue.value = profileDescription.textContent;
-
-    profileEditModal.classList.add("modal__opened");
-  }
-
-  function formSubmitHandler(event) {
-    event.preventDefault();
-
-    profileTitle.textContent = profileLineInputValue.value;
-    profileDescription.textContent = profileInputValue.value;
-    closeModal();
-  }
-  function closeModal() {
-    profileEditModal.classList.remove("modal__opened");
-
-  }
-  profileEditForm.addEventListener("submit", formSubmitHandler);
-  profileEditButton.addEventListener("click", openModal);
-  profileModalCloseButton.addEventListener("click", closeModal);
-
-//const cardEl = createCard(data);
-  //{
-   // return cardEl;
-  //}
-//function renderCard(data) {
- // cardListEl.appendChild(cardEl);
-//} 
-// function createCard(cardEl) {
-//   const cardEl = cardTemplate.cloneNode(true);
-//   cardListEl.appendChild(cardEl);
-//   return cardEl;
-// }
-// function renderCard(cardEl) {
-//   const cardEl = createCard(data);
-//   cardListEl.appendChild(cardEl);
-// }
