@@ -73,11 +73,12 @@ function renderCard(cardData) {
 initialCards.forEach(renderCard);
 
 function openModal() {
+  cardAddModal.classList.add("modal__opened");
   profileLineInputValue.value = profileTitle.textContent;
   profileInputValue.value = profileDescription.textContent;
 
   profileEditModal.classList.add("modal__opened");
-  /* cardAddModal.classList.add("modal__opened"); */
+
 }
 function formSubmitHandler(event) {
   event.preventDefault();
@@ -87,12 +88,16 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
+  cardAddModal.classList.add("modal__opened");
   profileEditModal.classList.remove("modal__opened");
- /*  cardAddModal.classList.remove("modal__opened"); */
+  
 
 }
 profileEditForm.addEventListener("submit", formSubmitHandler);
 profileEditButton.addEventListener("click", openModal);
 profileModalCloseButton.addEventListener("click", closeModal);
 
+ cardAddModal.addEventListener("click", openModal);
+ cardAddModal.addEventListener("click",closeModal );   
 
+ 
