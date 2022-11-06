@@ -34,9 +34,13 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
-const profileEditButton = document.querySelector(".profile__edit-button");
+
 const profileEditModal = document.querySelector("#edit-modal");
+const profileEditButton = document.querySelector("#edit-button");
+
 const cardAddModal = document.querySelector("#add-modal");
+const cardAddButton = document.querySelector("#add-button");
+
 const profileModalCloseButton = document.querySelector(".modal__close-button");
 const profileEditForm = document.querySelector(".modal__form");
 const profileTitle = document.querySelector(".profile__title ");
@@ -72,14 +76,13 @@ function renderCard(cardData) {
 //user event handler -> createCard -> renderCard
 initialCards.forEach(renderCard);
 
-function openModal() {
-  cardAddModal.classList.add("modal__opened");
+function openModal(modalNode) {
+  modalNode.classList.add("modal__opened");
+
   profileLineInputValue.value = profileTitle.textContent;
   profileInputValue.value = profileDescription.textContent;
-
-  profileEditModal.classList.add("modal__opened");
-
 }
+
 function formSubmitHandler(event) {
   event.preventDefault();
 
@@ -88,16 +91,15 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
-  cardAddModal.classList.add("modal__opened");
-  profileEditModal.classList.remove("modal__opened");
-  
-
+  document.querySelector(".modal__opened").classList.remove("modal__opened");
 }
+
 profileEditForm.addEventListener("submit", formSubmitHandler);
-profileEditButton.addEventListener("click", openModal);
+
+profileEditButton.addEventListener("click", () => openModal(profileEditModal));
 profileModalCloseButton.addEventListener("click", closeModal);
 
- cardAddModal.addEventListener("click", openModal);
- cardAddModal.addEventListener("click",closeModal );   
-
+cardAddButton.addEventListener("click", () => openModal(cardAddModal));
+cardAddModal.addEventListener("click", closeModal );   
+ 
  
