@@ -98,5 +98,5 @@ profileEditButton.addEventListener("click", () => {
 });
 profileModalCloseButton.addEventListener("click", closeModal);
 
-cardModalOpenButton.addEventListener("click", openModal),
-  cardAddModal.addEventListener("click", closeModal);
+cardModalOpenButton.addEventListener("click", openModal);
+cardAddModal.addEventListener("click", closeModal);
