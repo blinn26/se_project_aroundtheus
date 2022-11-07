@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                               Cards For HTML                               */
+/*                               ARRAY OF HTML                                */
 /* -------------------------------------------------------------------------- */
 
 const initialCards = [
@@ -75,20 +75,15 @@ initialCards.forEach(renderCard);
 
 function openModal(modal) {
   modal.classList.add("modal__opened");
-  /* cardAddModal.classList.add("modal__opened"); */
-
 }
 function formSubmitHandler(event) {
   event.preventDefault();
-
   profileTitle.textContent = profileLineInputValue.value;
   profileDescription.textContent = profileInputValue.value;
   closeModal();
 }
 function closeModal() {
-  /* cardAddModal.classList.add("modal__opened"), */
-    profileEditModal.classList.remove("modal__opened");
-
+  profileEditModal.classList.remove("modal__opened");
 }
 profileEditForm.addEventListener("submit", formSubmitHandler);
 profileEditButton.addEventListener("click", () => {
@@ -96,12 +91,8 @@ profileEditButton.addEventListener("click", () => {
   profileInputValue.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
-
 cardModalOpenButton.addEventListener("click", () => {
   openModal(cardAddModal);
- 
-
 });
 profileModalCloseButton.addEventListener("click", closeModal);
-/* cardModalOpenButton.addEventListener("click", openModal); */
-/* cardAddModal.addEventListener("click", closeModal); */
+cardAddModal.addEventListener("submit", closeModal);
