@@ -74,10 +74,10 @@ function renderCard(cardData) {
 initialCards.forEach(renderCard);
 
 function openModal(modal) {
-modal.classList.add("modal__opened");
- /* profileLineInputValue.value = profileTitle.textContent;
-  profileInputValue.value = profileDescription.textContent;
- */
+  modal.classList.add("modal__opened");
+  /* profileLineInputValue.value = profileTitle.textContent;
+   profileInputValue.value = profileDescription.textContent;
+  */
   /* profileEditModal.classList.add("modal__opened"); */
 
 }
