@@ -37,6 +37,7 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-modal");
 const cardAddModal = document.querySelector("#add-modal");
+const cardModalOpenButton = document.querySelector(".profile__add-button");
 const profileModalCloseButton = document.querySelector(".modal__close-button");
 const profileEditForm = document.querySelector(".modal__form");
 const profileTitle = document.querySelector(".profile__title ");
@@ -72,12 +73,13 @@ function renderCard(cardData) {
 //user event handler -> createCard -> renderCard
 initialCards.forEach(renderCard);
 
-function openModal() {
-  profileLineInputValue.value = profileTitle.textContent;
+function openModal(modal) {
+modal.classList.add("modal__opened");
+ /* profileLineInputValue.value = profileTitle.textContent;
   profileInputValue.value = profileDescription.textContent;
+ */
+  /* profileEditModal.classList.add("modal__opened"); */
 
-  profileEditModal.classList.add("modal__opened");
-  /* cardAddModal.classList.add("modal__opened"); */
 }
 function formSubmitHandler(event) {
   event.preventDefault();
@@ -87,12 +89,19 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
+  cardAddModal.classList.remove("modal__opened");
   profileEditModal.classList.remove("modal__opened");
- /*  cardAddModal.classList.remove("modal__opened"); */
+
 
 }
 profileEditForm.addEventListener("submit", formSubmitHandler);
-profileEditButton.addEventListener("click", openModal);
+profileEditButton.addEventListener("click", () => {
+  profileLineInputValue.value = profileTitle.textContent;
+  profileInputValue.value = profileDescription.textContent;
+  openModal(profileEditModal);
+});
+
+cardModalOpenButton.addEventListener("click", openModal);
+/* profileTitle.textContent =  */
 profileModalCloseButton.addEventListener("click", closeModal);
- 
- 
+cardAddModal.addEventListener("click", closeModal);
