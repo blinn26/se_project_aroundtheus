@@ -86,7 +86,7 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
-  cardAddModal.classList.add("modal__opened"),
+  /* cardAddModal.classList.add("modal__opened"), */
     profileEditModal.classList.remove("modal__opened");
 
 }
@@ -96,7 +96,12 @@ profileEditButton.addEventListener("click", () => {
   profileInputValue.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
-profileModalCloseButton.addEventListener("click", closeModal);
 
-cardModalOpenButton.addEventListener("click", openModal);
-cardAddModal.addEventListener("click", closeModal);
+cardModalOpenButton.addEventListener("click", () => {
+  openModal(cardAddModal);
+ 
+
+});
+profileModalCloseButton.addEventListener("click", closeModal);
+/* cardModalOpenButton.addEventListener("click", openModal); */
+/* cardAddModal.addEventListener("click", closeModal); */
