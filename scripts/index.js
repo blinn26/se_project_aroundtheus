@@ -75,10 +75,7 @@ initialCards.forEach(renderCard);
 
 function openModal(modal) {
   modal.classList.add("modal__opened");
-  /* profileLineInputValue.value = profileTitle.textContent;
-   profileInputValue.value = profileDescription.textContent;
-  */
-  /* profileEditModal.classList.add("modal__opened"); */
+  /* cardAddModal.classList.add("modal__opened"); */
 
 }
 function formSubmitHandler(event) {
@@ -89,9 +86,8 @@ function formSubmitHandler(event) {
   closeModal();
 }
 function closeModal() {
-  cardAddModal.classList.remove("modal__opened");
-  profileEditModal.classList.remove("modal__opened");
-
+  cardAddModal.classList.add("modal__opened"),
+    profileEditModal.classList.remove("modal__opened");
 
 }
 profileEditForm.addEventListener("submit", formSubmitHandler);
@@ -100,8 +96,7 @@ profileEditButton.addEventListener("click", () => {
   profileInputValue.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
-
-cardModalOpenButton.addEventListener("click", openModal);
-/* profileTitle.textContent =  */
 profileModalCloseButton.addEventListener("click", closeModal);
-cardAddModal.addEventListener("click", closeModal);
+
+cardModalOpenButton.addEventListener("click", openModal),
+  cardAddModal.addEventListener("click", closeModal);
