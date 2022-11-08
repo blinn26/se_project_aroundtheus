@@ -113,7 +113,11 @@ function closeModal(modal) {
   modal.classList.remove('modal__opened');
 }
 
+const formAddCardHandler = (evt) => {
+  evt.preventDefault();
+console.log("I am clicking submit button")
 
+}
 /* -------------------------------------------------------------------------- */
 /*                               Modal Settings                               */
 /* -------------------------------------------------------------------------- */
@@ -127,4 +131,5 @@ cardModalOpenButton.addEventListener("click", () => {
 profileModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
-cardAddModal.addEventListener("submit", formSubmitHandler); // ??? add card specific form handler
+cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
+
