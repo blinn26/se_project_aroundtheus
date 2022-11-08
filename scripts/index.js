@@ -77,6 +77,10 @@ function renderCard(cardData) {
 //user event handler -> createCard -> renderCard
 initialCards.forEach(renderCard);
 
+/* -------------------------------------------------------------------------- */
+/*             Edit Profile Settings/Open/Close/Title/Description             */
+/* -------------------------------------------------------------------------- */
+
 function openModal(modal) {
   modal.classList.add("modal__opened");
 }
@@ -95,12 +99,20 @@ profileEditButton.addEventListener("click", () => {
   profileInputValue.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
+
+/* -------------------------------------------------------------------------- */
+/*                               Modal Settings                               */
+/* -------------------------------------------------------------------------- */
 cardModalOpenButton.addEventListener("click", () => {
 openModal(cardAddModal);
 });
+
+/* -------------------------------------------------------------------------- */
+/*                                Close Buttons                               */
+/* -------------------------------------------------------------------------- */
 profileModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
 modalEditForm.addEventListener("submit", formSubmitHandler);
-
-
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", closeModal);
+
+
