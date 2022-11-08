@@ -99,7 +99,7 @@ function formSubmitHandler(event) {
   profileTitle.textContent = profileLineInputValue.value;
   profileDescription.textContent = profileInputValue.value;
 
-  closeModal();
+  closeModal(profileEditModal);
 }
 
 profileEditForm.addEventListener("submit", formSubmitHandler);
@@ -109,8 +109,8 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-function closeModal() {
-  document.querySelector('.modal__opened').classList.remove('modal__opened');
+function closeModal(modal) {
+  modal.classList.remove('modal__opened');
 }
 
 
@@ -124,7 +124,7 @@ cardModalOpenButton.addEventListener("click", () => {
 /* -------------------------------------------------------------------------- */
 /*                                Close Buttons                               */
 /* -------------------------------------------------------------------------- */
-profileModalCloseButton.addEventListener("click", () => closeModal());
+profileModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
-addModalCloseButton.addEventListener("click", () => closeModal());
+addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formSubmitHandler); // ??? add card specific form handler
