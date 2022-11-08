@@ -40,6 +40,9 @@ const cardAddModal = document.querySelector("#add-modal");
 const cardModalOpenButton = document.querySelector(".profile__add-button");
 const profileModalCloseButton = document.querySelector(".modal__close-button");
 const profileEditForm = document.querySelector(".modal__form");
+const modalEditForm = document.querySelector(".modal");
+const modalTitleForm = modalEditForm.querySelector("modal__form-title");
+const modalLinkForm = modalEditForm.querySelector("modal__form-link");
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
 const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
@@ -92,7 +95,11 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 cardModalOpenButton.addEventListener("click", () => {
-  openModal(cardAddModal);
+openModal(cardAddModal);
 });
 profileModalCloseButton.addEventListener("click", closeModal);
+/* modalEditForm.addEventListener("submit", formSubmitHandler); */
+/* modalTitleForm.textContent = profileLineInputValue.value;
+modalLinkForm.textContent = profileInputValue.value; */
+/* profileModalCloseButton.addEventListener("click", closeModal); */
 cardAddModal.addEventListener("submit", closeModal);
