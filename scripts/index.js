@@ -38,11 +38,12 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-modal");
 const cardAddModal = document.querySelector("#add-modal");
 const cardModalOpenButton = document.querySelector(".profile__add-button");
-const profileModalCloseButton = document.querySelector(".modal__close-button");
+const profileModalCloseButton = profileEditModal.querySelector(".modal__close-button");
+const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
 const profileEditForm = document.querySelector(".modal__form");
 const modalEditForm = document.querySelector(".modal");
-const modalTitleForm = modalEditForm.querySelector("modal__form-title");
-const modalLinkForm = modalEditForm.querySelector("modal__form-link");
+const modalTitleForm = modalEditForm.querySelector("#modal__form-title");
+const modalLinkForm = modalEditForm.querySelector("#modal__form-link");
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
 const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
@@ -85,8 +86,8 @@ function formSubmitHandler(event) {
   profileDescription.textContent = profileInputValue.value;
   closeModal();
 }
-function closeModal() {
-  profileEditModal.classList.remove("modal__opened");
+function closeModal(modal) {
+  modal.classList.remove("modal__opened");
 }
 profileEditForm.addEventListener("submit", formSubmitHandler);
 profileEditButton.addEventListener("click", () => {
@@ -97,9 +98,9 @@ profileEditButton.addEventListener("click", () => {
 cardModalOpenButton.addEventListener("click", () => {
 openModal(cardAddModal);
 });
-profileModalCloseButton.addEventListener("click", closeModal);
-/* modalEditForm.addEventListener("submit", formSubmitHandler); */
-/* modalTitleForm.textContent = profileLineInputValue.value;
-modalLinkForm.textContent = profileInputValue.value; */
-/* profileModalCloseButton.addEventListener("click", closeModal); */
+profileModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
+modalEditForm.addEventListener("submit", formSubmitHandler);
+
+
+addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", closeModal);
