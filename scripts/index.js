@@ -71,6 +71,7 @@ const profileInputValue = profileEditForm.querySelector(".modal__input-descripti
 /* -------------------------------------------------------------------------- */
 /*                            Card Commands for JS                            */
 /* -------------------------------------------------------------------------- */
+
 function renderCard(cardData) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
@@ -160,6 +161,11 @@ console.log(link);
 closeModal(cardAddModal);
 }
 
+/* initialCards.forEach(function)(cardData) {
+  const cardView = getCardView(cardData);
+  renderCard(cardView, cardListEl);
+});
+ */
 cardModalOpenButton.addEventListener("click", () => {
   openModal(cardAddModal);
 });
