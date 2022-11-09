@@ -130,7 +130,7 @@ function closeModal(modal) {
 
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
-console.log("I am clicking submit button")
+  console.log("I am clicking submit button")
 
 }
 /* -------------------------------------------------------------------------- */
