@@ -147,14 +147,19 @@ function closeModal(modal) {
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
   console.log("I am clicking submit button")
-  const name = evt.target.title.value;
+  const name = evt.target.name.value;
   const link = evt.target.link.value;
-  renderCard(name, link);
-
+console.log(name);
+console.log(link);
+  renderCard(
+  {
+    name: name,
+    link: link,
+  }
+    );
+closeModal(cardAddModal);
 }
-/* -------------------------------------------------------------------------- */
-/*                               Modal Settings                               */
-/* -------------------------------------------------------------------------- */
+
 cardModalOpenButton.addEventListener("click", () => {
   openModal(cardAddModal);
 });
