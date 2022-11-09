@@ -71,6 +71,22 @@ const profileInputValue = profileEditForm.querySelector(".modal__input-descripti
 /* -------------------------------------------------------------------------- */
 /*                            Card Commands for JS                            */
 /* -------------------------------------------------------------------------- */
+function renderCard(cardData) {
+  // clone template
+  const cardEl = cardTemplate.cloneNode(true);
+  // find .card__image
+  const imageEl = cardEl.querySelector(".card__image");
+  // find card__title
+  const cardTitle = cardEl.querySelector(".card__description-list");
+  // replace image src
+  imageEl.src = link;
+  // replace image a
+  imageEl.alt = name;
+  // replace title
+  cardTitle.textContent = name;
+  return cardEl;
+
+}
 
 function createCard({ name, link }) {
   // clone template
@@ -131,6 +147,9 @@ function closeModal(modal) {
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
   console.log("I am clicking submit button")
+  const name = evt.target.title.value;
+  const link = evt.target.link.value;
+  renderCard(name, link);
 
 }
 /* -------------------------------------------------------------------------- */
