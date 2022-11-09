@@ -30,37 +30,48 @@ const initialCards = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                       Const Commands Query Selectors                       */
+/*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
-const profileEditButton = document.querySelector(".profile__edit-button");
+const cardListEl = document.querySelector(".cards__list");
+/* -------------------------------------------------------------------------- */
+/*                            ID LABLED WITH MODAL                            */
+/* -------------------------------------------------------------------------- */
 
-// two unique modals
 const profileEditModal = document.querySelector("#edit-modal");
 const cardAddModal = document.querySelector("#add-modal");
 
-// therefore we need two unieq forms
-// e.g.: cardAddModal.querySelector('.modal__form'); ->> this is a unique form for the card add modal
+/* -------------------------------------------------------------------------- */
+/*                          PROFILE AND MODAL BUTTONS                         */
+/* -------------------------------------------------------------------------- */
 
-
-
+const profileEditButton = document.querySelector(".profile__edit-button");
 const cardModalOpenButton = document.querySelector(".profile__add-button");
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close-button");
 const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
+
+/* -------------------------------------------------------------------------- */
+/*                           MODAL AND PROFILE FORMS                          */
+/* -------------------------------------------------------------------------- */
 const profileEditForm = document.querySelector(".modal__form");
 const modalEditForm = document.querySelector(".modal");
 const modalTitleForm = modalEditForm.querySelector("#modal__form-title");
 const modalLinkForm = modalEditForm.querySelector("#modal__form-link");
+
+/* -------------------------------------------------------------------------- */
+/*                         TEXT CONTENT NAME AND TITLE                        */
+/* -------------------------------------------------------------------------- */
+
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
 const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
 const profileInputValue = profileEditForm.querySelector(".modal__input-description");
-const cardListEl = document.querySelector(".cards__list");
 
 /* -------------------------------------------------------------------------- */
 /*                            Card Commands for JS                            */
 /* -------------------------------------------------------------------------- */
+
 function createCard({ name, link }) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
