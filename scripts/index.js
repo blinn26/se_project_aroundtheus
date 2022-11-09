@@ -124,6 +124,10 @@ function closeModal(modal) {
   modal.classList.remove('modal__opened');
 }
 
+/* -------------------------------------------------------------------------- */
+/*                               ADD CUSTOM CARD                              */
+/* -------------------------------------------------------------------------- */
+
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
 console.log("I am clicking submit button")
