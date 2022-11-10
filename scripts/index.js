@@ -147,11 +147,11 @@ function closeModal(modal) {
 
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
-  console.log("I am clicking submit button")
+  /* console.log("I am clicking submit button") */
   const name = evt.target.name.value;
   const link = evt.target.link.value;
-console.log(name);
-console.log(link);
+/* console.log(name);
+console.log(link); */
   renderCard(
   {
     name: name,
