@@ -177,5 +177,3 @@ profileModalCloseButton.addEventListener("click", () => closeModal(profileEditMo
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
-
-debugger 
