@@ -107,7 +107,7 @@ function createCard({ name, link }) {
 function renderCard(cardData) {
   const cardEl = createCard(cardData)
   // append to the list
-  cardListEl.appendChild(cardEl);
+  cardListEl.prepend(cardEl);
 }
 // loop -> createCard -> renderCard
 //user event handler -> createCard -> renderCard
