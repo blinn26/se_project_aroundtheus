@@ -51,6 +51,7 @@ const cardModalOpenButton = document.querySelector(".profile__add-button");
 const profileModalCloseButton = profileEditModal.querySelector(".modal__close-button");
 const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
 
+
 /* -------------------------------------------------------------------------- */
 /*                           MODAL AND PROFILE FORMS                          */
 /* -------------------------------------------------------------------------- */
@@ -88,6 +89,10 @@ function renderCard(cardData) {
   return cardEl;
 
 }
+const handleLikeIcon = (evt) => {
+  evt.target.classList.toggle("card__like-button_is-active");
+  // Students know about `evt.target`
+};
 
 function createCard({ name, link }) {
   // clone template
@@ -95,12 +100,17 @@ function createCard({ name, link }) {
   // find .card__image
   const imageEl = cardEl.querySelector(".card__image");
   // find card__title
+  const cardLikeButton = cardEl.querySelector(".card__like-button");
+  console.log(cardLikeButton);
+  // add like button darken card element
   const cardTitle = cardEl.querySelector(".card__description-list");
   // replace image src
   imageEl.src = link;
   // replace image a
   imageEl.alt = name;
   // replace title
+  cardLikeButton.addEventListener("click", handleLikeIcon);
+  //  listener for button heart icon
   cardTitle.textContent = name;
   return cardEl;
 }

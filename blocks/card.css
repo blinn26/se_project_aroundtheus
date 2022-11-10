@@ -53,6 +53,11 @@
 
 }
 
+.card__like-button_is-active {
+    background: url(../images/Union.png);
+    /* background-color: pink; */
+}
+
 .card__like-button:hover {
     opacity: 0.5;
 }
