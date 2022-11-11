@@ -61,3 +61,22 @@
 .card__like-button:hover {
     opacity: 0.5;
 }
+
+.card__trash-button {
+    background: center;
+    background-position: no-repeat;
+    position: absolute;
+    border: none;
+    transition: 0.8s;
+    width: 19px;
+    height: 19px;
+
+
+
+}
+
+
+.card__trash-button :hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
