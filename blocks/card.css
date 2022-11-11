@@ -63,8 +63,7 @@
 }
 
 .card__trash-button {
-    background: center;
-    background-position: no-repeat;
+    background: center no-repeat;
     position: absolute;
     border: none;
     transition: 0.8s;
