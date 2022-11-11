@@ -101,7 +101,6 @@ function createCard({ name, link }) {
   const imageEl = cardEl.querySelector(".card__image");
   // find card__title
   const cardLikeButton = cardEl.querySelector(".card__like-button");
-  console.log(cardLikeButton);
   // add like button darken card element
   const cardTitle = cardEl.querySelector(".card__description-list");
   // replace image src
@@ -129,7 +128,7 @@ initialCards.forEach(renderCard);
 
 function openModal(modal) {
   modal.classList.add("modal__opened");
-  
+
 }
 function formSubmitHandler(event) {
   event.preventDefault();
@@ -160,15 +159,15 @@ const formAddCardHandler = (evt) => {
   /* console.log("I am clicking submit button") */
   const name = evt.target.name.value;
   const link = evt.target.link.value;
-/* console.log(name);
-console.log(link); */
+  /* console.log(name);
+  console.log(link); */
   renderCard(
-  {
-    name: name,
-    link: link,
-  }
-    );
-closeModal(cardAddModal);
+    {
+      name: name,
+      link: link,
+    }
+  );
+  closeModal(cardAddModal);
 }
 
 /* initialCards.forEach(function)(cardData) {

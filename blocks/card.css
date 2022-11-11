@@ -54,7 +54,7 @@
 }
 
 .card__like-button_is-active {
-    background: url(../images/Union.png);
+    background: url(../images/Union.png) center no-repeat;
     /* background-color: pink; */
 }
 
