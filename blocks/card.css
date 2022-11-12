@@ -5,13 +5,11 @@
     display: flex;
 }
 
-
 .card__image {
     width: 282px;
     height: 282px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
 .card__description {
@@ -39,7 +37,6 @@
     line-height: 29px;
     font-size: 24px;
     font-family: "Inter" sans-serif;
-
 }
 
 .card__like-button {
@@ -49,8 +46,6 @@
     transition: 0.7s;
     width: 21px;
     height: 18px;
-
-
 }
 
 .card__like-button_is-active {
@@ -69,13 +64,13 @@
     transition: 0.8s;
     width: 19px;
     height: 19px;
+    cursor: pointer;
+
 
 
 
 }
 
-
 .card__trash-button :hover {
-    cursor: pointer;
     opacity: 0.5;
 }

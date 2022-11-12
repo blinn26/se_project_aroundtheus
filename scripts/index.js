@@ -80,14 +80,14 @@ function renderCard(cardData) {
   const imageEl = cardEl.querySelector(".card__image");
   // find card__title
   const cardTitle = cardEl.querySelector(".card__description-list");
+  
   // replace image src
   imageEl.src = link;
   // replace image a
-  imageEl.alt = name;
+  imageEl.alt = title;
   // replace title
-  cardTitle.textContent = name;
+  cardTitle.textContent = title;
   return cardEl;
-
 }
 const handleLikeIcon = (evt) => {
   evt.target.classList.toggle("card__like-button_is-active");
@@ -97,11 +97,11 @@ const handleLikeIcon = (evt) => {
 function createCard({ name, link }) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
-  // find .card__image
+  // find .card__image 
   const imageEl = cardEl.querySelector(".card__image");
   // find card__title
   const cardLikeButton = cardEl.querySelector(".card__like-button");
-  // add like button darken card element
+  // add like button darken card element 
   const cardTitle = cardEl.querySelector(".card__description-list");
   // replace image src
   imageEl.src = link;
@@ -111,15 +111,17 @@ function createCard({ name, link }) {
   cardLikeButton.addEventListener("click", handleLikeIcon);
   //  listener for button heart icon
   cardTitle.textContent = name;
+  
   return cardEl;
 }
 function renderCard(cardData) {
   const cardEl = createCard(cardData)
-  // append to the list
   cardListEl.prepend(cardEl);
+  // append to the list
 }
 // loop -> createCard -> renderCard
 //user event handler -> createCard -> renderCard
+
 initialCards.forEach(renderCard);
 
 /* -------------------------------------------------------------------------- */
@@ -162,11 +164,8 @@ function closeModal(modal) {
 
 const formAddCardHandler = (evt) => {
   evt.preventDefault();
-  /* console.log("I am clicking submit button") */
   const name = evt.target.name.value;
   const link = evt.target.link.value;
-  /* console.log(name);
-  console.log(link); */
   renderCard(
     {
       name: name,
@@ -176,11 +175,6 @@ const formAddCardHandler = (evt) => {
   closeModal(cardAddModal);
 }
 
-/* initialCards.forEach(function)(cardData) {
-  const cardView = getCardView(cardData);
-  renderCard(cardView, cardListEl);
-});
- */
 cardModalOpenButton.addEventListener("click", () => {
   openModal(cardAddModal);
 });
@@ -192,3 +186,9 @@ profileModalCloseButton.addEventListener("click", () => closeModal(profileEditMo
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
+
+
+const cardTrashButon = cardEl.querySelector(".card__trash-button");
+cardTrashButon.addEventListener("click", () => {
+  remove.cardEl();
+});
