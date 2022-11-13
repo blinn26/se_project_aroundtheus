@@ -3,6 +3,7 @@
     border-radius: 10px;
     width: 282px;
     display: flex;
+    position: relative;
 }
 
 .card__image {
@@ -62,8 +63,8 @@
     position: absolute;
     border: none;
     transition: 0.8s;
-    width: 19px;
-    height: 19px;
+    top: 18px;
+    right: 16px;
     cursor: pointer;
 
 
