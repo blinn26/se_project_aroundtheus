@@ -137,6 +137,21 @@
     flex-direction: column;
 }
 
+.modal__image {
+    width: 433px;
+    height: 540px;
+    max-width: 100%;
+
+}
+
+.modal__text {
+    font-family: "Inter", sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
 @media screen and (max-width: 620px) {
     .modal {
         justify-content: center;

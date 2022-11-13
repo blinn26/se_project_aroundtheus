@@ -118,7 +118,7 @@ function createCard({ name, link }) {
   });
   imageEl.addEventListener("click", () => {
     const previewModal = document.getElementById('preview-modal');
-    const previewModalImage = document.getElementById('aa');
+    const previewModalImage = document.getElementById('modal-image');
 
     previewModalImage.src = link;
     previewModalImage.alt = name;
