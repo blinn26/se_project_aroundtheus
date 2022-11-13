@@ -35,7 +35,6 @@ const initialCards = [
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
-const cardImageViewer = cardListEl.querySelector(".card__image-viewer ");
 /* -------------------------------------------------------------------------- */
 /*                            ID LABLED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
@@ -118,10 +117,13 @@ function createCard({ name, link }) {
     cardEl.remove();
   });
   imageEl.addEventListener("click", () => {
-    cardImageViewer.src = data.link;
-    cardImageViewer.alt = data.name;
-    openModal(cardListEl);
+    const previewModal = document.getElementById('preview-modal');
+    const previewModalImage = document.getElementById('aa');
 
+    previewModalImage.src = link;
+    previewModalImage.alt = name;
+
+    openModal(document.getElementById('preview-modal'));
   });
 
   return cardEl;
