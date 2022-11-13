@@ -35,6 +35,7 @@ const initialCards = [
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
+const cardImageViewer = cardTemplate.querySelector(".card__image-viewer ");
 /* -------------------------------------------------------------------------- */
 /*                            ID LABLED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
@@ -80,7 +81,7 @@ function renderCard(cardData) {
   const imageEl = cardEl.querySelector(".card__image");
   // find card__title
   const cardTitle = cardEl.querySelector(".card__description-list");
-  
+
   // replace image src
   imageEl.src = link;
   // replace image a
@@ -112,11 +113,17 @@ function createCard({ name, link }) {
   //  listener for button heart icon
   cardTitle.textContent = name;
 
-const cardTrashButton = cardEl.querySelector(".card__trash-button");
-cardTrashButton.addEventListener("click", () => {
-  cardEl.remove();
-});
-  
+  const cardTrashButton = cardEl.querySelector(".card__trash-button");
+  cardTrashButton.addEventListener("click", () => {
+    cardEl.remove();
+  });
+  imageEl.addEventListener("click", () => {
+    cardImageViewer.src = data.link;
+    cardImageViewer.alt = data.name;
+    openModal(cardListEl);
+
+  });
+
   return cardEl;
 }
 function renderCard(cardData) {
