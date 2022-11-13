@@ -35,7 +35,7 @@ const initialCards = [
 
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
-const cardImageViewer = cardTemplate.querySelector(".card__image-viewer ");
+const cardImageViewer = cardListEl.querySelector(".card__image-viewer ");
 /* -------------------------------------------------------------------------- */
 /*                            ID LABLED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */

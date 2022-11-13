@@ -76,4 +76,6 @@
     opacity: 0.5;
 }
 
-.card__image-viewer {}
+.card__image-viewer {
+    background-color: fuchsia;
+}
