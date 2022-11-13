@@ -111,6 +111,11 @@ function createCard({ name, link }) {
   cardLikeButton.addEventListener("click", handleLikeIcon);
   //  listener for button heart icon
   cardTitle.textContent = name;
+
+const cardTrashButton = cardEl.querySelector(".card__trash-button");
+cardTrashButton.addEventListener("click", () => {
+  cardEl.remove();
+});
   
   return cardEl;
 }
@@ -187,8 +192,3 @@ modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> for
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
 
-
-const cardTrashButon = cardEl.querySelector(".card__trash-button");
-cardTrashButon.addEventListener("click", () => {
-  remove.cardEl();
-});
