@@ -142,9 +142,10 @@
 }
 
 .modal__image {
-    width: 433px;
-    height: 540px;
+    max-width: 75vw;
+    max-height: 75vh;
     max-width: 100%;
+    max-height: 100%;
     margin: 0 auto;
 
 }
@@ -229,11 +230,9 @@
 
     }
 
-    .modal__image {
-        width: 240px;
-        height: 299px;
+    /*  .modal__image {
         max-width: 100%;
-    }
+    } */
 
     .modal__text {
         font-family: "Inter", sans-serif;
