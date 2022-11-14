@@ -188,6 +188,16 @@
 
     }
 
+    .modal__container-transparent {
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        max-height: 75vh;
+        max-width: 75vw;
+        display: flex;
+
+    }
+
 
     .modal__save-button {
         height: 46px;
@@ -210,12 +220,13 @@
     }
 
     .modal__close-button {
-        height: 26px;
-        width: 26px;
-        left: 264.63px;
+        height: 30px;
+        width: 30px;
         align-self: center;
+        border: none;
 
     }
+
 
     .modal__input {
         width: 238px;
@@ -249,13 +260,13 @@
         max-width: 100%;
     } */
 
-    .modal__text {
+    /*   .modal__text {
         font-family: "Inter", sans-serif;
         color: #ffffff;
         font-weight: 400;
         font-style: normal;
         font-size: 12px;
-    }
+    } */
 
     .modal__form {
         /* grid-gap: 10px;
