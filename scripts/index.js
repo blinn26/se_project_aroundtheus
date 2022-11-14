@@ -61,6 +61,7 @@ const profileEditForm = document.querySelector(".modal__form");
 const modalEditForm = document.querySelector(".modal");
 const modalTitleForm = modalEditForm.querySelector("#modal__form-title");
 const modalLinkForm = modalEditForm.querySelector("#modal__form-link");
+const previewModal = document.getElementById('preview-modal');
 
 /* -------------------------------------------------------------------------- */
 /*                         TEXT CONTENT NAME AND TITLE                        */
@@ -119,8 +120,8 @@ function createCard({ name, link }) {
     cardEl.remove();
   });
   imageEl.addEventListener("click", () => {
-    const previewModal = document.getElementById('preview-modal');
-    const previewModalImage = document.getElementById('modal-image');
+    
+    const previewModalImage = previewModal.querySelector('#modal-image');
    
 
     previewModalImage.src = link;
@@ -204,6 +205,6 @@ profileModalCloseButton.addEventListener("click", () => closeModal(profileEditMo
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
-/* const previewCloseButton = previewModalImage.querySelector("#preview-modal-close");
-previewCloseButton.addEventListener("click", () => closeModal(previewModalImage)); */
+const previewCloseButton = previewModal.querySelector("#preview-modal-close");
+previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 
