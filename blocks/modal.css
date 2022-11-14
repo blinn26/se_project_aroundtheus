@@ -177,7 +177,7 @@
     .modal {
         justify-content: center;
         align-items: center;
-        padding-bottom: 25px
+        padding-bottom: 25px;
     }
 
     .modal__container {
