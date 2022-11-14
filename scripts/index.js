@@ -52,6 +52,8 @@ const profileModalCloseButton = profileEditModal.querySelector(".modal__close-bu
 const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
 
 
+
+
 /* -------------------------------------------------------------------------- */
 /*                           MODAL AND PROFILE FORMS                          */
 /* -------------------------------------------------------------------------- */
@@ -119,6 +121,7 @@ function createCard({ name, link }) {
   imageEl.addEventListener("click", () => {
     const previewModal = document.getElementById('preview-modal');
     const previewModalImage = document.getElementById('modal-image');
+   
 
     previewModalImage.src = link;
     previewModalImage.alt = name;
@@ -128,6 +131,7 @@ function createCard({ name, link }) {
 
   return cardEl;
 }
+
 function renderCard(cardData) {
   const cardEl = createCard(cardData)
   cardListEl.prepend(cardEl);
@@ -200,4 +204,6 @@ profileModalCloseButton.addEventListener("click", () => closeModal(profileEditMo
 modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
+/* const previewCloseButton = previewModalImage.querySelector("#preview-modal-close");
+previewCloseButton.addEventListener("click", () => closeModal(previewModalImage)); */
 
