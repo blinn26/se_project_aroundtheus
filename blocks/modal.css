@@ -62,7 +62,9 @@
     cursor: pointer;
     display: flex;
 
+
 }
+
 
 .modal__close-button:hover {
     opacity: 0.6;
@@ -220,13 +222,21 @@
     }
 
     .modal__close-button {
-        height: 30px;
-        width: 30px;
+        height: 26px;
+        width: 26px;
         align-self: center;
         border: none;
+        right: 0;
+
 
     }
 
+    .modal__preview-button {
+        height: 30px;
+        width: 30px;
+
+
+    }
 
     .modal__input {
         width: 238px;
