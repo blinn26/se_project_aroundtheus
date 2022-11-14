@@ -62,6 +62,7 @@ const modalEditForm = document.querySelector(".modal");
 const modalTitleForm = modalEditForm.querySelector("#modal__form-title");
 const modalLinkForm = modalEditForm.querySelector("#modal__form-link");
 const previewModal = document.getElementById('preview-modal');
+const previewTextModal = document.querySelector(".modal__text ");
 
 /* -------------------------------------------------------------------------- */
 /*                         TEXT CONTENT NAME AND TITLE                        */
@@ -127,6 +128,7 @@ function createCard({ name, link }) {
     previewModalImage.src = link;
     previewModalImage.alt = name;
 
+    previewTextModal.textContent = name;
     openModal(document.getElementById('preview-modal'));
   });
 
