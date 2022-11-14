@@ -2,7 +2,6 @@
     font-family: "Inter", Arial, sans-serif;
     align-items: center;
     justify-content: center;
-    background: 0px 0px 25px rgba(0, 0, 0, 0.15);
     visibility: none;
     opacity: 0;
     pointer-events: none;
@@ -13,6 +12,17 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background: rgba(0, 0, 0, 0.50);
+
+
+}
+
+.modal_opened {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: visibility 0s, opacity 0.5s linear;
+
 
 
 }
@@ -26,22 +36,20 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     position: relative;
 
+
 }
 
 .modal__container-transparent {
     background-color: transparent;
+    height: auto;
+    width: auto;
+    max-height: 75vh;
+    max-width: 75vw;
     display: flex;
 
 }
 
-.modal__opened {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-    transition: visibility 0s, opacity 0.5s linear;
-    background: rgba(0, 0, 0, 0.50);
 
-}
 
 .modal__close-button {
     background: url(../images/Close\ Icon.png)center no-repeat;
@@ -143,8 +151,9 @@
 }
 
 .modal__image {
-    max-height: 75vh;
-    margin: 0 auto;
+    max-width: 100%;
+    object-fit: cover;
+    /*  margin: 0 auto; */
 
 }
 

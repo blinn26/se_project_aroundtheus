@@ -150,7 +150,7 @@ initialCards.forEach(renderCard);
 /* -------------------------------------------------------------------------- */
 
 function openModal(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 
 }
 function formSubmitHandler(event) {
@@ -170,7 +170,7 @@ profileEditButton.addEventListener("click", () => {
 });
 
 function closeModal(modal) {
-  modal.classList.remove('modal__opened');
+  modal.classList.remove('modal_opened');
 }
 
 /* -------------------------------------------------------------------------- */
