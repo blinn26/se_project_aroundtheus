@@ -57,8 +57,8 @@ const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
 /* -------------------------------------------------------------------------- */
 /*                           MODAL AND PROFILE FORMS                          */
 /* -------------------------------------------------------------------------- */
-const profileEditForm = document.querySelector(".modal__form");
 const profileModal = document.querySelector(".modal");
+const profileEditForm = profileModal.querySelector(".modal__form");
 const modalTitleForm = profileModal.querySelector("#modal__form-title");
 const modalLinkForm = profileModal.querySelector("#modal__form-link");
 const previewModal = document.getElementById('preview-modal');
