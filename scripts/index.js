@@ -77,27 +77,6 @@ const fillProfileForm = profileEditForm.querySelector(".modal__input-description
 /*                            Card Commands for JS                            */
 /* -------------------------------------------------------------------------- */
 
-function renderCard(cardData) {
-  // clone template
-  const cardEl = cardTemplate.cloneNode(true);
-  // find .card__image
-  const imageEl = cardEl.querySelector(".card__image");
-  // find card__title
-  const cardTitle = cardEl.querySelector(".card__description-list");
-
-  // replace image src
-  imageEl.src = link;
-  // replace image a
-  imageEl.alt = title;
-  // replace title
-  cardTitle.textContent = title;
-  return cardEl;
-}
-const handleLikeIcon = (evt) => {
-  evt.target.classList.toggle("card__like-button_is-active");
-  // Students know about `evt.target`
-};
-
 function createCard({ name, link }) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
@@ -117,9 +96,15 @@ function createCard({ name, link }) {
   cardTitle.textContent = name;
 
   const cardTrashButton = cardEl.querySelector(".card__trash-button");
+  // Trash button add commands
   cardTrashButton.addEventListener("click", () => {
     cardEl.remove();
   });
+
+  /* -------------------------------------------------------------------------- */
+  /*                             MODAL PREVIEW IMAGE                            */
+  /* -------------------------------------------------------------------------- */
+
   imageEl.addEventListener("click", () => {
 
     const previewModalImage = previewModal.querySelector('#modal-image');
@@ -134,6 +119,11 @@ function createCard({ name, link }) {
 
   return cardEl;
 }
+
+const handleLikeIcon = (evt) => {
+  evt.target.classList.toggle("card__like-button_is-active");
+  // like icon active
+};
 
 function renderCard(cardData) {
   const cardEl = createCard(cardData)
@@ -172,12 +162,6 @@ profileEditButton.addEventListener("click", () => {
 function closeModal(modal) {
   modal.classList.remove('modal_opened');
 }
-
-/* -------------------------------------------------------------------------- */
-/*                                 DELETE CARD                                */
-/* -------------------------------------------------------------------------- */
-
-
 
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
