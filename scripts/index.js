@@ -71,7 +71,7 @@ const previewTextModal = document.querySelector(".modal__text ");
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
 const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
-const fillProfileForm = profileEditForm.querySelector(".modal__input-description");
+const profileDescriptionInput = profileEditForm.querySelector(".modal__input-description");
 
 /* -------------------------------------------------------------------------- */
 /*                            Card Commands for JS                            */
@@ -147,7 +147,7 @@ function handleProfileFormSubmit(event) {
   event.preventDefault();
 
   profileTitle.textContent = profileLineInputValue.value;
-  profileDescription.textContent = fillProfileForm.value;
+  profileDescription.textContent = profileDescriptionInput.value;
 
   closeModal(profileEditModal);
 }
@@ -155,7 +155,7 @@ function handleProfileFormSubmit(event) {
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 profileEditButton.addEventListener("click", () => {
   profileLineInputValue.value = profileTitle.textContent;
-  fillProfileForm.value = profileDescription.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 
