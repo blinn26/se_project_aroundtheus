@@ -70,7 +70,7 @@ const previewTextModal = document.querySelector(".modal__text ");
 
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
-const profileLineInputValue = profileEditForm.querySelector(".modal__input-line");
+const profileNameInput = profileEditForm.querySelector(".modal__input-line");
 const profileDescriptionInput = profileEditForm.querySelector(".modal__input-description");
 
 /* -------------------------------------------------------------------------- */
@@ -146,7 +146,7 @@ function openModal(modal) {
 function handleProfileFormSubmit(event) {
   event.preventDefault();
 
-  profileTitle.textContent = profileLineInputValue.value;
+  profileTitle.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
 
   closeModal(profileEditModal);
@@ -154,7 +154,7 @@ function handleProfileFormSubmit(event) {
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 profileEditButton.addEventListener("click", () => {
-  profileLineInputValue.value = profileTitle.textContent;
+  profileNameInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
