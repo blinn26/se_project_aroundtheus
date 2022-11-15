@@ -121,9 +121,9 @@ function createCard({ name, link }) {
     cardEl.remove();
   });
   imageEl.addEventListener("click", () => {
-    
+
     const previewModalImage = previewModal.querySelector('#modal-image');
-   
+
 
     previewModalImage.src = link;
     previewModalImage.alt = name;
@@ -153,7 +153,7 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 
 }
-function formSubmitHandler(event) {
+function handleProfileFormSubmit(event) {
   event.preventDefault();
 
   profileTitle.textContent = profileLineInputValue.value;
@@ -162,7 +162,7 @@ function formSubmitHandler(event) {
   closeModal(profileEditModal);
 }
 
-profileEditForm.addEventListener("submit", formSubmitHandler);
+profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 profileEditButton.addEventListener("click", () => {
   profileLineInputValue.value = profileTitle.textContent;
   profileInputValue.value = profileDescription.textContent;
@@ -183,7 +183,7 @@ function closeModal(modal) {
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */
 
-const formAddCardHandler = (evt) => {
+const handleAddCard = (evt) => {
   evt.preventDefault();
   const name = evt.target.name.value;
   const link = evt.target.link.value;
@@ -204,9 +204,9 @@ cardModalOpenButton.addEventListener("click", () => {
 /*                                Close Buttons                               */
 /* -------------------------------------------------------------------------- */
 profileModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
-modalEditForm.addEventListener("submit", formSubmitHandler); // edit user -> formSubmitHandler
+modalEditForm.addEventListener("submit", handleProfileFormSubmit); // edit user -> handleProfileFormSubmit
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
-cardAddModal.addEventListener("submit", formAddCardHandler); // ??? add card specific form handler
+cardAddModal.addEventListener("submit", handleAddCard); // ??? add card specific form handler
 const previewCloseButton = previewModal.querySelector("#preview-modal-close");
 previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 
