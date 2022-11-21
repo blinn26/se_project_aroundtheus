@@ -1,15 +1,17 @@
-// enabling validation by calling enableValidation()
+// enabling validation by calling enableValidation()o
 // pass all the settings on call
 function setEventListeners(formEl, options) {
+    console.log("hi");
     const { inputSelector } = options;
     const inputEls = [...formEl.querySelectorAll(inputSelector)];
     inputEls.forEach((inputEl) => {
-        inputEl.addEventListener("input", (inputEl) => {
-            console.log(inputEl);
+        inputEl.addEventListener("input", (inputEvt) => {
+            console.log(inputEvt);
+
         });
     });
 
-
+}
     function enableValidation(options) {
         const formEls = [...document.querySelectorAll(options.formSelector)];
         formEls.forEach((formEl) => {
@@ -19,7 +21,7 @@ function setEventListeners(formEl, options) {
 
             setEventListeners(formEl, options);
             // look for all inputs inside of form
-            // loop through all ther inputs to see if all are valid
+            // loop through all there inputs to see if all are valid
             // get validation message
             // add error class to input
             // display error message
@@ -29,15 +31,17 @@ function setEventListeners(formEl, options) {
             // reset error message
 
         });
-    }
-
-    const config = {
-        formSelector: ".modal__form",
-        inputSelector: ".modal__input",
-        submitButtonSelector: ".modal__button",
-        inactiveButtonClass: "modal__button_disabled",
-        inputErrorClass: "modal__input_type_error",
-        errorClass: "modal__error_visible",
     };
-    enableValidation(config);
-}
+
+const config = {
+    formSelector: ".modal__form",
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".popup__button",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible",
+};
+enableValidation(config);
+
+
+

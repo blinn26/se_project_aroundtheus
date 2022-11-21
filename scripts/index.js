@@ -36,7 +36,7 @@ const initialCards = [
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
 /* -------------------------------------------------------------------------- */
-/*                            ID LABLED WITH MODAL                            */
+/*                            ID LABELED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
 
 const profileEditModal = document.querySelector("#edit-modal");
