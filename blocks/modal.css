@@ -175,6 +175,19 @@
 
 }
 
+.modal__error {
+    font-size: 12px;
+    line-height: 15px;
+    color: #ff0000;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    transition: opacity 0.3s;
+    /* font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400; */
+}
+
 @media screen and (max-width: 620px) {
     .modal {
         justify-content: center;
