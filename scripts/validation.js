@@ -1,7 +1,20 @@
 // enabling validation by calling enableValidation()o
 // pass all the settings on call
 
-function showInputError(formEl, inputEl, options) {}
+function showInputError(formEl, inputEl, options) {
+  inputEl.classList.add(options.inputErrorClass);
+  const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
+  errorEl.classList.remove(options.errorClass);
+}
+
+function hideInputError(formEl, inputEl, options) {
+  inputEl.classList.remove(options.inputErrorClass);
+  const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
+  // "hello, " + userName => "hello, Josh"
+  // const userName = "Josh"
+  // `http://${domainName}/{backendEndpoint}/users/${userId}`
+  errorEl.classList.add(options.errorClass);
+}
 
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
@@ -45,8 +58,8 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: ".modal__input_type_error",
-  errorClass: ".modal__error_visible",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error-hidden",
 };
 enableValidation(config);

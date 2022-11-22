@@ -77,6 +77,7 @@
         <h3 class="modal__title">Edit profile</h3>
         <form class="modal__form">
           <input
+            id="owner-name"
             class="modal__input modal__input-line"
             type="text"
             name="name"
@@ -85,8 +86,11 @@
             maxlength="40"
             required
           />
-          <span class="modal__error">Error</span>
+          <span class="modal__error modal__error-hidden" id="name-error"
+            >Error</span
+          >
           <input
+            id="owner-description"
             class="modal__input modal__input-description"
             type="text"
             name="description"
