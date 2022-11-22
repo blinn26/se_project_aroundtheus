@@ -188,6 +188,16 @@
     font-weight: 400;
 }
 
+.modal__input_type_error {
+    border-bottom: 1px solid rgba(255, 0, 0, 1);
+    position: absolute;
+    width: 358px;
+    height: 0px;
+    left: 461px;
+    top: 333px;
+
+}
+
 @media screen and (max-width: 620px) {
     .modal {
         justify-content: center;
