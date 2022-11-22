@@ -1,7 +1,15 @@
 // enabling validation by calling enableValidation()o
 // pass all the settings on call
 
-function showInputError() {}
+function showInputError(formEl, inputEl, options) {}
+
+function checkInputValidity(formEl, inputEl, options) {
+  if (!inputEl.validity.valid) {
+    showInputError(formEl, inputEl, options);
+  } else {
+    hideInputError(formEl, inputEl, options);
+  }
+}
 
 function setEventListeners(formEl, options) {
   console.log("hi");
@@ -9,7 +17,7 @@ function setEventListeners(formEl, options) {
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (inputEvt) => {
-      console.log(inputEvt);
+      checkInputValidity(formEl, inputEl, options);
     });
   });
 }
