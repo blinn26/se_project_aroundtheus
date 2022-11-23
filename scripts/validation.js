@@ -1,7 +1,19 @@
 // enabling validation by calling enableValidation()o
 // pass all the settings on call
 
-function showInputError(formEl, inputEl, options) {
+function showInputError(formEl, inputEl, { inputErrorClass, errorClass }); {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.add(inputErrorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classList.add(errorClass);
+}
+function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }); {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.remove(inputErrorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classList.add(errorClass);
+}
+f/* unction showInputError(formEl, inputEl, options) {
   inputEl.classList.add(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.classList.remove(options.errorClass);
@@ -14,7 +26,7 @@ function hideInputError(formEl, inputEl, options) {
   // const userName = "Josh"
   // `http://${domainName}/{backendEndpoint}/users/${userId}`
   errorEl.classList.add(options.errorClass);
-}
+} */
 
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
