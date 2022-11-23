@@ -1,19 +1,8 @@
 // enabling validation by calling enableValidation()o
 // pass all the settings on call
 
-function showInputError(formEl, inputEl, { inputErrorClass, errorClass }); {
-  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-  inputEl.classList.add(inputErrorClass);
-  errorMessageEl.textContent = inputEl.validationMessage;
-  errorMessageEl.classList.add(errorClass);
-}
-function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }); {
-  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-  inputEl.classList.remove(inputErrorClass);
-  errorMessageEl.textContent = inputEl.validationMessage;
-  errorMessageEl.classList.add(errorClass);
-}
-f/* unction showInputError(formEl, inputEl, options) {
+function showInputError(formEl, inputEl, options) {
+  console.log(`#${inputEl.name}-error`);
   inputEl.classList.add(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.classList.remove(options.errorClass);
@@ -22,12 +11,8 @@ f/* unction showInputError(formEl, inputEl, options) {
 function hideInputError(formEl, inputEl, options) {
   inputEl.classList.remove(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
-  // "hello, " + userName => "hello, Josh"
-  // const userName = "Josh"
-  // `http://${domainName}/{backendEndpoint}/users/${userId}`
   errorEl.classList.add(options.errorClass);
-} */
-
+}
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, options);
@@ -37,11 +22,10 @@ function checkInputValidity(formEl, inputEl, options) {
 }
 
 function setEventListeners(formEl, options) {
-  console.log("hi");
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
-    inputEl.addEventListener("input", (inputEvt) => {
+    inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
     });
   });
@@ -49,8 +33,8 @@ function setEventListeners(formEl, options) {
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
   formEls.forEach((formEl) => {
-    formEl.addEventListener("submit", (evt) => {
-      evt.preventDefault();
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
     });
 
     setEventListeners(formEl, options);
