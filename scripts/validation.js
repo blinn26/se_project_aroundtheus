@@ -26,6 +26,7 @@ function setEventListeners(formEl, options) {
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
+      console.log(e.target.value);
       checkInputValidity(formEl, inputEl, options);
     });
   });
