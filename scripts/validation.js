@@ -16,20 +16,38 @@ function hideInputError(formEl, inputEl, options) {
 }
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
-    console.log(inputEl.validationMessage);
     showInputError(formEl, inputEl, options, inputEl.validationMessage);
   } else {
     hideInputError(formEl, inputEl, options);
   }
 }
 
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  let foundInvalid = false;
+  inputEls.forEach((inputEl) => {
+    if (!inputEl.validity.valid) {
+      foundInvalid = true;
+    }
+  });
+
+  if (foundInvalid) {
+    submitButton.classList.add(inactiveButtonClass);
+    submitButton.disabled = true;
+  } else {
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
+  }
+}
+
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
+  const submitButton = formEl.querySelector(".modal__button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       console.log(e.target.value);
       checkInputValidity(formEl, inputEl, options);
+      toggleButtonState(inputEls, submitButton, options);
     });
   });
 }
