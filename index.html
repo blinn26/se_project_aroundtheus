@@ -122,6 +122,10 @@
             type="text"
             name="name"
             placeholder="Title"
+            minlength="1"
+            maxlength="30"
+            required
+            <span class="modal__error modal__error-hidden" id="form-title"></span>
           />
           <input
             id="modal__form-link"
@@ -129,6 +133,9 @@
             type="text"
             name="link"
             placeholder="Image URL"
+            type="url"
+            required
+            <span class="modal__error modal__error-hidden" id="form-link"></span>
           />
           <button
             class="modal__save-button modal__save-button-transparent"
