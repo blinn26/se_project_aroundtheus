@@ -2,7 +2,7 @@
 // pass all the settings on call
 
 function showInputError(formEl, inputEl, options, validationMessage) {
-  console.log(`#${inputEl.name}-error`);
+  /* console.log(`#${inputEl.name}-error`); */
   inputEl.classList.add(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.textContent = validationMessage;
@@ -13,6 +13,7 @@ function hideInputError(formEl, inputEl, options) {
   inputEl.classList.remove(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.classList.add(options.errorClass);
+  console.log();
 }
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
