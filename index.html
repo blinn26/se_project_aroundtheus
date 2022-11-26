@@ -126,7 +126,10 @@
             maxlength="30"
             required
           />
-          <span class="modal__error modal__error-hidden" id="form-title"></span>
+          <span
+            class="modal__error modal__error-hidden"
+            id="title-error"
+          ></span>
           <input
             id="modal__form-link"
             class="modal__input modal__input-description"
@@ -136,10 +139,11 @@
             type="url"
             required
           />
-          <span class="modal__error modal__error-hidden" id="form-link"></span>
+          <span class="modal__error modal__error-hidden" id="link-error"></span>
           <button
             class="modal__save-button modal__button_disabled"
             type="submit"
+            disabled
           >
             Save
           </button>
