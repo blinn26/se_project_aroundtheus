@@ -117,15 +117,25 @@ function createCard({ name, link }) {
     openModal(document.getElementById("preview-modal"));
   });
 
-  const handleEscapeClick = (evt) => {
-    console.log(handleEscapeClick);
-    const key = evt.key;
-    if (key === "Escape") {
-      const openModal = document.querySelector(".modal_opened");
-      closeModal(openModal);
-    }
+  const handleEscUp = (evt) => {
+    evt.preventDefault();
+    isEscEvent(evt, closeModal);
   };
 
+  const isEscEvent = (evt, action) => {
+    const openModal = document.querySelector("modal_opened");
+    if (evt.which === ESC_KEYCODE) {
+      action(openModal);
+    }
+  };
+  const openModal = (openModal) => {
+    openModal.classList.add("modal_opened");
+    document.addEventListener("keyup", handleEscUp);
+  };
+  const closeModal = (openModal) => {
+    openModal.classList.remove("modal_opened");
+    document.removeEventListener("keyup", handleEscUp);
+  };
   return cardEl;
 }
 
