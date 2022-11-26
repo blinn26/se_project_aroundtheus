@@ -11,9 +11,9 @@ function showInputError(formEl, inputEl, options, validationMessage) {
 
 function hideInputError(formEl, inputEl, options) {
   inputEl.classList.remove(options.inputErrorClass);
+  console.log(formEl);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.classList.add(options.errorClass);
-  console.log();
 }
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
