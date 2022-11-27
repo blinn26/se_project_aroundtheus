@@ -1,6 +1,3 @@
-// enabling validation by calling enable validate()
-// pass all the settings on call
-
 function showInputError(formEl, inputEl, options, validationMessage) {
   /* console.log(`#${inputEl.name}-error`); */
   inputEl.classList.add(options.inputErrorClass);
@@ -74,6 +71,16 @@ function enableValidation(options) {
     // reset error message
   });
 }
+
+/* const enableValidation = ({ formSelector, ...rest }) => {
+  const getFormList = [...document.querySelectorAll(formSelector)];
+  getFormList.forEach((formEl) => {
+    formEl.addEventListener("sumbmit", (evt) => {
+      evt.preventDefault();
+    });
+    setEventListeners(formEl, rest);
+  });
+}; */
 
 const validationConfig = {
   formSelector: ".modal__form",

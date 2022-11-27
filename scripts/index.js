@@ -74,14 +74,14 @@ const profileDescriptionInput = profileEditForm.querySelector(
 /*                            CARDS FOR JAVASCRIPT                            */
 /* -------------------------------------------------------------------------- */
 
-const validationConfig = {
+/* const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error-hidden",
-};
+}; */
 
 const handleEscUp = (evt) => {
   evt.preventDefault();

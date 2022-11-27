@@ -299,7 +299,16 @@
 
 
 
+    .modal__button_disabled {
+        background: white;
+        cursor: not-allowed;
+        border: 1px solid #000000;
+        border-radius: 2px;
+        color: black;
+        opacity: 0.2;
 
+
+    }
 
 
 
