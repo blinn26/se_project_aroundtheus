@@ -1,5 +1,8 @@
+/* -------------------------------------------------------------------------- */
+/*                         VALIDATE ERRORS FOR INPUTS                         */
+/* -------------------------------------------------------------------------- */
+
 function showInputError(formEl, inputEl, options, validationMessage) {
-  /* console.log(`#${inputEl.name}-error`); */
   inputEl.classList.add(options.inputErrorClass);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.textContent = validationMessage;
@@ -8,7 +11,6 @@ function showInputError(formEl, inputEl, options, validationMessage) {
 
 function hideInputError(formEl, inputEl, options) {
   inputEl.classList.remove(options.inputErrorClass);
-  console.log(formEl);
   const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
   errorEl.classList.add(options.errorClass);
 }
@@ -18,10 +20,8 @@ function checkInputValidity(formEl, inputEl, options) {
   }
   hideInputError(formEl, inputEl, options);
 
-  function hasInvalidInput(inputList) {
-    return !inputList.every((inputEl) => inputEl.validity.valid);
-    console.log("hasInvalidInput");
-  }
+  /* function checkInputValidity(inputList) {
+    return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
@@ -81,6 +81,10 @@ function enableValidation(options) {
     setEventListeners(formEl, rest);
   });
 }; */
+
+/* -------------------------------------------------------------------------- */
+/*                        ENABLE VALIDATION FOR STRINGS                       */
+/* -------------------------------------------------------------------------- */
 
 enableValidation({
   formSelector: ".modal__form",
