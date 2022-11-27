@@ -1,4 +1,4 @@
-// enabling validation by calling enableValidation()o
+// enabling validation by calling enable validate()
 // pass all the settings on call
 
 function showInputError(formEl, inputEl, options, validationMessage) {
@@ -75,7 +75,7 @@ function enableValidation(options) {
   });
 }
 
-const config = {
+const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
@@ -83,4 +83,5 @@ const config = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error-hidden",
 };
-enableValidation(config);
+
+enableValidation(validationConfig);
