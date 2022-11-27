@@ -78,6 +78,25 @@ const profileDescriptionInput = profileEditForm.querySelector(
 /* -------------------------------------------------------------------------- */
 /*                            Card Commands for JS                            */
 /* -------------------------------------------------------------------------- */
+const handleEscUp = (evt) => {
+  evt.preventDefault();
+  isEscEvent(evt, () => closeModal(document.querySelector(".modal_opened")));
+};
+
+const isEscEvent = (evt, action) => {
+  const openModal = document.querySelector("modal_opened");
+  if (evt.which === 27) {
+    action(openModal);
+  }
+};
+const openModal = (openModal) => {
+  openModal.classList.add("modal_opened");
+  document.addEventListener("keyup", handleEscUp);
+};
+const closeModal = (openModal) => {
+  openModal.classList.remove("modal_opened");
+  document.removeEventListener("keyup", handleEscUp);
+};
 
 function createCard({ name, link }) {
   // clone template
@@ -117,25 +136,25 @@ function createCard({ name, link }) {
     openModal(document.getElementById("preview-modal"));
   });
 
-  const handleEscUp = (evt) => {
-    evt.preventDefault();
-    isEscEvent(evt, () => closeModal(document.getElementById("preview-modal")));
-  };
+  // const handleEscUp = (evt) => {
+  //   evt.preventDefault();
+  //   isEscEvent(evt, () => closeModal(document.getElementById("preview-modal")));
+  // };
 
-  const isEscEvent = (evt, action) => {
-    const openModal = document.querySelector("modal_opened");
-    if (evt.which === 27) {
-      action(openModal);
-    }
-  };
-  const openModal = (openModal) => {
-    openModal.classList.add("modal_opened");
-    document.addEventListener("keyup", handleEscUp);
-  };
-  const closeModal = (openModal) => {
-    openModal.classList.remove("modal_opened");
-    document.removeEventListener("keyup", handleEscUp);
-  };
+  // const isEscEvent = (evt, action) => {
+  //   const openModal = document.querySelector("modal_opened");
+  //   if (evt.which === 27) {
+  //     action(openModal);
+  //   }
+  // };
+  // const openModal = (openModal) => {
+  //   openModal.classList.add("modal_opened");
+  //   document.addEventListener("keyup", handleEscUp);
+  // };
+  // const closeModal = (openModal) => {
+  //   openModal.classList.remove("modal_opened");
+  //   document.removeEventListener("keyup", handleEscUp);
+  // };
   return cardEl;
 }
 
@@ -158,9 +177,9 @@ initialCards.forEach(renderCard);
 /*             Edit Profile Settings/Open/Close/Title/Description             */
 /* -------------------------------------------------------------------------- */
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-}
+// function openModal(modal) {
+//   modal.classList.add("modal_opened");
+// }
 function handleProfileFormSubmit(event) {
   event.preventDefault();
 
@@ -177,9 +196,9 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-}
+// function closeModal(modal) {
+//   modal.classList.remove("modal_opened");
+// }
 
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
