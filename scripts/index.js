@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                               ARRAY OF HTML                                */
+/*                             INTIAL CARDS ARRAY                             */
 /* -------------------------------------------------------------------------- */
 
 const initialCards = [
@@ -63,11 +63,6 @@ const modalTitleForm = profileModal.querySelector("#modal__form-title");
 const modalLinkForm = profileModal.querySelector("#modal__form-link");
 const previewModal = document.getElementById("preview-modal");
 const previewTextModal = document.querySelector(".modal__text ");
-
-/* -------------------------------------------------------------------------- */
-/*                         TEXT CONTENT NAME AND TITLE                        */
-/* -------------------------------------------------------------------------- */
-
 const profileTitle = document.querySelector(".profile__title ");
 const profileDescription = document.querySelector(".profile__description");
 const profileNameInput = profileEditForm.querySelector(".modal__input-line");
@@ -76,8 +71,9 @@ const profileDescriptionInput = profileEditForm.querySelector(
 );
 
 /* -------------------------------------------------------------------------- */
-/*                            Card Commands for JS                            */
+/*                            CARDS FOR JAVASCRIPT                            */
 /* -------------------------------------------------------------------------- */
+
 const handleEscUp = (evt) => {
   evt.preventDefault();
   isEscEvent(evt, () => closeModal(document.querySelector(".modal_opened")));
@@ -155,6 +151,11 @@ function createCard({ name, link }) {
   //   openModal.classList.remove("modal_opened");
   //   document.removeEventListener("keyup", handleEscUp);
   // };
+
+  /* -------------------------------------------------------------------------- */
+  /*                      CREATE CARD, RENDER CARD AND LOOP                     */
+  /* -------------------------------------------------------------------------- */
+
   return cardEl;
 }
 
@@ -174,7 +175,7 @@ function renderCard(cardData) {
 initialCards.forEach(renderCard);
 
 /* -------------------------------------------------------------------------- */
-/*             Edit Profile Settings/Open/Close/Title/Description             */
+/*             EDIT PROFILE SETTINGS/OPEN/CLOSE/TITLE/DESCRIPTION             */
 /* -------------------------------------------------------------------------- */
 
 // function openModal(modal) {
