@@ -73,6 +73,7 @@ function enableValidation(options) {
 }
 
 /* const enableValidation = ({ formSelector, ...rest }) => {
+  console.log(enableValidation);
   const getFormList = [...document.querySelectorAll(formSelector)];
   getFormList.forEach((formEl) => {
     formEl.addEventListener("sumbmit", (evt) => {
