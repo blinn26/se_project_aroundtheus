@@ -116,15 +116,14 @@ function createCard({ name, link }) {
     previewTextModal.textContent = name;
     openModal(document.getElementById("preview-modal"));
   });
-
   const handleEscUp = (evt) => {
     evt.preventDefault();
-    isEscEvent(evt, closeModal);
+    isEscEvent(evt, () => closeModal(document.getElementById("preview-modal")));
   };
-
+​
   const isEscEvent = (evt, action) => {
     const openModal = document.querySelector("modal_opened");
-    if (evt.which === ESC_KEYCODE) {
+    if (evt.which === 27) {
       action(openModal);
     }
   };
@@ -149,10 +148,10 @@ function renderCard(cardData) {
   cardListEl.prepend(cardEl);
   // append to the list
 }
-// loop -> createCard -> renderCard
-//user event handler -> createCard -> renderCard
+  // loop -> createCard -> renderCard
+  //user event handler -> createCard -> renderCard
 
-initialCards.forEach(renderCard);
+  initialCards.forEach(renderCard);
 
 /* -------------------------------------------------------------------------- */
 /*             Edit Profile Settings/Open/Close/Title/Description             */
