@@ -71,17 +71,8 @@ const profileDescriptionInput = profileEditForm.querySelector(
 );
 
 /* -------------------------------------------------------------------------- */
-/*                            CARDS FOR JAVASCRIPT                            */
+/*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
 /* -------------------------------------------------------------------------- */
-
-/* const validationConfig = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error-hidden",
-}; */
 
 const handleEscUp = (evt) => {
   evt.preventDefault();
@@ -122,6 +113,10 @@ const closeModal = (openModal) => {
   document.removeEventListener("click", clickOutCloseModal);
 };
 
+/* -------------------------------------------------------------------------- */
+/*                         CREATE A CARD NAME AND LINK                        */
+/* -------------------------------------------------------------------------- */
+
 function createCard({ name, link }) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
@@ -159,26 +154,6 @@ function createCard({ name, link }) {
     previewTextModal.textContent = name;
     openModal(document.getElementById("preview-modal"));
   });
-
-  // const handleEscUp = (evt) => {
-  //   evt.preventDefault();
-  //   isEscEvent(evt, () => closeModal(document.getElementById("preview-modal")));
-  // };
-
-  // const isEscEvent = (evt, action) => {
-  //   const openModal = document.querySelector("modal_opened");
-  //   if (evt.which === 27) {
-  //     action(openModal);
-  //   }
-  // };
-  // const openModal = (openModal) => {
-  //   openModal.classList.add("modal_opened");
-  //   document.addEventListener("keyup", handleEscUp);
-  // };
-  // const closeModal = (openModal) => {
-  //   openModal.classList.remove("modal_opened");
-  //   document.removeEventListener("keyup", handleEscUp);
-  // };
 
   /* -------------------------------------------------------------------------- */
   /*                      CREATE CARD, RENDER CARD AND LOOP                     */

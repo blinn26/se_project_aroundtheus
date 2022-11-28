@@ -72,36 +72,6 @@ function enableValidation(options) {
   });
 }
 
-/* const enableValidation = ({ formSelector, ...rest }) => {
-  console.log(enableValidation);
-  const getFormList = [...document.querySelectorAll(formSelector)];
-  getFormList.forEach((formEl) => {
-    formEl.addEventListener("sumbmit", (evt) => {
-      evt.preventDefault();
-    });
-    setEventListeners(formEl, rest);
-  });
-}; */
-
-/* -------------------------------------------------------------------------- */
-/*                         I THINK STEP 3 NOT WORKING                         */
-/* -------------------------------------------------------------------------- */
-/* const handleEscUp = (evt) => {
-  evt.preventDefault();
-  isEscEvent(evt, closeModal);
-}; */
-
-/* const openModal = (formSelector) => {
-  formSelector.classList.add("modal_opened");
-  document.addEventListener("keyup", handleEscUp);
-};
-
-const closeModal = (formSelector) => {
-  formSelector.classList.remove("modal-opened");
-  document.addEventListener("keyup", handleEscUp);
-};
- */
-
 /* -------------------------------------------------------------------------- */
 /*                        ENABLE VALIDATION FOR STRINGS                       */
 /* -------------------------------------------------------------------------- */
