@@ -4,14 +4,14 @@
 
 function showInputError(formEl, inputEl, options, validationMessage) {
   inputEl.classList.add(options.inputErrorClass);
-  const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
+  const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorEl.textContent = validationMessage;
   errorEl.classList.remove(options.errorClass);
 }
 
 function hideInputError(formEl, inputEl, options) {
   inputEl.classList.remove(options.inputErrorClass);
-  const errorEl = formEl.querySelector(`#${inputEl.name}-error`);
+  const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorEl.classList.add(options.errorClass);
 }
 function checkInputValidity(formEl, inputEl, options) {
@@ -100,8 +100,31 @@ const closeModal = (formSelector) => {
   formSelector.classList.remove("modal-opened");
   document.addEventListener("keyup", handleEscUp);
 };
- */
 
+function closeEscModal(evt, modal) {
+  if (evt.key === "Escape") {
+    closeModal(modal);
+  }
+}
+
+function clickOutCloseModal(evt, modal) {
+  if (evt.target.classListcontains("modal")) {
+    closeEscModal(modal);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+  modal.addEventListener("mousedown", clickOutCloseModal);
+  document.addEventListener("keyup", closeEscModal);
+}
+
+function closeModal(modal) {
+  modal.classlist.remove("modal_opened");
+  modal.removeEventListener("click", clickOutCloseModal);
+  document.removeEventListener("keyup", closeEscModal);
+}
+ */
 /* -------------------------------------------------------------------------- */
 /*                        ENABLE VALIDATION FOR STRINGS                       */
 /* -------------------------------------------------------------------------- */
