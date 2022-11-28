@@ -101,30 +101,6 @@ const closeModal = (formSelector) => {
   document.addEventListener("keyup", handleEscUp);
 };
  */
-function closeEscModal(evt, modal) {
-  if (evt.key === "Escape") {
-    closeModal(modal);
-  }
-}
-
-function clickOutCloseModal(evt, modal) {
-  console.log("clicked overlay");
-  if (evt.target.classListcontains("modal")) {
-    closeEscModal(modal);
-  }
-}
-
-function formSelector(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("mousedown", clickOutCloseModal);
-  document.addEventListener("keyup", closeEscModal);
-}
-
-function formSelector(modal) {
-  modal.classlist.remove("modal_opened");
-  document.removeEventListener("click", clickOutCloseModal);
-  document.removeEventListener("keyup", closeEscModal);
-}
 
 /* -------------------------------------------------------------------------- */
 /*                        ENABLE VALIDATION FOR STRINGS                       */

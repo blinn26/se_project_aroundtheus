@@ -94,13 +94,32 @@ const isEscEvent = (evt, action) => {
     action(openModal);
   }
 };
+
+function closeEscModal(evt, modal) {
+  if (evt.key === "Escape") {
+    closeModal(modal);
+  }
+}
+
+function clickOutCloseModal(evt, modal) {
+  console.log("clicked overlay");
+  if (evt.target.classList.contains("modal")) {
+    closeModal(modal);
+  }
+}
+
 const openModal = (openModal) => {
   openModal.classList.add("modal_opened");
-  document.addEventListener("keyup", handleEscUp);
+  document.addEventListener("keyup", (evt) => handleEscUp(evt, openModal));
+  document.addEventListener("click", (evt) =>
+    clickOutCloseModal(evt, openModal)
+  );
+  /*  document.removeEventListener("keyup", closeEscModal); */
 };
 const closeModal = (openModal) => {
   openModal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscUp);
+  document.removeEventListener("click", clickOutCloseModal);
 };
 
 function createCard({ name, link }) {
