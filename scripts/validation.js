@@ -108,6 +108,7 @@ function closeEscModal(evt, modal) {
 }
 
 function clickOutCloseModal(evt, modal) {
+  console.log("clicked overlay");
   if (evt.target.classListcontains("modal")) {
     closeEscModal(modal);
   }
@@ -115,13 +116,13 @@ function clickOutCloseModal(evt, modal) {
 
 function formSelector(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("mousedown", clickOutCloseModal);
+  document.addEventListener("mousedown", clickOutCloseModal);
   document.addEventListener("keyup", closeEscModal);
 }
 
 function formSelector(modal) {
   modal.classlist.remove("modal_opened");
-  modal.removeEventListener("click", clickOutCloseModal);
+  document.removeEventListener("click", clickOutCloseModal);
   document.removeEventListener("keyup", closeEscModal);
 }
 
