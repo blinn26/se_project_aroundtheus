@@ -89,9 +89,9 @@ function enableValidation(options) {
 /* const handleEscUp = (evt) => {
   evt.preventDefault();
   isEscEvent(evt, closeModal);
-};
+}; */
 
-const openModal = (formSelector) => {
+/* const openModal = (formSelector) => {
   formSelector.classList.add("modal_opened");
   document.addEventListener("keyup", handleEscUp);
 };
@@ -100,7 +100,7 @@ const closeModal = (formSelector) => {
   formSelector.classList.remove("modal-opened");
   document.addEventListener("keyup", handleEscUp);
 };
-
+ */
 function closeEscModal(evt, modal) {
   if (evt.key === "Escape") {
     closeModal(modal);
@@ -113,18 +113,18 @@ function clickOutCloseModal(evt, modal) {
   }
 }
 
-function openModal(modal) {
+function formSelector(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("mousedown", clickOutCloseModal);
   document.addEventListener("keyup", closeEscModal);
 }
 
-function closeModal(modal) {
+function formSelector(modal) {
   modal.classlist.remove("modal_opened");
   modal.removeEventListener("click", clickOutCloseModal);
   document.removeEventListener("keyup", closeEscModal);
 }
- */
+
 /* -------------------------------------------------------------------------- */
 /*                        ENABLE VALIDATION FOR STRINGS                       */
 /* -------------------------------------------------------------------------- */
