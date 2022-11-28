@@ -84,6 +84,25 @@ function enableValidation(options) {
 }; */
 
 /* -------------------------------------------------------------------------- */
+/*                         I THINK STEP 3 NOT WORKING                         */
+/* -------------------------------------------------------------------------- */
+/* const handleEscUp = (evt) => {
+  evt.preventDefault();
+  isEscEvent(evt, closeModal);
+};
+
+const openModal = (formSelector) => {
+  formSelector.classList.add("modal_opened");
+  document.addEventListener("keyup", handleEscUp);
+};
+
+const closeModal = (formSelector) => {
+  formSelector.classList.remove("modal-opened");
+  document.addEventListener("keyup", handleEscUp);
+};
+ */
+
+/* -------------------------------------------------------------------------- */
 /*                        ENABLE VALIDATION FOR STRINGS                       */
 /* -------------------------------------------------------------------------- */
 
