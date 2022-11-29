@@ -34,10 +34,11 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 
   if (hasInvalidInput) {
     submitButton.classList.add(inactiveButtonClass);
-    return (submitButton.disabled = true);
+    submitButton.disabled = true;
+  } else {
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
   }
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
 }
 
 function setEventListeners(formEl, options) {
@@ -58,6 +59,9 @@ function enableValidation(options) {
     formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
+
+    const submitButton = formEl.querySelector(".modal__save-button");
+    submitButton.disabled = true;
 
     setEventListeners(formEl, options);
     // look for all inputs inside of form
@@ -80,7 +84,7 @@ enableValidation({
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
+  inactiveButtonClass: "modal__button-disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error-hidden",
 });

@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
 /* -------------------------------------------------------------------------- */
+const ESCAPE = 27;
 
 const initialCards = [
   {
@@ -81,7 +82,7 @@ const handleEscUp = (evt) => {
 
 const isEscEvent = (evt, action) => {
   const openModal = document.querySelector("modal_opened");
-  if (evt.which === 27) {
+  if (evt.which === ESCAPE) {
     action(openModal);
   }
 };
