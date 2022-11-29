@@ -75,15 +75,13 @@ const profileDescriptionInput = profileEditForm.querySelector(
 /*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
 /* -------------------------------------------------------------------------- */
 
-const handleEscUp = (evt) => {
-  evt.preventDefault();
+/* const handleEscUp = (evt) => {
   isEscEvent(evt, () => closeModal(document.querySelector(".modal_opened")));
-};
+}; */
 
-const isEscEvent = (evt, action) => {
-  const openModal = document.querySelector("modal_opened");
+const handleEscUp = (evt, action) => {
   if (evt.which === ESCAPE) {
-    action(openModal);
+    closeModal(action);
   }
 };
 
