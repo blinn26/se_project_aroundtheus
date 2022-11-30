@@ -43,6 +43,7 @@ function toggleButtonState(
     submitButtonSelector.classList.remove(inactiveButtonClass);
     submitButtonSelector.disabled = false;
   }
+  console.log("finished submit");
 }
 
 function setEventListeners(formEl, options) {

@@ -79,9 +79,10 @@ const profileDescriptionInput = profileEditForm.querySelector(
   isEscEvent(evt, () => closeModal(document.querySelector(".modal_opened")));
 }; */
 
-const handleEscUp = (evt, action) => {
+const handleEscUp = (evt) => {
+  const activePopup = document.querySelector(".modal_opened");
   if (evt.which === ESCAPE) {
-    closeModal(action);
+    closeModal(activePopup);
   }
 };
 
@@ -91,24 +92,26 @@ function closeEscModal(evt, modal) {
   }
 }
 
-function clickOutCloseModal(evt, modal) {
+function clickOutCloseModal(evt) {
+  const activePopup = document.querySelector(".modal_opened");
   if (evt.target.classList.contains("modal")) {
-    closeModal(modal);
+    closeModal(activePopup);
   }
 }
 
 const openModal = (openModal) => {
   openModal.classList.add("modal_opened");
-  document.addEventListener("keyup", (evt) => handleEscUp(evt, openModal));
-  document.addEventListener("click", (evt) =>
-    clickOutCloseModal(evt, openModal)
-  );
+  /*  document.addEventListener("keyup", (evt) => handleEscUp(evt, openModal)); */
+  document.addEventListener("keyup", handleEscUp);
+
+  openModal.addEventListener("mousedown", clickOutCloseModal);
+
   /*  document.removeEventListener("keyup", closeEscModal); */
 };
 const closeModal = (openModal) => {
   openModal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscUp);
-  document.removeEventListener("click", clickOutCloseModal);
+  document.removeEventListener("mousedown", clickOutCloseModal);
 };
 
 /* -------------------------------------------------------------------------- */
@@ -214,9 +217,15 @@ const handleAddCard = (evt) => {
     name: name,
     link: link,
   });
-  closeModal(cardAddModal);
-
+  // closeModal(cardAddModal);
   evt.target.reset();
+  console.log(evt.target);
+  const inputEls = evt.target.querySelectorAll(".modal__input");
+  const saveButtonEl = evt.target.querySelector(".modal__save-button");
+  toggleButtonState(inputEls, saveButtonEl, {
+    inactiveButtonClass: "modal__button-disabled",
+  });
+  closeModal(cardAddModal);
 };
 
 cardModalOpenButton.addEventListener("click", () => {
