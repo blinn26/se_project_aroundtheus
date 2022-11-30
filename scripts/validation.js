@@ -44,11 +44,11 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".modal__save-button");
+  const submitButtonSelector = formEl.querySelector(".modal__save-button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputEls, submitButton, options);
+      toggleButtonState(inputEls, submitButtonSelector, options);
     });
   });
 }
@@ -59,8 +59,8 @@ function enableValidation(options) {
       e.preventDefault();
     });
 
-    const submitButton = formEl.querySelector(".modal__save-button");
-    submitButton.disabled = true;
+    const submitButtonSelector = formEl.querySelector(".modal__save-button");
+    submitButtonSelector.disabled = true;
 
     setEventListeners(formEl, options);
     // look for all inputs inside of form

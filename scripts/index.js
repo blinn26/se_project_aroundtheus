@@ -230,7 +230,7 @@ cardModalOpenButton.addEventListener("click", () => {
 profileModalCloseButton.addEventListener("click", () =>
   closeModal(profileEditModal)
 );
-profileModal.addEventListener("submit", handleProfileFormSubmit); // edit user -> handleProfileFormSubmit
+/* profileModal.addEventListener("submit", handleProfileFormSubmit);  */ // THE CORRECT USAGE OF THIS CODE IS ON 196
 addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", handleAddCard); // ??? add card specific form handler
 const previewCloseButton = previewModal.querySelector("#preview-modal-close");
