@@ -92,7 +92,6 @@ function closeEscModal(evt, modal) {
 }
 
 function clickOutCloseModal(evt, modal) {
-  console.log("clicked overlay");
   if (evt.target.classList.contains("modal")) {
     closeModal(modal);
   }
