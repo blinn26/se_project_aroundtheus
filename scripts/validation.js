@@ -24,7 +24,11 @@ function checkInputValidity(formEl, inputEl, options) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+function toggleButtonState(
+  inputEls,
+  submitButtonSelector,
+  { inactiveButtonClass }
+) {
   let hasInvalidInput = false;
   inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
@@ -33,11 +37,11 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   });
 
   if (hasInvalidInput) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
+    submitButtonSelector.classList.add(inactiveButtonClass);
+    submitButtonSelector.disabled = true;
   } else {
-    submitButton.classList.remove(inactiveButtonClass);
-    submitButton.disabled = false;
+    submitButtonSelector.classList.remove(inactiveButtonClass);
+    submitButtonSelector.disabled = false;
   }
 }
 
