@@ -35,6 +35,12 @@ function toggleInputError(formEl, inputEl, options) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
+function checkFieldsValidity() {
+  // ...
+
+  return false; //true
+}
+
 function toggleButtonState(
   inputEls,
 
@@ -44,12 +50,17 @@ function toggleButtonState(
 ) {
   let hasInvalidInput = false;
 
+  // if the function has name toggleButtonState, why the hell it checks if the form is valid?
   inputEls.forEach((inputEl) => {
+    // inputEls.every...
+    // instead of forEach use every
     if (!inputEl.validity.valid) {
       hasInvalidInput = true;
     }
   });
 
+  if (checkFieldsValidity()) {
+  }
   if (hasInvalidInput) {
     submitButtonSelector.classList.add(inactiveButtonClass);
 
