@@ -14,13 +14,13 @@ function hideInputError(formEl, inputEl, options) {
   const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorEl.classList.add(options.errorClass);
 }
-function checkInputValidity(formEl, inputEl, options) {
+function toggleInputError(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
     return showInputError(formEl, inputEl, options, inputEl.validationMessage);
   }
   hideInputError(formEl, inputEl, options);
 
-  /* function checkInputValidity(inputList) {
+  /* function toggleInputError(inputList) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
@@ -30,6 +30,7 @@ function toggleButtonState(
   { inactiveButtonClass }
 ) {
   let hasInvalidInput = false;
+  const submitButtonSelectorEl = document.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
       hasInvalidInput = true;
@@ -37,13 +38,12 @@ function toggleButtonState(
   });
 
   if (hasInvalidInput) {
-    submitButtonSelector.classList.add(inactiveButtonClass);
-    submitButtonSelector.disabled = true;
+    submitButtonSelectorEl.classList.add(inactiveButtonClass);
+    submitButtonSelectorEl.disabled = true;
   } else {
-    submitButtonSelector.classList.remove(inactiveButtonClass);
-    submitButtonSelector.disabled = false;
+    submitButtonSelectorEl.classList.remove(inactiveButtonClass);
+    submitButtonSelectorEl.disabled = false;
   }
-  console.log("finished submit");
 }
 
 function setEventListeners(formEl, options) {
@@ -52,7 +52,7 @@ function setEventListeners(formEl, options) {
   const submitButtonSelector = formEl.querySelector(".modal__save-button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      checkInputValidity(formEl, inputEl, options);
+      toggleInputError(formEl, inputEl, options);
       toggleButtonState(inputEls, submitButtonSelector, options);
     });
   });
@@ -84,11 +84,4 @@ function enableValidation(options) {
 /*                        ENABLE VALIDATION FOR STRINGS                       */
 /* -------------------------------------------------------------------------- */
 
-enableValidation({
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button-disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error-hidden",
-});
+enableValidation(config);
