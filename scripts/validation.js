@@ -35,51 +35,37 @@ function toggleInputError(formEl, inputEl, options) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
-function checkFieldsValidity() {
-  // ...
-
-  return false; //true
-}
-
 function toggleButtonState(
   inputEls,
-
   submitButtonSelector,
-
   { inactiveButtonClass }
 ) {
-  let hasInvalidInput = false;
+  const submitButtonEl = document.querySelector(submitButtonSelector);
+  console.log(submitButtonEl, hasInvalidInput(inputEls));
+  if (hasInvalidInput(inputEls)) {
+    submitButtonEl.classList.add(inactiveButtonClass);
 
-  // if the function has name toggleButtonState, why the hell it checks if the form is valid?
-  inputEls.forEach((inputEl) => {
-    // inputEls.every...
-    // instead of forEach use every
-    if (!inputEl.validity.valid) {
-      hasInvalidInput = true;
-    }
-  });
-
-  if (checkFieldsValidity()) {
-  }
-  if (hasInvalidInput) {
-    submitButtonSelector.classList.add(inactiveButtonClass);
-
-    submitButtonSelector.disabled = true;
+    submitButtonEl.disabled = true;
   } else {
-    submitButtonSelector.classList.remove(inactiveButtonClass);
+    submitButtonEl.classList.remove(inactiveButtonClass);
 
-    submitButtonSelector.disabled = false;
+    submitButtonEl.disabled = false;
+  }
+
+  function hasInvalidInput(inputEls) {
+    // console.log(inputEls);
+    return inputEls.every((inputEl) => !inputEl.validity.valid);
   }
 }
 
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButtonSelector = formEl.querySelector(".modal__save-button");
+  // const submitButtonSelector = formEl.querySelector(".modal__save-button");
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       toggleInputError(formEl, inputEl, options);
-      toggleButtonState(inputEls, submitButtonSelector, options);
+      toggleButtonState(inputEls, config.submitButtonSelector, options);
     });
   });
 }
@@ -90,7 +76,9 @@ function enableValidation(options) {
       e.preventDefault();
     });
 
-    const submitButtonSelector = formEl.querySelector(".modal__save-button");
+    const submitButtonSelector = formEl.querySelector(
+      config.submitButtonSelector
+    );
     submitButtonSelector.disabled = true;
 
     setEventListeners(formEl, options);

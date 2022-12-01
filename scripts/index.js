@@ -5,7 +5,7 @@
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
+  submitButtonSelector: ".modal__save-button",
   inactiveButtonClass: "modal__button-disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error-hidden",
@@ -235,9 +235,9 @@ const handleAddCard = (evt) => {
   });
   // closeModal(cardAddModal);
   evt.target.reset();
-  console.log(evt.target);
-  const inputEls = evt.target.querySelectorAll(".modal__input");
-
+  // console.log(evt.target);
+  const inputEls = [...cardAddModal.querySelectorAll(".modal__input")];
+  console.log(inputEls);
   toggleButtonState(inputEls, config.submitButtonSelector, config);
   closeModal(cardAddModal);
 };
