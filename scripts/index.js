@@ -99,18 +99,18 @@ const handleEscUp = (evt) => {
   }
 };
 
-function closeEscModal(evt, modal) {
+/* function closeEscModal(evt, modal) {
   if (evt.key === "Escape") {
     closeModal(modal);
   }
-}
+} */
 
-/* function clickOutCloseModal(evt) {
+function clickOutCloseModal(evt) {
   const activePopup = document.querySelector(".modal_opened");
   if (evt.target.classList.contains("modal")) {
     closeModal(activePopup);
   }
-} */
+}
 
 const openModal = (openModal) => {
   openModal.classList.add("modal_opened");
