@@ -23,14 +23,27 @@ function toggleInputError(formEl, inputEl, options) {
   /* function toggleInputError(inputList) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
+function toggleInputError(formEl, inputEl, options) {
+  if (!inputEl.validity.valid) {
+    return showInputError(formEl, inputEl, options, inputEl.validationMessage);
+  }
+
+  hideInputError(formEl, inputEl, options);
+
+  /* function toggleInputError(inputList) { 
+
+    return !inputList.every((inputEl) => inputEl.validity.valid);} */
+}
 
 function toggleButtonState(
   inputEls,
+
   submitButtonSelector,
+
   { inactiveButtonClass }
 ) {
   let hasInvalidInput = false;
-  const submitButtonSelectorEl = document.querySelector(submitButtonSelector);
+
   inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
       hasInvalidInput = true;
@@ -38,11 +51,13 @@ function toggleButtonState(
   });
 
   if (hasInvalidInput) {
-    submitButtonSelectorEl.classList.add(inactiveButtonClass);
-    submitButtonSelectorEl.disabled = true;
+    submitButtonSelector.classList.add(inactiveButtonClass);
+
+    submitButtonSelector.disabled = true;
   } else {
-    submitButtonSelectorEl.classList.remove(inactiveButtonClass);
-    submitButtonSelectorEl.disabled = false;
+    submitButtonSelector.classList.remove(inactiveButtonClass);
+
+    submitButtonSelector.disabled = false;
   }
 }
 

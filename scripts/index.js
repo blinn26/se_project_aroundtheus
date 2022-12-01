@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                 ENABLE VALIDATION STRING FROM VALIDATION JS                */
+/* -------------------------------------------------------------------------- */
+
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -101,12 +105,12 @@ function closeEscModal(evt, modal) {
   }
 }
 
-function clickOutCloseModal(evt) {
+/* function clickOutCloseModal(evt) {
   const activePopup = document.querySelector(".modal_opened");
   if (evt.target.classList.contains("modal")) {
     closeModal(activePopup);
   }
-}
+} */
 
 const openModal = (openModal) => {
   openModal.classList.add("modal_opened");
@@ -117,6 +121,7 @@ const openModal = (openModal) => {
 
   /*  document.removeEventListener("keyup", closeEscModal); */
 };
+
 const closeModal = (openModal) => {
   openModal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscUp);
