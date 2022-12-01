@@ -93,8 +93,9 @@ const profileDescriptionInput = profileEditForm.querySelector(
 }; */
 
 const handleEscUp = (evt) => {
-  const activePopup = document.querySelector(".modal_opened");
   if (evt.which === ESCAPE) {
+    const activePopup = document.querySelector(".modal_opened");
+
     closeModal(activePopup);
   }
 };
@@ -106,8 +107,9 @@ const handleEscUp = (evt) => {
 } */
 
 function clickOutCloseModal(evt) {
-  const activePopup = document.querySelector(".modal_opened");
   if (evt.target.classList.contains("modal")) {
+    const activePopup = document.querySelector(".modal_opened");
+
     closeModal(activePopup);
   }
 }
