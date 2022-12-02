@@ -35,26 +35,17 @@ function toggleInputError(formEl, inputEl, options) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
-function toggleButtonState(
-  inputEls,
-  submitButtonSelector,
-  { inactiveButtonClass }
-) {
-  const submitButtonEl = document.querySelector(submitButtonSelector);
-  console.log(submitButtonEl, hasInvalidInput(inputEls));
+function toggleButtonState(inputEls, submitButtonEl, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
     submitButtonEl.classList.add(inactiveButtonClass);
-
     submitButtonEl.disabled = true;
   } else {
     submitButtonEl.classList.remove(inactiveButtonClass);
-
     submitButtonEl.disabled = false;
   }
 
   function hasInvalidInput(inputEls) {
-    // console.log(inputEls);
-    return inputEls.every((inputEl) => !inputEl.validity.valid);
+    return !inputEls.every((inputEl) => inputEl.validity.valid);
   }
 }
 
@@ -62,10 +53,12 @@ function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   // const submitButtonSelector = formEl.querySelector(".modal__save-button");
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
+  submitButton.disabled = true;
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       toggleInputError(formEl, inputEl, options);
-      toggleButtonState(inputEls, config.submitButtonSelector, options);
+      toggleButtonState(inputEls, submitButton, options);
     });
   });
 }
@@ -75,11 +68,6 @@ function enableValidation(options) {
     formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-
-    const submitButtonSelector = formEl.querySelector(
-      config.submitButtonSelector
-    );
-    submitButtonSelector.disabled = true;
 
     setEventListeners(formEl, options);
     // look for all inputs inside of form

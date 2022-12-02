@@ -88,10 +88,6 @@ const profileDescriptionInput = profileEditForm.querySelector(
 /*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
 /* -------------------------------------------------------------------------- */
 
-/* const handleEscUp = (evt) => {
-  isEscEvent(evt, () => closeModal(document.querySelector(".modal_opened")));
-}; */
-
 const handleEscUp = (evt) => {
   if (evt.which === ESCAPE) {
     const activePopup = document.querySelector(".modal_opened");
@@ -99,12 +95,6 @@ const handleEscUp = (evt) => {
     closeModal(activePopup);
   }
 };
-
-/* function closeEscModal(evt, modal) {
-  if (evt.key === "Escape") {
-    closeModal(modal);
-  }
-} */
 
 function clickOutCloseModal(evt) {
   if (evt.target.classList.contains("modal")) {
@@ -115,15 +105,11 @@ function clickOutCloseModal(evt) {
 }
 
 const openModal = (openModal) => {
+  document.addEventListener("mousedown", clickOutCloseModal);
   openModal.classList.add("modal_opened");
   /*  document.addEventListener("keyup", (evt) => handleEscUp(evt, openModal)); */
   document.addEventListener("keyup", handleEscUp);
-
-  openModal.addEventListener("mousedown", clickOutCloseModal);
-
-  /*  document.removeEventListener("keyup", closeEscModal); */
 };
-
 const closeModal = (openModal) => {
   openModal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscUp);
@@ -198,9 +184,6 @@ initialCards.forEach(renderCard);
 /*             EDIT PROFILE SETTINGS/OPEN/CLOSE/TITLE/DESCRIPTION             */
 /* -------------------------------------------------------------------------- */
 
-// function openModal(modal) {
-//   modal.classList.add("modal_opened");
-// }
 function handleProfileFormSubmit(event) {
   event.preventDefault();
 
@@ -217,10 +200,6 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-// function closeModal(modal) {
-//   modal.classList.remove("modal_opened");
-// }
-
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */
@@ -233,11 +212,10 @@ const handleAddCard = (evt) => {
     name: name,
     link: link,
   });
-  // closeModal(cardAddModal);
+
   evt.target.reset();
-  // console.log(evt.target);
   const inputEls = [...cardAddModal.querySelectorAll(".modal__input")];
-  console.log(inputEls);
+
   toggleButtonState(inputEls, config.submitButtonSelector, config);
   closeModal(cardAddModal);
 };
