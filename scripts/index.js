@@ -56,7 +56,7 @@ const cardListEl = document.querySelector(".cards__list");
 
 const profileEditModal = document.querySelector("#edit-modal");
 const cardAddModal = document.querySelector("#add-modal");
-
+const addCardSave = cardAddModal.querySelector(config.submitButtonSelector);
 /* -------------------------------------------------------------------------- */
 /*                          PROFILE AND MODAL BUTTONS                         */
 /* -------------------------------------------------------------------------- */
@@ -107,7 +107,7 @@ function clickOutCloseModal(evt) {
 const openModal = (openModal) => {
   document.addEventListener("mousedown", clickOutCloseModal);
   openModal.classList.add("modal_opened");
-  /*  document.addEventListener("keyup", (evt) => handleEscUp(evt, openModal)); */
+
   document.addEventListener("keyup", handleEscUp);
 };
 const closeModal = (openModal) => {
@@ -216,7 +216,7 @@ const handleAddCard = (evt) => {
   evt.target.reset();
   const inputEls = [...cardAddModal.querySelectorAll(".modal__input")];
 
-  toggleButtonState(inputEls, config.submitButtonSelector, config);
+  toggleButtonState(inputEls, addCardSave, config);
   closeModal(cardAddModal);
 };
 
