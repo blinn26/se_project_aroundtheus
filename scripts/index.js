@@ -56,7 +56,6 @@ const cardListEl = document.querySelector(".cards__list");
 
 const profileEditModal = document.querySelector("#edit-modal");
 const cardAddModal = document.querySelector("#add-modal");
-const addCardSave = cardAddModal.querySelector(config.submitButtonSelector);
 /* -------------------------------------------------------------------------- */
 /*                          PROFILE AND MODAL BUTTONS                         */
 /* -------------------------------------------------------------------------- */
@@ -67,7 +66,7 @@ const profileModalCloseButton = profileEditModal.querySelector(
   ".modal__close-button"
 );
 const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
-
+const addCardSave = cardAddModal.querySelector(config.submitButtonSelector);
 /* -------------------------------------------------------------------------- */
 /*                           MODAL AND PROFILE FORMS                          */
 /* -------------------------------------------------------------------------- */
