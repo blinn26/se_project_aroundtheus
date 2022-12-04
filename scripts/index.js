@@ -234,3 +234,30 @@ addModalCloseButton.addEventListener("click", () => closeModal(cardAddModal));
 cardAddModal.addEventListener("submit", handleAddCard); // ??? add card specific form handler
 const previewCloseButton = previewModal.querySelector("#preview-modal-close");
 previewCloseButton.addEventListener("click", () => closeModal(previewModal));
+
+class FormValidator {
+  /*  constructor(settings, formEl) {
+    this;
+    this._form = formEl;
+  } */
+
+  constructor(settings, formEl) {
+    this._formSelector;
+    this._inputSelector = settings.inputSelector;
+    this._submitButtonSelector = settings.submitButtonSelector;
+    this._inactiveButtonClass = settings.inactiveButtonClass;
+    this._inputErrorClass = settings.inputErrorClass;
+    this._errorClass = settings.errorClass;
+    this._form = formEl;
+  }
+
+  enableValidation() {
+    this._form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+
+    setEventListeners(formEl, options);
+  }
+}
+const editFormValidator = new FormValidator();
+editFormValidator.enableValidation();

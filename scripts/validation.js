@@ -87,22 +87,3 @@ function enableValidation(options) {
 /* -------------------------------------------------------------------------- */
 
 enableValidation(config);
-
-class formValidator {
-  constructor(settings, formEl) {
-    this._form = formEl;
-    console.log(this);
-  }
-}
-
-/* const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__save-button",
-  inactiveButtonClass: "modal__button-disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error-hidden",
-}; */
-
-const editFormValidator = new formValidator();
-/* const addFormValidator = new FormValidator(settings, addForm); */
