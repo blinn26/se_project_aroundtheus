@@ -1,0 +1,17 @@
+{
+  "files.autoSave": "onFocusChange",
+  "explorer.excludeGitIgnore": true,
+  "terminal.integrated.confirmOnKill": "always",
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": false,
+  "search.useParentIgnoreFiles": true,
+  "scm.alwaysShowRepositories": true,
+  "scm.alwaysShowActions": true,
+  "scm.providerCountBadge": "visible",
+  "scm.repositories.sortOrder": "name",
+  "powermode.enabled": true,
+  "powermode.combo.location": "statusbar",
+  "powermode.combo.counterEnabled": "hide",
+  "powermode.combo.timeout": 0,
+  "powermode.explosions.backgroundMode": "image"
+}
