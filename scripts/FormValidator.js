@@ -12,7 +12,7 @@ class FormValidator {
   _setEventListeners() {
     const { inputSelector } = options;
     const inputEls = [...formEl.querySelectorAll(inputSelector)];
-    // const submitButtonSelector = formEl.querySelector(".modal__save-button");
+
     const submitButton = formEl.querySelector(options.submitButtonSelector);
     submitButton.disabled = true;
     inputEls.forEach((inputEl) => {
