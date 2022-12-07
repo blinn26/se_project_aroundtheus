@@ -50,6 +50,7 @@ const initialCards = [
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
+const cardSelector = "#card-template";
 /* -------------------------------------------------------------------------- */
 /*                            ID LABELED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
@@ -170,8 +171,8 @@ const handleLikeIcon = (evt) => {
 };
 
 function renderCard(cardData) {
-  const cardEl = createCard(cardData);
-  cardListEl.prepend(cardEl);
+  const cardEl = createCard(cardData, card - template);
+  cardListEl.prepend(card.getView);
   // append to the list
 }
 // loop -> createCard -> renderCard
