@@ -9,6 +9,27 @@ class FormValidator {
     this._form = formEl;
   }
 
+  _showInputError() {
+    inputEl.classList.add(options.inputErrorClass);
+    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
+    errorEl.textContent = validationMessage;
+    errorEl.classList.remove(options.errorClass);
+  }
+
+  _toggleButtonState() {
+    if (hasInvalidInput(inputEls)) {
+      submitButtonEl.classList.add(inactiveButtonClass);
+      submitButtonEl.disabled = true;
+    } else {
+      submitButtonEl.classList.remove(inactiveButtonClass);
+      submitButtonEl.disabled = false;
+    }
+  }
+
+  _hasInvalidInput() {
+    return !inputEls.every((inputEl) => inputEl.validity.valid);
+  }
+
   _setEventListeners() {
     const { inputSelector } = options;
     const inputEls = [...formEl.querySelectorAll(inputSelector)];
