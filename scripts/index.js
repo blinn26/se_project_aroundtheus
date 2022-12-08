@@ -1,3 +1,6 @@
+import FormValidator from "./FormValidator.js";
+
+// const FormValidator = require("./FormValidator");
 /* -------------------------------------------------------------------------- */
 /*                 ENABLE VALIDATION STRING FROM VALIDATION JS                */
 /* -------------------------------------------------------------------------- */
@@ -171,8 +174,8 @@ const handleLikeIcon = (evt) => {
 };
 
 function renderCard(cardData) {
-  const cardEl = createCard(cardData, card - template);
-  cardListEl.prepend(card.getView);
+  const card = createCard(cardData);
+  cardListEl.prepend(card);
   // append to the list
 }
 // loop -> createCard -> renderCard
@@ -236,27 +239,28 @@ cardAddModal.addEventListener("submit", handleAddCard); // ??? add card specific
 const previewCloseButton = previewModal.querySelector("#preview-modal-close");
 previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 
-class FormValidator {
-  constructor(settings, formEl) {
-    this._formSelector;
-    this._inputSelector = settings.inputSelector;
-    this._submitButtonSelector = settings.submitButtonSelector;
-    this._inactiveButtonClass = settings.inactiveButtonClass;
-    this._inputErrorClass = settings.inputErrorClass;
-    this._errorClass = settings.errorClass;
-    this._form = formEl;
-  }
+// class FormValidator {
+//   constructor(settings, formEl) {
+//     this._formSelector;
+//     this._inputSelector = settings.inputSelector;
+//     this._submitButtonSelector = settings.submitButtonSelector;
+//     this._inactiveButtonClass = settings.inactiveButtonClass;
+//     this._inputErrorClass = settings.inputErrorClass;
+//     this._errorClass = settings.errorClass;
+//     this._form = formEl;
+//   }
 
-  enableValidation() {
-    this._form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
+//   enableValidation() {
+//     this._form.addEventListener("submit", (evt) => {
+//       evt.preventDefault();
+//     });
 
-    setEventListeners(formEl, options);
-  }
-}
-const editFormValidator = new FormValidator(settings, editForm);
+//     setEventListeners(formEl, options);
+//   }
+// }
+
+const editFormValidator = new FormValidator(config, profileEditForm);
 editFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(settings, addForm);
-addFormValidator.enableValidation();
+// const addFormValidator = new FormValidator(config, addForm);
+// addFormValidator.enableValidation();

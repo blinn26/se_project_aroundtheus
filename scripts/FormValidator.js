@@ -1,6 +1,6 @@
 class FormValidator {
   constructor(settings, formEl) {
-    this._formSelector;
+    /* this._formSelector; */
     this._inputSelector = settings.inputSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
     this._inactiveButtonClass = settings.inactiveButtonClass;
@@ -31,29 +31,26 @@ class FormValidator {
   }
 
   _setEventListeners() {
-    const { inputSelector } = options;
-    const inputEls = [...formEl.querySelectorAll(inputSelector)];
+    /* const { inputSelector } = options; */
+    this.inputEls = [...this._form.querySelectorAll(this._inputSelector)];
 
-    const submitButton = formEl.querySelector(options.submitButtonSelector);
+    const submitButton = this._form.querySelector(this._submitButtonSelector);
     submitButton.disabled = true;
-    inputEls.forEach((inputEl) => {
-      inputEl.addEventListener("input", (evt) => {
-        toggleInputError(formEl, inputEl, options);
+    this.inputEls.forEach((x) => {
+      x.addEventListener("input", (evt) => {
+        toggleInputError(this._form, x, options);
         toggleButtonState(inputEls, submitButton, options);
       });
     });
   }
 
   enableValidation() {
+    console.log(this);
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
 
-    setEventListeners(formEl, options);
+    this._setEventListeners();
   }
 }
-const editFormValidator = new FormValidator(settings, editForm);
-editFormValidator.enableValidation();
-
-const addFormValidator = new FormValidator(settings, addForm);
-addFormValidator.enableValidation();
+export default FormValidator;
