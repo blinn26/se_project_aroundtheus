@@ -38,7 +38,7 @@ class FormValidator {
     submitButton.disabled = true;
     this.inputEls.forEach((inputEls) => {
       inputEls.addEventListener("input", (evt) => {
-        toggleInputError(this._form, this.inputEls, options);
+        toggleInputError(this._form, this._inputEls, options);
         toggleButtonState(inputEls, submitButton, options);
       });
     });

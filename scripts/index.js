@@ -53,7 +53,7 @@ const initialCards = [
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
-const cardSelector = "#card-template";
+/* const cardSelector = "#card-template"; */
 /* -------------------------------------------------------------------------- */
 /*                            ID LABELED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
@@ -69,6 +69,7 @@ const cardModalOpenButton = document.querySelector(".profile__add-button");
 const profileModalCloseButton = profileEditModal.querySelector(
   ".modal__close-button"
 );
+
 const addModalCloseButton = cardAddModal.querySelector(".modal__close-button");
 const addCardSave = cardAddModal.querySelector(config.submitButtonSelector);
 /* -------------------------------------------------------------------------- */
@@ -174,8 +175,8 @@ const handleLikeIcon = (evt) => {
 };
 
 function renderCard(cardData) {
-  const card = createCard(cardData);
-  cardListEl.prepend(card);
+  const cardEl = createCard(cardData);
+  cardListEl.prepend(cardEl);
   // append to the list
 }
 // loop -> createCard -> renderCard
