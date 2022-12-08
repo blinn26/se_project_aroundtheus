@@ -5,12 +5,12 @@ class Card {
     this._cardSelector = cardSelector;
   }
   _setEventListeners() {
-    cardTrashButton.addEventListener("click", () => {
-      Card.remove();
-      previewCloseButton.addEventListener("click"),
-        () => closeModal(previewModal);
-    });
+    this._element
+      .querySelector("card__like-button_is-active")
+      .addEventListener("click", _handleLikeIcon);
   }
+
+  _handleLikeIcon() {}
 
   _getTemplate() {
     return document
@@ -21,8 +21,11 @@ class Card {
 
   getView() {
     this._element = this._getTemplate();
+
+    this._element.querySelector(".card__image").style.backgroundImage =
+      "url(${this_link})";
+    this._element.querySelector("card__title").textContent = this._name;
     this._setEventListeners();
   }
 }
-
 export default Card;

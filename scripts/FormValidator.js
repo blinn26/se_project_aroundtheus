@@ -37,7 +37,7 @@ class FormValidator {
     const submitButton = formEl.querySelector(options.submitButtonSelector);
     submitButton.disabled = true;
     inputEls.forEach((inputEl) => {
-      inputEl.addEventListener("input", (e) => {
+      inputEl.addEventListener("input", (evt) => {
         toggleInputError(formEl, inputEl, options);
         toggleButtonState(inputEls, submitButton, options);
       });
@@ -52,5 +52,8 @@ class FormValidator {
     setEventListeners(formEl, options);
   }
 }
-const editFormValidator = new FormValidator();
+const editFormValidator = new FormValidator(settings, editForm);
 editFormValidator.enableValidation();
+
+const addFormValidator = new FormValidator(settings, addForm);
+addFormValidator.enableValidation();
