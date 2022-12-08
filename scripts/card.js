@@ -4,11 +4,25 @@ class Card {
     this._name = data.link;
     this._cardSelector = cardSelector;
   }
-  _getTemplate() {
-    document.querySelector(this._cardSelector);
+  _setEventListeners() {
+    cardTrashButton.addEventListener("click", () => {
+      Card.remove();
+      previewCloseButton.addEventListener("click"),
+        () => closeModal(previewModal);
+    });
   }
 
-  getView() {}
+  _getTemplate() {
+    return document
+      .querySelector(this._cardSelector)
+      .content.querySelector(".card")
+      .cloneNode(true);
+  }
+
+  getView() {
+    this._element = this._getTemplate();
+    this._setEventListeners();
+  }
 }
 
 export default Card;
