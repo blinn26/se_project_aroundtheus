@@ -10,7 +10,10 @@ class Card {
       .addEventListener("click", _handleLikeIcon);
   }
 
-  _handleLikeIcon() {}
+  _handleLikeIcon() {
+    evt.target.classList.toggle("card__like-button_is-active");
+    // like icon active
+  }
 
   _getTemplate() {
     return document

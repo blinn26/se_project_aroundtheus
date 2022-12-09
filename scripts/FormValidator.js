@@ -26,6 +26,13 @@ class FormValidator {
     }
   }
 
+  _hideInputError() {
+    inputEl.classList.remove(options.inputErrorClass);
+
+    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
+    errorEl.classList.add(options.errorClass);
+  }
+
   _hasInvalidInput() {
     return !inputEls.every((inputEl) => inputEl.validity.valid);
   }
@@ -38,14 +45,14 @@ class FormValidator {
     submitButton.disabled = true;
     this.inputEls.forEach((inputEls) => {
       inputEls.addEventListener("input", (evt) => {
-        toggleInputError(this._form, this._inputEls, options);
+        toggleInputError(this._form, this.inputEls, options);
+        console.log(options);
         toggleButtonState(inputEls, submitButton, options);
       });
     });
   }
 
   enableValidation() {
-    console.log(this);
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });

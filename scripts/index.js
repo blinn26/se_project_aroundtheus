@@ -1,18 +1,10 @@
 import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
 
 // const FormValidator = require("./FormValidator");
 /* -------------------------------------------------------------------------- */
 /*                 ENABLE VALIDATION STRING FROM VALIDATION JS                */
 /* -------------------------------------------------------------------------- */
-
-const config = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__save-button",
-  inactiveButtonClass: "modal__button-disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error-hidden",
-};
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
@@ -45,6 +37,15 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
+
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__save-button",
+  inactiveButtonClass: "modal__button-disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error-hidden",
+};
 
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
@@ -240,6 +241,16 @@ cardAddModal.addEventListener("submit", handleAddCard); // ??? add card specific
 const previewCloseButton = previewModal.querySelector("#preview-modal-close");
 previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 
+/* -------------------------------------------------------------------------- */
+/*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
+/* -------------------------------------------------------------------------- */
+
+const editFormValidator = new FormValidator(config, profileEditForm);
+editFormValidator.enableValidation();
+
+const addCardValidator = new FormValidator(config, cardAddModal);
+addCardValidator.enableValidation();
+
 // class FormValidator {
 //   constructor(settings, formEl) {
 //     this._formSelector;
@@ -259,9 +270,6 @@ previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 //     setEventListeners(formEl, options);
 //   }
 // }
-
-const editFormValidator = new FormValidator(config, profileEditForm);
-editFormValidator.enableValidation();
 
 // const addFormValidator = new FormValidator(config, addForm);
 // addFormValidator.enableValidation();
