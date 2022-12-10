@@ -8,6 +8,13 @@ class FormValidator {
     this._errorClass = settings.errorClass;
     this._form = formEl;
   }
+  enableValidation() {
+    this._form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+
+    this._setEventListeners(formEl, options);
+  }
 
   _showInputError() {
     inputEl.classList.add(options.inputErrorClass);
@@ -41,23 +48,15 @@ class FormValidator {
     /* const { inputSelector } = options; */
     this.inputEls = [...this._form.querySelectorAll(this._inputSelector)];
 
-    const submitButton = this._form.querySelector(this._submitButtonSelector);
+    this.submitButton = this._form.querySelector(this._submitButtonSelector);
     submitButton.disabled = true;
     this.inputEls.forEach((inputEls) => {
-      inputEls.addEventListener("input", (evt) => {
-        toggleInputError(this._form, this.inputEls, options);
-        console.log(options);
+      this.inputEls.addEventListener("input", (evt) => {
+        toggleInputError(form, inputEls, options);
+
         toggleButtonState(inputEls, submitButton, options);
       });
     });
-  }
-
-  enableValidation() {
-    this._form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-
-    this._setEventListeners();
   }
 }
 export default FormValidator;

@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 
 // const FormValidator = require("./FormValidator");
 /* -------------------------------------------------------------------------- */
