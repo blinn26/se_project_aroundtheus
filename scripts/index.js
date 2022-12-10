@@ -2,9 +2,6 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
 // const FormValidator = require("./FormValidator");
-/* -------------------------------------------------------------------------- */
-/*                 ENABLE VALIDATION STRING FROM VALIDATION JS                */
-/* -------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
@@ -246,9 +243,11 @@ previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 /* -------------------------------------------------------------------------- */
 
 const editFormValidator = new FormValidator(config, profileEditForm);
-editFormValidator.enableValidation();
 
 const addCardValidator = new FormValidator(config, cardAddModal);
+
+editFormValidator.enableValidation();
+
 addCardValidator.enableValidation();
 
 // class FormValidator {
@@ -270,6 +269,3 @@ addCardValidator.enableValidation();
 //     setEventListeners(formEl, options);
 //   }
 // }
-
-// const addFormValidator = new FormValidator(config, addForm);
-// addFormValidator.enableValidation();

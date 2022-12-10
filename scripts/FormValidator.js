@@ -44,6 +44,18 @@ class FormValidator {
     return !inputEls.every((inputEl) => inputEl.validity.valid);
   }
 
+  _checkInputValidity() {
+    if (!inputEl.validity.valid) {
+      return showInputError(
+        formEl,
+        inputEl,
+        options,
+        inputEl.validationMessage
+      );
+    }
+    hideInputError(formEl, inputEl, options);
+  }
+
   _setEventListeners() {
     /* const { inputSelector } = options; */
     this.inputEls = [...this._form.querySelectorAll(this._inputSelector)];
