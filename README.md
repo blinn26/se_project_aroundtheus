@@ -34,4 +34,6 @@ The pop up design of a log in feature is based on the implementations of JavaScr
 
 Now with JavaScript working with DOM and learning how to use JS in my HTML and CSS and combine them all together to get a better user experience!
 
+Form Validation introduced with FormValidator.js and validation.js to help the valitaty of the Card.js and utils.js work into the project.
+
 **Edited by Ben Linn**
