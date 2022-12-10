@@ -1,7 +1,9 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+/* -------------------------------------------------------------------------- */
+/*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
+/* -------------------------------------------------------------------------- */
 
-// const FormValidator = require("./FormValidator");
+import FormValidator from "./FormValidator.js";
+import Cards from "./Card.js";
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
@@ -34,6 +36,10 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
+
+/* -------------------------------------------------------------------------- */
+/*                                CONFIG STRING                               */
+/* -------------------------------------------------------------------------- */
 
 const config = {
   formSelector: ".modal__form",
@@ -249,23 +255,3 @@ const addCardValidator = new FormValidator(config, cardAddModal);
 editFormValidator.enableValidation();
 
 addCardValidator.enableValidation();
-
-// class FormValidator {
-//   constructor(settings, formEl) {
-//     this._formSelector;
-//     this._inputSelector = settings.inputSelector;
-//     this._submitButtonSelector = settings.submitButtonSelector;
-//     this._inactiveButtonClass = settings.inactiveButtonClass;
-//     this._inputErrorClass = settings.inputErrorClass;
-//     this._errorClass = settings.errorClass;
-//     this._form = formEl;
-//   }
-
-//   enableValidation() {
-//     this._form.addEventListener("submit", (evt) => {
-//       evt.preventDefault();
-//     });
-
-//     setEventListeners(formEl, options);
-//   }
-// }

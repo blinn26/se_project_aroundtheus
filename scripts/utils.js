@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                         ESCAPE EVENT OPEN AND CLOSE                        */
+/* -------------------------------------------------------------------------- */
+
 const handleEscUp = (evt) => {
   if (evt.which === ESCAPE) {
     const activePopup = document.querySelector(".modal_opened");
@@ -5,6 +9,10 @@ const handleEscUp = (evt) => {
     closeModal(activePopup);
   }
 };
+
+/* -------------------------------------------------------------------------- */
+/*                MODAL OPEN AND CLOSE WITH KEY CLICKS AS WELL                */
+/* -------------------------------------------------------------------------- */
 
 function clickOutCloseModal(evt) {
   if (evt.target.classList.contains("modal")) {

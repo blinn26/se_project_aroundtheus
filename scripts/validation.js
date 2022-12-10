@@ -35,6 +35,10 @@ function toggleInputError(formEl, inputEl, options) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                BUTTON CLASS                                */
+/* -------------------------------------------------------------------------- */
+
 function toggleButtonState(inputEls, submitButtonEl, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
     submitButtonEl.classList.add(inactiveButtonClass);
@@ -49,6 +53,10 @@ function toggleButtonState(inputEls, submitButtonEl, { inactiveButtonClass }) {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             SET EVENTLISTENERS                             */
+/* -------------------------------------------------------------------------- */
+
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
@@ -62,6 +70,9 @@ function setEventListeners(formEl, options) {
     });
   });
 }
+
+/* ---------------------------- ENABLE VALIDATION --------------------------- */
+
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
   formEls.forEach((formEl) => {

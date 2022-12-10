@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                           CONSTRUCTOR AND CLASSES                          */
+/* -------------------------------------------------------------------------- */
+
 class FormValidator {
   constructor(settings, formEl) {
     /* this._formSelector; */
@@ -8,6 +12,9 @@ class FormValidator {
     this._errorClass = settings.errorClass;
     this._form = formEl;
   }
+
+  /* ---------------------------- ENABLE VALIDATION --------------------------- */
+
   enableValidation() {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
@@ -16,21 +23,13 @@ class FormValidator {
     this._setEventListeners(formEl, options);
   }
 
+  /* --------------------------------- ERRORS --------------------------------- */
+
   _showInputError() {
     inputEl.classList.add(options.inputErrorClass);
     const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
     errorEl.textContent = validationMessage;
     errorEl.classList.remove(options.errorClass);
-  }
-
-  _toggleButtonState() {
-    if (hasInvalidInput(inputEls)) {
-      submitButtonEl.classList.add(inactiveButtonClass);
-      submitButtonEl.disabled = true;
-    } else {
-      submitButtonEl.classList.remove(inactiveButtonClass);
-      submitButtonEl.disabled = false;
-    }
   }
 
   _hideInputError() {
@@ -40,9 +39,7 @@ class FormValidator {
     errorEl.classList.add(options.errorClass);
   }
 
-  _hasInvalidInput() {
-    return !inputEls.every((inputEl) => inputEl.validity.valid);
-  }
+  /* ----------------------------- CHECK VALIDATY ----------------------------- */
 
   _checkInputValidity() {
     if (!inputEl.validity.valid) {
@@ -55,6 +52,24 @@ class FormValidator {
     }
     hideInputError(formEl, inputEl, options);
   }
+
+  _hasInvalidInput() {
+    return !inputEls.every((inputEl) => inputEl.validity.valid);
+  }
+
+  /* ------------------------------ BUTTON CLASS ------------------------------ */
+
+  _toggleButtonState() {
+    if (hasInvalidInput(inputEls)) {
+      submitButtonEl.classList.add(inactiveButtonClass);
+      submitButtonEl.disabled = true;
+    } else {
+      submitButtonEl.classList.remove(inactiveButtonClass);
+      submitButtonEl.disabled = false;
+    }
+  }
+
+  /* --------------------------- SET EVENTLISTENERS --------------------------- */
 
   _setEventListeners() {
     /* const { inputSelector } = options; */
@@ -71,4 +86,7 @@ class FormValidator {
     });
   }
 }
+
+/* ------------------------- EXPORTING FORMVALIDATOR ------------------------ */
+
 export default FormValidator;
