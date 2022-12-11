@@ -6,11 +6,12 @@ class FormValidator {
   constructor(settings, formEl) {
     /* this._formSelector; */
     this._inputSelector = settings.inputSelector;
-    this._submitButtonSelector = settings.submitButtonSelector;
+    //this._submitButtonSelector = settings.submitButtonSelector;
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
     this._form = formEl;
+    this._config = settings;
   }
 
   /* ---------------------------- ENABLE VALIDATION --------------------------- */
@@ -20,7 +21,7 @@ class FormValidator {
       evt.preventDefault();
     });
 
-    this._setEventListeners(formEl, options);
+    this._setEventListeners(); // this function receives 2 arguments
   }
 
   /* --------------------------------- ERRORS --------------------------------- */
@@ -72,16 +73,21 @@ class FormValidator {
   /* --------------------------- SET EVENTLISTENERS --------------------------- */
 
   _setEventListeners() {
+    // how many anrguments it really expects?
     /* const { inputSelector } = options; */
     this.inputEls = [...this._form.querySelectorAll(this._inputSelector)];
 
-    this.submitButton = this._form.querySelector(this._submitButtonSelector);
+    const submitButton = this._form.querySelector(
+      this._config.submitButtonSelector
+    );
+
     submitButton.disabled = true;
-    this.inputEls.forEach((inputEls) => {
-      this.inputEls.addEventListener("input", (evt) => {
+
+    this.inputEl.forEach((inputEl) => {
+      inputEl.addEventListener("input", (evt) => {
         toggleInputError(form, inputEls, options);
 
-        toggleButtonState(inputEls, submitButton, options);
+        toggleButtonState(inputEls, submitButton, this._config);
       });
     });
   }
