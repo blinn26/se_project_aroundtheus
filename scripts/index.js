@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 
 import FormValidator from "./FormValidator.js";
-import Cards from "./Card.js";
+import Card from "./Card.js";
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */

@@ -7,7 +7,15 @@ class Card {
   _setEventListeners() {
     this._element
       .querySelector("card__like-button_is-active")
-      .addEventListener("click", _handleLikeIcon);
+      .addEventListener("click", this._handleLikeIcon);
+
+    this._element
+      .querySelector(".card__image")
+      .addEventListener("click", this._previewModalImage);
+
+    this._element
+      .querySelector(".card__trash-button")
+      .addEventListener("click", this._cardTrashButton);
   }
 
   _handleLikeIcon() {
