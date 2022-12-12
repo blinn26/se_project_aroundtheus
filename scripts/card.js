@@ -19,6 +19,7 @@ class Card {
   }
 
   _handleLikeIcon() {
+    this._element.querySelector;
     evt.target.classList.toggle("card__like-button_is-active");
     // like icon active
   }

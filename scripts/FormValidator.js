@@ -11,8 +11,6 @@ class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
     this._form = formEl;
-    this._inputEls = settings.inputEls;
-    this._inputEl = settings.inputEl;
   }
 
   /* ---------------------------- ENABLE VALIDATION --------------------------- */
@@ -28,22 +26,27 @@ class FormValidator {
   /* --------------------------------- ERRORS --------------------------------- */
 
   _showInputError() {
-    inputEl.classList.add(options.inputErrorClass);
-    const errorEl = this._form.querySelector(`#${inputEl.id}-error`);
-    errorEl.textContent = validationMessage;
-    errorEl.classList.remove(this._errorClass);
+    const errorEl = this._form.querySelector(
+      `#${this._inputSelector.id}-error`
+    );
+    this._inputSelector.classList.add(this._inputErrorClass);
+
+    errorEl.textContent = this._inputSelector.validationMessage;
+    errorEl.classList.remove(this._inputErrorClass);
   }
 
   _hideInputError() {
-    inputEl.classList.remove(options.inputErrorClass);
-
-    const errorEl = this._form.querySelector(`#${inputEl.id}-error`);
+    const errorEl = this._form.querySelector(
+      `#${this._inputSelector.id}-error`
+    );
     errorEl.classList.add(options.errorClass);
+
+    errorEl.classList.remove(options.inputErrorClass);
   }
 
   /* ----------------------------- CHECK VALIDATY ----------------------------- */
 
-  _checkInputValidity() {
+  _toggleInputError() {
     if (!inputEl.validity.valid) {
       return showInputError(this._form, inputEl, inputEl.validationMessage);
     }
@@ -69,20 +72,13 @@ class FormValidator {
   /* --------------------------- SET EVENTLISTENERS --------------------------- */
 
   _setEventListeners() {
-    /* const { inputSelector } = options; */
-    this.inputEls = [...this._form.querySelectorAll(this._inputSelector)];
-
-    this._submitButton = this._form.querySelector(this._submitButtonSelector);
-    this._submitButton.disabled = true;
-    this._inputEls.forEach(this._inputEls);
-    this._inputEls.addEventListener("input", (evt) => {
-      this._toggleInputError(this._form, this._inputEls);
-
-      this._toggleButtonState(this._inputEls, this._submitButton);
+    const inputEls = [...this._form.querySelectorAll(this._inputSelector)];
+    inputEls.forEach((inputEl) => {
+      inputEl.addEventListener("input", (evt) => {
+        this._toggleInputError(inputEl);
+        this._toggleButtonState();
+      });
     });
   }
 }
-
-/* ------------------------- EXPORTING FORMVALIDATOR ------------------------ */
-
 export default FormValidator;
