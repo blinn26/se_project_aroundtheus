@@ -227,6 +227,7 @@ const handleAddCard = (evt) => {
   const inputEls = [...cardAddModal.querySelectorAll(".modal__input")];
 
   toggleButtonState(inputEls, addCardSave, config);
+  console.log(toggleButtonState);
   closeModal(cardAddModal);
 };
 

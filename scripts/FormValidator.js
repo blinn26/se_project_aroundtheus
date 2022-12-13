@@ -31,7 +31,7 @@ class FormValidator {
 
   /* ----------------------------- CHECK VALIDATY ----------------------------- */
 
-  _toggleInputError(inputEl) if (!inputEl.validity.valid) {
+  _toggleInputError(inputEl) if(!inputEl.validity.valid) {
     return showInputError(this._form, inputEl, inputEl.validationMessage);
   }
 
