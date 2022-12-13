@@ -18,25 +18,28 @@ class FormValidator {
   _showInputError() {
     const errorEl = this._form.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this_.inputErrorClass);
-    errorEl.textContent = this._validationMessage;
+    errorEl.textContent = inputEl.validationMessage;
     errorEl.classList.remove(this_.errorClass);
   }
 
   _hideInputError() {
-    const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
+    const errorEl = this._form.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(this_.inputErrorClass);
+    errorel.textContent = "";
     errorEl.classList.add(this_.errorClass);
   }
 
   /* ----------------------------- CHECK VALIDATY ----------------------------- */
 
-  _toggleInputError(inputEl) {}
+  _toggleInputError(inputEl) if (!inputEl.validity.valid) {
+    return showInputError(this._form, inputEl, inputEl.validationMessage);
+  }
 
   _hasInvalidInput() {
     const inputEls = [...this._form.querySelectorAll(this._inputSelector)];
     return !inputEls.every((inputEl) => inputEl.validity.valid);
   }
-
+ this._hideInputError(inputEl)
   /* ------------------------------ BUTTON CLASS ------------------------------ */
 
   _toggleButtonState() {
@@ -60,7 +63,7 @@ class FormValidator {
       });
     });
     this._form.addEventListener("reset", () => {
-      setTimeout(() => {
+      setTimeout((0) => {
         this._toggleButtonState();
       }, timeout);
     });

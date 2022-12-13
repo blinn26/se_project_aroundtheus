@@ -20,7 +20,7 @@ function toggleInputError(formEl, inputEl, options) {
   }
   hideInputError(formEl, inputEl, options);
 
-  /* function toggleInputError(inputList) {
+  /*function toggleInputError(inputList) {
     return !inputList.every((inputEl) => inputEl.validity.valid);} */
 }
 function toggleInputError(formEl, inputEl, options) {
