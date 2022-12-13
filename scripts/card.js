@@ -1,9 +1,18 @@
+/* -------------------------------------------------------------------------- */
+/*                            CONSTRUCTOR FOR CARDS                           */
+/* -------------------------------------------------------------------------- */
+
 class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
   }
+
+  /* -------------------------------------------------------------------------- */
+  /*                             SET EVENTLISTENERS                             */
+  /* -------------------------------------------------------------------------- */
+
   _setEventListeners() {
     this._element
       .querySelector(".card__like-button")
@@ -18,6 +27,10 @@ class Card {
       .addEventListener("click", this._cardTrashButton);
   }
 
+  /* -------------------------------------------------------------------------- */
+  /*                           HANDLE AND GET TEMPLATE                          */
+  /* -------------------------------------------------------------------------- */
+
   _handleLikeIcon() {
     this._element;
     evt.target.classList.toggle("card__like-button");
@@ -30,6 +43,10 @@ class Card {
       .content.querySelector(".card")
       .cloneNode(true);
   }
+
+  /* -------------------------------------------------------------------------- */
+  /*                           RETURN CARDS AND EXPORT                          */
+  /* -------------------------------------------------------------------------- */
 
   getView() {
     this._element = this._getTemplate();
