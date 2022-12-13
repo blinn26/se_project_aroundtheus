@@ -6,7 +6,7 @@ class Card {
   }
   _setEventListeners() {
     this._element
-      .querySelector("card__like-button_is-active")
+      .querySelector("card__like-button")
       .addEventListener("click", this._handleLikeIcon);
 
     this._element
@@ -25,6 +25,7 @@ class Card {
   }
 
   _getTemplate() {
+    console.log(document.querySelector(this._cardSelector));
     return document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
@@ -36,7 +37,8 @@ class Card {
 
     this._element.querySelector(".card__image").style.backgroundImage =
       "url(${this_link})";
-    this._element.querySelector("card__title").textContent = this._name;
+    this._element.querySelector(".card__description-list").textContent =
+      this._name;
     this._setEventListeners();
   }
 }

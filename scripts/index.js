@@ -179,8 +179,10 @@ const handleLikeIcon = (evt) => {
 };
 
 function renderCard(cardData) {
-  const cardEl = createCard(cardData);
-  cardListEl.prepend(cardEl);
+  const card = new Card(cardData, "#card-template");
+  cardListEl.prepend(card.getView());
+  /* const cardEl = createCard(cardData); */
+  /* cardListEl.prepend(cardEl); */
   // append to the list
 }
 // loop -> createCard -> renderCard
