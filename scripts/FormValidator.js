@@ -13,16 +13,6 @@ class FormValidator {
     this._form = formEl;
   }
 
-  /* ---------------------------- ENABLE VALIDATION --------------------------- */
-
-  enableValidation() {
-    this._form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-
-    this._setEventListeners();
-  }
-
   /* --------------------------------- ERRORS --------------------------------- */
 
   _showInputError() {
@@ -65,10 +55,25 @@ class FormValidator {
     const inputEls = [...this._form.querySelectorAll(this._inputSelector)];
     inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (evt) => {
-        this._toggleInputError(inputEl);
+        hasInvalidInput();
         this._toggleButtonState();
       });
     });
+    this._form.addEventListener("reset", () => {
+      setTimeout(() => {
+        this._toggleButtonState();
+      }, timeout);
+    });
+  }
+
+  /* ---------------------------- ENABLE VALIDATION --------------------------- */
+
+  enableValidation() {
+    this._form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+
+    this._setEventListeners();
   }
 }
 export default FormValidator;

@@ -33,15 +33,17 @@ class Card {
 
   _handleLikeIcon() {
     this._element;
-    evt.target.classList.toggle("card__like-button");
+    querySelector(this._handleLikeIcon);
+    classList.toggle(".card__like-button");
     // like icon active
   }
 
   _getTemplate() {
-    return document
+    const cardEl = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
+    return cardEl;
   }
 
   /* -------------------------------------------------------------------------- */
