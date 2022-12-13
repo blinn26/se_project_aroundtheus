@@ -2,7 +2,7 @@
 /*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
 /* -------------------------------------------------------------------------- */
 
-import FormValidator from "./FormValidator.js";
+/* import FormValidator from "./FormValidator.js"; */
 import Card from "./Card.js";
 
 /* -------------------------------------------------------------------------- */
@@ -250,10 +250,11 @@ previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 /*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
 /* -------------------------------------------------------------------------- */
 
-const editFormValidator = new FormValidator(config, profileEditForm);
+/* const editFormValidator = new FormValidator(config, profileEditForm);
 
 const addCardValidator = new FormValidator(config, cardAddModal);
-
-editFormValidator.enableValidation();
+ */
+/* editFormValidator.enableValidation();
 
 addCardValidator.enableValidation();
+ */
