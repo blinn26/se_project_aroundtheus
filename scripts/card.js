@@ -6,7 +6,7 @@ class Card {
   }
   _setEventListeners() {
     this._element
-      .querySelector("card__like-button")
+      .querySelector(".card__like-button_is-active")
       .addEventListener("click", this._handleLikeIcon);
 
     this._element
@@ -19,13 +19,12 @@ class Card {
   }
 
   _handleLikeIcon() {
-    this._element.querySelector;
-    evt.target.classList.toggle("card__like-button_is-active");
+    this._element;
+    evt.target.classList.toggle("card__like-button");
     // like icon active
   }
 
   _getTemplate() {
-    console.log(document.querySelector(this._cardSelector));
     return document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
