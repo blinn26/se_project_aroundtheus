@@ -1,3 +1,4 @@
+import { openModal } from "./utils.js";
 /* -------------------------------------------------------------------------- */
 /*                            CONSTRUCTOR FOR CARDS                           */
 /* -------------------------------------------------------------------------- */
@@ -34,7 +35,13 @@ class Card {
   /*                           HANDLE AND GET TEMPLATE                          */
   /* -------------------------------------------------------------------------- */
 
-  _previewModalImage = () => {};
+  _previewModalImage = () => {
+    const imageModal = document.querySelector("#preview-modal");
+    const imageModalImage = imageModal.querySelector(".modal__image");
+    imageModalImage.src = this._link;
+    console.log(imageModalImage);
+    openModal(imageModal);
+  };
 
   _handleLikeIcon = () => {
     this._element
