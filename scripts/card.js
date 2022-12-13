@@ -34,10 +34,7 @@ class Card {
   /*                           HANDLE AND GET TEMPLATE                          */
   /* -------------------------------------------------------------------------- */
 
-  _previewModalImage = () => {
-    this._element.querySelector(".card__image").classList.toggle("card__image");
-    // image active
-  };
+  _previewModalImage = () => {};
 
   _handleLikeIcon = () => {
     this._element
