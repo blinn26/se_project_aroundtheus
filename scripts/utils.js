@@ -2,10 +2,10 @@
 /*                         ESCAPE EVENT OPEN AND CLOSE                        */
 /* -------------------------------------------------------------------------- */
 export function handleEscUp(evt) {
-  if (evt.which === ESCAPE) {
+  if (evt.key === "Escape") {
     const activePopup = document.querySelector(".modal_opened");
-
     closeModal(activePopup);
+    // closeModal(activePopup);
   }
 }
 

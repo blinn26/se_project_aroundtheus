@@ -2,8 +2,9 @@
 /*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
 /* -------------------------------------------------------------------------- */
 
-/* import FormValidator from "./FormValidator.js"; */
+import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
+import { handleEscUp } from "./utils.js";
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
@@ -96,13 +97,13 @@ const profileDescriptionInput = profileEditForm.querySelector(
 /*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
 /* -------------------------------------------------------------------------- */
 
-const handleEscUp = (evt) => {
+/* const handleEscUp = (evt) => {
   if (evt.which === ESCAPE) {
     const activePopup = document.querySelector(".modal_opened");
 
     closeModal(activePopup);
   }
-};
+}; */
 
 function clickOutCloseModal(evt) {
   if (evt.target.classList.contains("modal")) {
@@ -112,15 +113,20 @@ function clickOutCloseModal(evt) {
   }
 }
 
+function escapeHandler(evt) {
+  handleEscUp(evt, closeModal);
+}
+
 const openModal = (openModal) => {
   document.addEventListener("mousedown", clickOutCloseModal);
   openModal.classList.add("modal_opened");
 
-  document.addEventListener("keyup", handleEscUp);
+  document.addEventListener("keyup", escapeHandler);
 };
+
 const closeModal = (openModal) => {
   openModal.classList.remove("modal_opened");
-  document.removeEventListener("keyup", handleEscUp);
+  document.removeEventListener("keyup", escapeHandler);
   document.removeEventListener("mousedown", clickOutCloseModal);
 };
 
