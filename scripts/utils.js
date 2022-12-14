@@ -8,7 +8,10 @@ export function handleEscUp(evt) {
     // closeModal(activePopup);
   }
 }
-
+/* 
+export const escapeHandler = (evt) => {
+  handleEscUp(evt, closeModal);
+}; */
 export const escapeHandler = (evt) => {
   evt.preventDefault();
   clickOutCloseModal(evt, closeModal);

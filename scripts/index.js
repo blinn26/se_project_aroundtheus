@@ -177,10 +177,10 @@ const closeModal = (openModal) => {
 /*   return cardEl;
 }
  */
-const handleLikeIcon = (evt) => {
+/* const handleLikeIcon = (evt) => {
   evt.target.classList.toggle("card__like-button_is-active");
   // like icon active
-};
+}; */
 
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template");
