@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                         ESCAPE EVENT OPEN AND CLOSE                        */
+/*                            ESCAPE KEY EXIT PRESS                           */
 /* -------------------------------------------------------------------------- */
 export function handleEscUp(evt) {
   if (evt.key === "Escape") {
@@ -9,8 +9,13 @@ export function handleEscUp(evt) {
   }
 }
 
+export const escapeHandler = (evt) => {
+  evt.preventDefault();
+  clickOutCloseModal(evt, closeModal);
+};
+
 /* -------------------------------------------------------------------------- */
-/*                MODAL OPEN AND CLOSE WITH KEY CLICKS AS WELL                */
+/*                   CLICK OUTSIDE OF IMAGE OR MODAL ESCAPE                   */
 /* -------------------------------------------------------------------------- */
 
 export function clickOutCloseModal(evt) {

@@ -9,7 +9,7 @@ import { handleEscUp } from "./utils.js";
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
 /* -------------------------------------------------------------------------- */
-const ESCAPE = 27;
+/* const ESCAPE= 27; */
 
 const initialCards = [
   {
@@ -41,7 +41,6 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 /*                                CONFIG STRING                               */
 /* -------------------------------------------------------------------------- */
-
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -50,7 +49,6 @@ const config = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error-hidden",
 };
-
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
@@ -134,7 +132,7 @@ const closeModal = (openModal) => {
 /*                         CREATE A CARD NAME AND LINK                        */
 /* -------------------------------------------------------------------------- */
 
-function createCard({ name, link }) {
+/* function createCard({ name, link }) {
   // clone template
   const cardEl = cardTemplate.cloneNode(true);
   // find .card__image
@@ -156,13 +154,13 @@ function createCard({ name, link }) {
   // Trash button add commands
   cardTrashButton.addEventListener("click", () => {
     cardEl.remove();
-  });
+  }); */
 
-  /* -------------------------------------------------------------------------- */
-  /*                             MODAL PREVIEW IMAGE                            */
-  /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                             MODAL PREVIEW IMAGE                            */
+/* -------------------------------------------------------------------------- */
 
-  imageEl.addEventListener("click", () => {
+/* imageEl.addEventListener("click", () => {
     const previewModalImage = previewModal.querySelector("#modal-image");
 
     previewModalImage.src = link;
@@ -170,15 +168,15 @@ function createCard({ name, link }) {
 
     previewTextModal.textContent = name;
     openModal(document.getElementById("preview-modal"));
-  });
+  }); */
 
-  /* -------------------------------------------------------------------------- */
-  /*                      CREATE CARD, RENDER CARD AND LOOP                     */
-  /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                      CREATE CARD, RENDER CARD AND LOOP                     */
+/* -------------------------------------------------------------------------- */
 
-  return cardEl;
+/*   return cardEl;
 }
-
+ */
 const handleLikeIcon = (evt) => {
   evt.target.classList.toggle("card__like-button_is-active");
   // like icon active
@@ -232,8 +230,8 @@ const handleAddCard = (evt) => {
   evt.target.reset();
   const inputEls = [...cardAddModal.querySelectorAll(".modal__input")];
 
-  toggleButtonState(inputEls, addCardSave, config);
-  console.log(toggleButtonState);
+  /*  toggleButtonState(inputEls, addCardSave, config); */
+
   closeModal(cardAddModal);
 };
 
@@ -257,11 +255,10 @@ previewCloseButton.addEventListener("click", () => closeModal(previewModal));
 /*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
 /* -------------------------------------------------------------------------- */
 
-/* const editFormValidator = new FormValidator(config, profileEditForm);
+const editFormValidator = new FormValidator(config, profileEditForm);
 
 const addCardValidator = new FormValidator(config, cardAddModal);
- */
-/* editFormValidator.enableValidation();
+
+editFormValidator.enableValidation();
 
 addCardValidator.enableValidation();
- */
