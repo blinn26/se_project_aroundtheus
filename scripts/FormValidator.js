@@ -43,26 +43,31 @@ class FormValidator {
 
   /* ------------------------------ BUTTON CLASS ------------------------------ */
 
-  toggleButtonState(inputEl) {
-    if (this._hasInvalidInput(inputEl)) {
-      this._submitButtonEl.classList.add(this._inactiveButtonClass)
-      this._submitButtonEl.disabled = true
-    } else {
+  toggleButtonState() {
+    if (this._isFormValid()) {
       this._submitButtonEl.classList.remove(this._inactiveButtonClass)
       this._submitButtonEl.disabled = false
+    } else {
+      this._submitButtonEl.classList.add(this._inactiveButtonClass)
+      this._submitButtonEl.disabled = true
     }
+  }
+
+  _isFormValid() {
+    return this._inputEls.every((inputEl) => {
+      return inputEl.validity.valid
+    })
   }
 
   /* --------------------------- SET EVENTLISTENERS --------------------------- */
 
   _setEventListeners() {
-    const inputEls = [...this._form.querySelectorAll(this._inputSelector)]
-    this._submitButtonEl = this._form.querySelectorAll(
-      this._submitButtonSelector
-    )
-    inputEls.forEach((inputEl) => {
+    this._inputEls = [...this._form.querySelectorAll(this._inputSelector)]
+    this._submitButtonEl = this._form.querySelector(this._submitButtonSelector)
+    this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener('input', (evt) => {
         this._hasInvalidInput(inputEl)
+        this.toggleButtonState()
       })
     })
   }
