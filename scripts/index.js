@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
-import { handleEscUp, openModal, closeModal } from './utils.js'
+import { openModal, closeModal } from './utils.js'
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
