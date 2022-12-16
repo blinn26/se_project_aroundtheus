@@ -4,7 +4,6 @@
 
 class FormValidator {
   constructor(settings, formEl) {
-    /* this._formSelector; */
     this._inputSelector = settings.inputSelector
     this._submitButtonSelector = settings.submitButtonSelector
     this._inactiveButtonClass = settings.inactiveButtonClass
@@ -32,8 +31,6 @@ class FormValidator {
   /* ----------------------------- CHECK VALIDATY ----------------------------- */
 
   _hasInvalidInput(inputEl) {
-    /* const inputEls = [...this._form.querySelectorAll(this._inputSelector)] */
-    /* return !inputEls.every((inputEl) => inputEl.validity.valid) */
     if (!inputEl.validity.valid) {
       this._showInputError(inputEl)
     } else {
