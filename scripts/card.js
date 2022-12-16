@@ -3,7 +3,7 @@ import { openModal } from './utils.js'
 /*                            CONSTRUCTOR FOR CARDS                           */
 /* -------------------------------------------------------------------------- */
 
-class card {
+class Card {
   constructor(data, cardSelector) {
     this._name = data.name
     this._link = data.link
@@ -74,4 +74,4 @@ class card {
     return this._element
   }
 }
-export default card
+export default Card

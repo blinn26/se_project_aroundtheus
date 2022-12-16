@@ -1,10 +1,9 @@
 /* -------------------------------------------------------------------------- */
 /*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
 /* -------------------------------------------------------------------------- */
-
 import FormValidator from './FormValidator.js'
+import Card from './Card.js'
 import { handleEscUp } from './utils.js'
-import Card from './card.js'
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
