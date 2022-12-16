@@ -48,6 +48,7 @@ const config = {
   inputErrorClass: 'modal__input_type_error',
   errorClass: 'modal__error-hidden',
 }
+
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
@@ -89,7 +90,17 @@ const profileNameInput = profileEditForm.querySelector('.modal__input-line')
 const profileDescriptionInput = profileEditForm.querySelector(
   '.modal__input-description'
 )
+/* -------------------------------------------------------------------------- */
+/*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
+/* -------------------------------------------------------------------------- */
 
+const editFormValidator = new FormValidator(config, profileEditForm)
+
+const addCardValidator = new FormValidator(config, cardAddModal)
+
+editFormValidator.enableValidation()
+
+addCardValidator.enableValidation()
 /* -------------------------------------------------------------------------- */
 /*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
 /* -------------------------------------------------------------------------- */
@@ -170,6 +181,7 @@ const handleAddCard = (evt) => {
 }
 
 cardModalOpenButton.addEventListener('click', () => {
+  addCardValidator.resetValidation()
   openModal(cardAddModal)
 })
 
@@ -184,15 +196,3 @@ addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
 cardAddModal.addEventListener('submit', handleAddCard) // ??? add card specific form handler
 const previewCloseButton = previewModal.querySelector('#preview-modal-close')
 previewCloseButton.addEventListener('click', () => closeModal(previewModal))
-
-/* -------------------------------------------------------------------------- */
-/*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
-/* -------------------------------------------------------------------------- */
-
-const editFormValidator = new FormValidator(config, profileEditForm)
-
-const addCardValidator = new FormValidator(config, cardAddModal)
-
-editFormValidator.enableValidation()
-
-addCardValidator.enableValidation()
