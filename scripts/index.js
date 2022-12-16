@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
-import { handleEscUp } from './utils.js'
+import { handleEscUp, openModal, closeModal } from './utils.js'
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
@@ -47,7 +47,6 @@ const config = {
   inputErrorClass: 'modal__input_type_error',
   errorClass: 'modal__error-hidden',
 }
-
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
@@ -55,7 +54,7 @@ const config = {
 const cardTemplate =
   document.querySelector('#card-template').content.firstElementChild
 const cardListEl = document.querySelector('.cards__list')
-/* const cardSelector = "#card-template"; */
+
 /* -------------------------------------------------------------------------- */
 /*                            ID LABELED WITH MODAL                            */
 /* -------------------------------------------------------------------------- */
@@ -100,45 +99,6 @@ const addCardValidator = new FormValidator(config, cardAddModal)
 editFormValidator.enableValidation()
 
 addCardValidator.enableValidation()
-/* -------------------------------------------------------------------------- */
-/*            ESCAPE HANDLER KEYUP AND CLICK FOR MODAL AND PREIVEW            */
-/* -------------------------------------------------------------------------- */
-
-function clickOutCloseModal(evt) {
-  if (evt.target.classList.contains('modal')) {
-    const activePopup = document.querySelector('.modal_opened')
-
-    closeModal(activePopup)
-  }
-}
-
-function escapeHandler(evt) {
-  handleEscUp(evt, closeModal)
-}
-
-const openModal = (openModal) => {
-  document.addEventListener('mousedown', clickOutCloseModal)
-  openModal.classList.add('modal_opened')
-
-  document.addEventListener('keyup', escapeHandler)
-}
-
-const closeModal = (openModal) => {
-  openModal.classList.remove('modal_opened')
-  document.removeEventListener('keyup', escapeHandler)
-  document.removeEventListener('mousedown', clickOutCloseModal)
-}
-
-/* -------------------------------------------------------------------------- */
-/*                      CREATE CARD, RENDER CARD AND LOOP                     */
-/* -------------------------------------------------------------------------- */
-
-function renderCard(cardData) {
-  const card = new Card(cardData, '#card-template')
-  cardListEl.prepend(card.getView())
-}
-
-initialCards.forEach(renderCard)
 
 /* -------------------------------------------------------------------------- */
 /*             EDIT PROFILE SETTINGS/OPEN/CLOSE/TITLE/DESCRIPTION             */
@@ -166,7 +126,7 @@ profileEditButton.addEventListener('click', () => {
 
 const handleAddCard = (evt) => {
   evt.preventDefault()
-  const name = evt.target.name.value
+  const name = evt.target.title.value
   const link = evt.target.link.value
   renderCard({
     name: name,
@@ -174,7 +134,7 @@ const handleAddCard = (evt) => {
   })
 
   evt.target.reset()
-  const inputEls = [...cardAddModal.querySelectorAll('.modal__input')]
+  /* const inputEls = [...cardAddModal.querySelectorAll('.modal__input')] */
 
   closeModal(cardAddModal)
 }
@@ -184,6 +144,16 @@ cardModalOpenButton.addEventListener('click', () => {
   openModal(cardAddModal)
 })
 
+/* -------------------------------------------------------------------------- */
+/*                      CREATE CARD, RENDER CARD AND LOOP                     */
+/* -------------------------------------------------------------------------- */
+
+function renderCard(cardData) {
+  const card = new Card(cardData, '#card-template')
+  cardListEl.prepend(card.getView())
+}
+
+initialCards.forEach(renderCard)
 /* -------------------------------------------------------------------------- */
 /*                                Close Buttons                               */
 /* -------------------------------------------------------------------------- */

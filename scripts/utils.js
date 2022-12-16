@@ -8,11 +8,11 @@ export function handleEscUp(evt) {
     // closeModal(activePopup);
   }
 }
-
+/* 
 export const escapeHandler = (evt) => {
   evt.preventDefault()
   clickOutCloseModal(evt, closeModal)
-}
+} */
 
 /* -------------------------------------------------------------------------- */
 /*                   CLICK OUTSIDE OF IMAGE OR MODAL ESCAPE                   */
