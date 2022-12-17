@@ -36,6 +36,8 @@ class Card {
     const imageModal = document.querySelector('#preview-modal')
     const imageModalImage = imageModal.querySelector('.modal__image')
     imageModalImage.src = this._link
+    const imagePreview = imageModal.querySelector('.modal__text')
+    imagePreview.textContent = this._name
 
     openModal(imageModal)
   }
