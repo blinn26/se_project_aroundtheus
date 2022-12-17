@@ -36,6 +36,7 @@ class Card {
     const imageModal = document.querySelector('#preview-modal')
     const imageModalImage = imageModal.querySelector('.modal__image')
     imageModalImage.src = this._link
+    imageModalImage.alt = this._name
     const imagePreview = imageModal.querySelector('.modal__text')
     imagePreview.textContent = this._name
 
@@ -71,6 +72,7 @@ class Card {
     this._element.querySelector('.card__image').src = this._link
     this._element.querySelector('.card__description-list').textContent =
       this._name
+    this._element.querySelector('.card__image').alt = this._name
     this._setEventListeners()
 
     return this._element

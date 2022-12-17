@@ -15,9 +15,7 @@ export function handleEscUp(evt) {
 
 export function clickOutCloseModal(evt) {
   if (evt.target.classList.contains('modal')) {
-    const activePopup = document.querySelector('.modal_opened')
-
-    closeModal(activePopup)
+    closeModal(evt.target)
   }
 }
 
