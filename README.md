@@ -8,6 +8,10 @@
 - Images
 - Github
 - JavaScript
+- Npm
+- Node.js
+- Webpack
+  
 
 **Description Functionality**
 
