@@ -4,7 +4,7 @@
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
 import { openModal, closeModal } from './utils.js'
-// import '../pages/index.css'
+import '../pages/index.css'
 
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
