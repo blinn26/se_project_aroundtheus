@@ -1,6 +1,6 @@
 {
   "files.autoSave": "onFocusChange",
-  "explorer.excludeGitIgnore": true,
+  "explorer.excludeGitIgnore": false,
   "terminal.integrated.confirmOnKill": "always",
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": false,
@@ -13,5 +13,6 @@
   "powermode.combo.location": "statusbar",
   "powermode.combo.counterEnabled": "hide",
   "powermode.combo.timeout": 0,
-  "powermode.explosions.backgroundMode": "image"
+  "powermode.explosions.backgroundMode": "image",
+  "explorer.enableDragAndDrop": true
 }
