@@ -13,6 +13,7 @@ import { openModal, closeModal } from '../scripts/utils.js'
 /*                        CREATE INSTANCE OF THE CLASS                        */
 /* -------------------------------------------------------------------------- */
 const CardSection = new Section({
+  items: initialCards,
   renderer: (item) => {
     const cardEl = new Card(item)
     CardSection.addItems(cardEl.getView())
