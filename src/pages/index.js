@@ -4,9 +4,9 @@
 import './index.css'
 
 import { initialCards, selectors } from '../scripts/constants'
-import Card from '../scripts/Card'
-import FormValidator from '../scripts/FormValidator'
-import Section from '../scripts/Section'
+import Card from '../components/Card'
+import Section from '../components/Section'
+import FormValidator from '../components/FormValidator'
 
 /* -------------------------------------------------------------------------- */
 /*                        CREATE INSTANCE OF THE CLASS                        */
@@ -24,6 +24,7 @@ const CardSection = new Section(
 /*                         INTIALIZE ALL MY INSTANCES                         */
 /* -------------------------------------------------------------------------- */
 CardSection.renderItems(initialCards)
+console.log('test')
 /* -------------------------------------------------------------------------- */
 /*                                ALL THE REST                                */
 /* -------------------------------------------------------------------------- */
