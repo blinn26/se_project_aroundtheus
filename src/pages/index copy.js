@@ -1,8 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
 /* -------------------------------------------------------------------------- */
-import FormValidator from '../scripts/FormValidator.js'
-import Card from '../scripts/Card.js'
+import FormValidator from '../components/FormValidator.js'
+import Card from '../components/Card.js'
 import { openModal, closeModal } from '../scripts/utils.js'
 import '../pages/index.css'
 
