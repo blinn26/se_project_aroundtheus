@@ -1,4 +1,4 @@
-export default class Section {
+class Section {
   constructor({ renderer, selector }) {
     this._renderer = renderer
     this._element = document.querySelector(selector)
@@ -8,3 +8,5 @@ export default class Section {
   }
   addItems(item) {}
 }
+
+export default Section
