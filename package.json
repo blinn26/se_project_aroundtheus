@@ -2,7 +2,7 @@
   "name": "practicum",
   "version": "0.0.1",
   "description": "Project 8",
-  "main": "index copy.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"

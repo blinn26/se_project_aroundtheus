@@ -166,3 +166,16 @@ addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
 cardAddModal.addEventListener('submit', handleAddCard)
 const previewCloseButton = previewModal.querySelector('#preview-modal-close')
 previewCloseButton.addEventListener('click', () => closeModal(previewModal))
+
+/* const CardSection = new Section(
+  {
+    renderer: (item) => {
+      const cardEl = new Card(item, selectors.cardTemplate)
+      CardSection.addItem(cardEl.getView())
+    },
+  },
+  selectors.cardSection */
+/* )
+
+CardSection.renderItems(initialCards)
+console.log('test') */
