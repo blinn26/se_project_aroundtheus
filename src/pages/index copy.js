@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 import FormValidator from '../components/FormValidator.js'
 import Card from '../components/Card.js'
-import { openModal, closeModal } from '../scripts/utils.js'
+import { openModal, closeModal } from '../utils/utils.js'
 import '../pages/index.css'
 
 /* -------------------------------------------------------------------------- */

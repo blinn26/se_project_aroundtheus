@@ -1,4 +1,4 @@
-import { openModal } from '../scripts/utils.js'
+import { openModal } from '../utils/utils.js'
 /* -------------------------------------------------------------------------- */
 /*                            CONSTRUCTOR FOR CARDS                           */
 /* -------------------------------------------------------------------------- */
