@@ -1,4 +1,4 @@
-import { ESC_KEYCODE } from '../utils/constants.js'
+import { _handleEscUp } from '../utils/constants.js'
 class popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector)

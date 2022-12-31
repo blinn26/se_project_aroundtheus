@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                            ESCAPE KEY EXIT PRESS                           */
 /* -------------------------------------------------------------------------- */
-export function handleEscUp(evt) {
+export function _handleEscUp(evt) {
   if (evt.key === 'Escape') {
     const activePopup = document.querySelector('.modal_opened')
     closeModal(activePopup)
@@ -23,10 +23,10 @@ export function openModal(openModal) {
   document.addEventListener('mousedown', clickOutCloseModal)
   openModal.classList.add('modal_opened')
 
-  document.addEventListener('keyup', handleEscUp)
+  document.addEventListener('keyup', _handleEscUp)
 }
 export function closeModal(openModal) {
   openModal.classList.remove('modal_opened')
-  document.removeEventListener('keyup', handleEscUp)
+  document.removeEventListener('keyup', _handleEscUp)
   document.removeEventListener('mousedown', clickOutCloseModal)
 }
