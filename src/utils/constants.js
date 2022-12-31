@@ -25,6 +25,15 @@ export const initialCards = [
   },
 ]
 
+const config = {
+  formSelector: '.modal__form',
+  inputSelector: '.modal__input',
+  submitButtonSelector: '.modal__save-button',
+  inactiveButtonClass: 'modal__button-disabled',
+  inputErrorClass: 'modal__input_type_error',
+  errorClass: 'modal__error-hidden',
+}
+
 export const selectors = {
   cardSection: 'cards__list',
   cardTemplate: 'card-template',

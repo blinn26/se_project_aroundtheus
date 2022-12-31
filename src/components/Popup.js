@@ -8,7 +8,7 @@ class popup {
   _handleEscUp(evt) {
     evt.preventDefault()
 
-    if (evt.which === ESC_KEYCODE) {
+    if (evt.which === 'Escape') {
       this.close()
     }
   }
@@ -16,8 +16,8 @@ class popup {
   setEventListeners() {
     this._popupElement.addEventListener('click', (evt) => {
       if (
-        evt.target.classList.contains('popup') ||
-        evt.target.classList.contains('close-popup')
+        evt.target.classList.contains('modal') ||
+        evt.target.classList.contains('closeModal')
       ) {
         this.close()
       }
@@ -30,7 +30,7 @@ class popup {
   }
 
   close() {
-    this._popupElement.classList.remove('popup_is-opened')
+    this._popupElement.classList.remove('modal_opened')
     document.removeEventListener('keyup', this._handleEscUp)
   }
 }
