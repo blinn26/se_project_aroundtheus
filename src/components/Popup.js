@@ -23,4 +23,16 @@ class popup {
       }
     })
   }
+
+  open() {
+    this._popupElement.classList.add('modal_opened')
+    this._popupElement.addEventListener('keydown', this._handleEscUp)
+  }
+
+  close() {
+    this._popupElement.classList.remove('popup_is-opened')
+    document.removeEventListener('keyup', this._handleEscUp)
+  }
 }
+
+export default popup
