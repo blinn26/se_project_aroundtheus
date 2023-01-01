@@ -5,17 +5,16 @@ export default class UserInfo {
       profileDescriptionSelector
     )
   }
-}
-setProfileInfo(Name, description)
-{
-  this._profileNameElement.textContent = Name
-  this._profileDescriptionElement.textContent = description
-}
 
-getProfileInfo()
-{
-  return {
-    profileName: this._profileNameElement.textContent,
-    profileDescription: this._profileDescriptionElement.textContent,
+  setProfileInfo(name, description) {
+    this._profileNameElement.textContent = name
+    this._profileDescriptionElement.textContent = description
+  }
+
+  getProfileInfo() {
+    return {
+      name: this._profileNameElement.textContent,
+      description: this._profileDescriptionElement.textContent,
+    }
   }
 }

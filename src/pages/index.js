@@ -1,16 +1,19 @@
 /* -------------------------------------------------------------------------- */
 /*             IMPORTING FORMVALIDATOR AND CARDS TO SCRIPTS FOR JS            */
 /* -------------------------------------------------------------------------- */
-import FormValidator from '../components/FormValidator.js'
-import Card from '../components/Card.js'
-import { openModal, closeModal } from '../utils/utils.js'
 import '../pages/index.css'
-
+import FormValidator from '../components/FormValidator.js'
+import { openModal, closeModal } from '../utils/utils.js'
+import UserInfo from '../components/UserInfo.js'
+import { initialCards, config, selectors } from '../utils/constants'
+import Popup from '../components/Popup.js'
+import Card from '../components/Card.js'
+import Section from '../components/Section.js'
 /* -------------------------------------------------------------------------- */
 /*                             INTIAL CARDS ARRAY                             */
 /* -------------------------------------------------------------------------- */
 
-const initialCards = [
+/* const initialCards = [
   {
     name: 'Yosemite Valley',
     link: 'https://code.s3.yandex.net/web-code/yosemite.jpg',
@@ -35,19 +38,19 @@ const initialCards = [
     name: 'Lago di Braies',
     link: 'https://code.s3.yandex.net/web-code/lago.jpg',
   },
-]
+] */
 
 /* -------------------------------------------------------------------------- */
 /*                                CONFIG STRING                               */
 /* -------------------------------------------------------------------------- */
-const config = {
+/* const config = {
   formSelector: '.modal__form',
   inputSelector: '.modal__input',
   submitButtonSelector: '.modal__save-button',
   inactiveButtonClass: 'modal__button-disabled',
   inputErrorClass: 'modal__input_type_error',
   errorClass: 'modal__error-hidden',
-}
+} */
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
