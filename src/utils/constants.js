@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                            INTIAL CARDS DISPLAY                            */
+/* -------------------------------------------------------------------------- */
+
 export const initialCards = [
   {
     name: 'Yosemite Valley',
@@ -25,7 +29,11 @@ export const initialCards = [
   },
 ]
 
-const config = {
+/* -------------------------------------------------------------------------- */
+/*           EXPORTING SELECTORS, BUTTONS, CLASSES, CARDS AND FORMS           */
+/* -------------------------------------------------------------------------- */
+
+export const config = {
   formSelector: '.modal__form',
   inputSelector: '.modal__input',
   submitButtonSelector: '.modal__save-button',

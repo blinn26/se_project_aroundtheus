@@ -1,6 +1,21 @@
 export default class UserInfo {
-    constructor()
-    // constructor user name description element
+  constructor(profileNameSelector, profileDescriptionSelector) {
+    this._profileNameElement = document.querySelector(profileNameSelector)
+    this._profileDescriptionElement = document.querySelector(
+      profileDescriptionSelector
+    )
+  }
+}
+setProfileInfo(Name, description)
+{
+  this._profileNameElement.textContent = Name
+  this._profileDescriptionElement.textContent = description
+}
 
-    // user get user info and set user info
+getProfileInfo()
+{
+  return {
+    profileName: this._profileNameElement.textContent,
+    profileDescription: this._profileDescriptionElement.textContent,
+  }
 }
