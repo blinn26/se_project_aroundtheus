@@ -9,6 +9,7 @@ import { initialCards, config, selectors } from '../utils/constants'
 import Popup from '../components/Popup.js'
 import Card from '../components/Card.js'
 import Section from '../components/Section.js'
+import PopupWithForm from '../components/PopupWithForm'
 
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
@@ -63,20 +64,21 @@ editFormValidator.enableValidation()
 
 addCardValidator.enableValidation()
 
+const addCardPopup = new PopupWithForm({
+  popupSelector: '#add-modal',
+  handleFormSubmit: (evt) => {
+    evt.preventDefault()
+
+    profileTitle.textContent = profileNameInput.value
+    profileDescription.textContent = profileDescriptionInput.value
+
+    closeModal(profileEditModal)
+  },
+})
+
 /* -------------------------------------------------------------------------- */
 /*             EDIT PROFILE SETTINGS/OPEN/CLOSE/TITLE/DESCRIPTION             */
 /* -------------------------------------------------------------------------- */
-
-function handleProfileFormSubmit(event) {
-  event.preventDefault()
-
-  profileTitle.textContent = profileNameInput.value
-  profileDescription.textContent = profileDescriptionInput.value
-
-  closeModal(profileEditModal)
-}
-
-profileEditForm.addEventListener('submit', handleProfileFormSubmit)
 profileEditButton.addEventListener('click', () => {
   profileNameInput.value = profileTitle.textContent
   profileDescriptionInput.value = profileDescription.textContent
