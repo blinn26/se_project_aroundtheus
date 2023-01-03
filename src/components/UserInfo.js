@@ -6,9 +6,9 @@ export default class UserInfo {
     )
   }
 
-  setProfileInfo(name, description) {
+  setProfileInfo(name, about) {
     this._profileNameElement.textContent = name
-    this._profileDescriptionElement.textContent = description
+    this._profileDescriptionElement.textContent = about
   }
 
   getProfileInfo() {
