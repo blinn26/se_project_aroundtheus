@@ -5,11 +5,11 @@ import '../pages/index.css'
 import FormValidator from '../components/FormValidator.js'
 import { openModal, closeModal } from '../utils/utils.js'
 import UserInfo from '../components/UserInfo.js'
-import { initialCards, config, selectors } from '../utils/constants'
+import { initialCards, config, selectors } from '../utils/constants.js'
 import Popup from '../components/Popup.js'
 import Card from '../components/Card.js'
 import Section from '../components/Section.js'
-import PopupWithForm from '../components/PopupWithForm'
+import PopupWithForm from '../components/PopupWithForm.js'
 
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
@@ -67,14 +67,9 @@ addCardValidator.enableValidation()
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
-    console.log(data)
+    renderCard(data)
+    addCardPopup.close()
   },
-  /* handleProfileFormSubmit: (data) => {
-    profileTitle.textContent = data.name
-    profileDescription.textContent = data.about
-
-    closeModal(profileEditModal)
-  }, */
 })
 
 addCardPopup.setEventListeners()
