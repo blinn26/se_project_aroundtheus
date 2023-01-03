@@ -66,12 +66,15 @@ addCardValidator.enableValidation()
 
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
-  handleProfileFormSubmit: (data) => {
+  handleFormSubmit: (data) => {
+    console.log(data)
+  },
+  /* handleProfileFormSubmit: (data) => {
     profileTitle.textContent = data.name
     profileDescription.textContent = data.about
 
     closeModal(profileEditModal)
-  },
+  }, */
 })
 
 addCardPopup.setEventListeners()
@@ -103,7 +106,8 @@ const handleAddCard = (evt) => {
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation()
-  openModal(cardAddModal)
+  /* openModal(cardAddModal) */
+  addCardPopup.open()
 })
 
 /* -------------------------------------------------------------------------- */
