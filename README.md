@@ -10,7 +10,13 @@
 - JavaScript
 - Npm
 - Node.js
+- Babel
+- JSON
 - Webpack
+- Components
+- UserInfo
+- Popups
+- Utils
   
 
 **Description Functionality**
