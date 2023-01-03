@@ -66,19 +66,16 @@ addCardValidator.enableValidation()
 
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
-  handleFormSubmit: (evt) => {
-    evt.preventDefault()
-
-    profileTitle.textContent = profileNameInput.value
-    profileDescription.textContent = profileDescriptionInput.value
+  handleProfileFormSubmit: (data) => {
+    profileTitle.textContent = data.name
+    profileDescription.textContent = data.about
 
     closeModal(profileEditModal)
   },
 })
 
-/* -------------------------------------------------------------------------- */
-/*             EDIT PROFILE SETTINGS/OPEN/CLOSE/TITLE/DESCRIPTION             */
-/* -------------------------------------------------------------------------- */
+addCardPopup.setEventListeners()
+
 profileEditButton.addEventListener('click', () => {
   profileNameInput.value = profileTitle.textContent
   profileDescriptionInput.value = profileDescription.textContent
@@ -122,9 +119,9 @@ initialCards.forEach(renderCard)
 /* -------------------------------------------------------------------------- */
 /*                                Close Buttons                               */
 /* -------------------------------------------------------------------------- */
-profileModalCloseButton.addEventListener('click', () =>
+profileModalCloseButton.addEventListener('click', () => {
   closeModal(profileEditModal)
-)
+})
 
 addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
 cardAddModal.addEventListener('submit', handleAddCard)

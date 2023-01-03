@@ -8,8 +8,17 @@ class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit
   }
   _getInputValues() {}
-  setEventListeners() {}
+  setEventListeners() {
+    this._modalForm.addEventListener('submit', (evt) => {
+      evt.preventDefault()
+      this._handformSubmit(this._getInputValues())
 
+      {
+        name: 'Ben'
+        about: 'Softwear Dev'
+      }
+    })
+  }
   close() {
     this_modalForm.reset()
 
