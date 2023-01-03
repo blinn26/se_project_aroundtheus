@@ -53,6 +53,15 @@ const profileDescriptionInput = profileEditForm.querySelector(
   '.modal__input-description'
 )
 /* -------------------------------------------------------------------------- */
+/*                                 REFACTERING                                */
+/* -------------------------------------------------------------------------- */
+
+const userInfo = new UserInfo({
+  profileNameSelector: config.profileNameSelector,
+  profileDescriptionSelector: config.profileDescriptionSelector,
+})
+
+/* -------------------------------------------------------------------------- */
 /*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
 /* -------------------------------------------------------------------------- */
 
@@ -79,7 +88,14 @@ profileEditButton.addEventListener('click', () => {
   profileDescriptionInput.value = profileDescription.textContent
   openModal(profileEditModal)
 })
+const userInfoPopup = new PopupWithForm({
+  popupSelector: '#edit-modal',
 
+  handleFormSubmit: (data) => {
+    console.log(data)
+    userInfo.setProfileInfo(data.name, data.description)
+  },
+})
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */
