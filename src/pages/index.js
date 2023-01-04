@@ -88,6 +88,28 @@ const userInfoPopup = new PopupWithForm({
   },
 })
 userInfoPopup.setEventListeners()
+
+function createCard(item) {
+  const card = new Card(
+    {
+      data: item,
+      handleFormSubmit: '.modal__image',
+    },
+    selectors.cardTemplate
+  )
+  return card.getView()
+}
+
+const cardSection = new Section(
+  {
+    items: initialCards,
+    renderer: (data) => {
+      const card = createCard(data)
+      cardSection.additems(card)
+    },
+  },
+  selectors.cardSection
+)
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */
