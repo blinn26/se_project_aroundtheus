@@ -96,6 +96,7 @@ const userInfoPopup = new PopupWithForm({
     userInfo.setProfileInfo(data.name, data.description)
   },
 })
+userInfoPopup.setEventListeners()
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */

@@ -40,6 +40,8 @@ export const config = {
   inactiveButtonClass: 'modal__button-disabled',
   inputErrorClass: 'modal__input_type_error',
   errorClass: 'modal__error-hidden',
+  profileNameSelector: '.profile__title',
+  profileDescriptionSelector: '.profile__description',
 }
 
 export const selectors = {
