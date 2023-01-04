@@ -20,26 +20,18 @@ const cardTemplate =
 const cardListEl = document.querySelector('.cards__list')
 
 /* -------------------------------------------------------------------------- */
-/*                            ID LABELED WITH MODAL                            */
+/*           PROFILE BUTTONS PROFILE FORMS MODAL BUTTONS MODAL FORMS          */
 /* -------------------------------------------------------------------------- */
 
 const profileEditModal = document.querySelector('#edit-modal')
 const cardAddModal = document.querySelector('#add-modal')
-/* -------------------------------------------------------------------------- */
-/*                          PROFILE AND MODAL BUTTONS                         */
-/* -------------------------------------------------------------------------- */
-
 const profileEditButton = document.querySelector('.profile__edit-button')
 const cardModalOpenButton = document.querySelector('.profile__add-button')
 const profileModalCloseButton = profileEditModal.querySelector(
   '.modal__close-button'
 )
-
 const addModalCloseButton = cardAddModal.querySelector('.modal__close-button')
 const addCardSave = cardAddModal.querySelector(config.submitButtonSelector)
-/* -------------------------------------------------------------------------- */
-/*                           MODAL AND PROFILE FORMS                          */
-/* -------------------------------------------------------------------------- */
 const profileModal = document.querySelector('.modal')
 const profileEditForm = profileModal.querySelector('.modal__form')
 const modalTitleForm = profileModal.querySelector('#modal__form-title')
@@ -53,7 +45,7 @@ const profileDescriptionInput = profileEditForm.querySelector(
   '.modal__input-description'
 )
 /* -------------------------------------------------------------------------- */
-/*                                 REFACTERING                                */
+/*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
 /* -------------------------------------------------------------------------- */
 
 const userInfo = new UserInfo({
@@ -92,7 +84,6 @@ const userInfoPopup = new PopupWithForm({
   popupSelector: '#edit-modal',
 
   handleFormSubmit: (data) => {
-    console.log(data)
     userInfo.setProfileInfo(data.name, data.description)
   },
 })
@@ -111,7 +102,6 @@ const handleAddCard = (evt) => {
   })
 
   evt.target.reset()
-  /* const inputEls = [...cardAddModal.querySelectorAll('.modal__input')] */
 
   closeModal(cardAddModal)
 }
