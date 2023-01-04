@@ -65,6 +65,10 @@ editFormValidator.enableValidation()
 
 addCardValidator.enableValidation()
 
+/* -------------------------------------------------------------------------- */
+/*                       BOTH POPUP MODALS AND PREVIEWS                       */
+/* -------------------------------------------------------------------------- */
+
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
