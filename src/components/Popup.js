@@ -1,5 +1,5 @@
 import { _handleEscUp } from '../utils/constants.js'
-class popup {
+class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector)
     this._handleEscUp = this._handleEscUp.bind(this)
@@ -35,4 +35,4 @@ class popup {
   }
 }
 
-export default popup
+export default Popup
