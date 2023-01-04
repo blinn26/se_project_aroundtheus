@@ -46,5 +46,6 @@ export const config = {
 
 export const selectors = {
   cardSection: 'cards__list',
-  cardTemplate: 'card-template',
+  cardTemplate: '#card-template',
+  cardModalAdd: 'add__modal',
 }

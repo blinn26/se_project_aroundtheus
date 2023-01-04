@@ -6,7 +6,6 @@ import FormValidator from '../components/FormValidator.js'
 import { openModal, closeModal } from '../utils/utils.js'
 import UserInfo from '../components/UserInfo.js'
 import { initialCards, config, selectors } from '../utils/constants.js'
-import Popup from '../components/Popup.js'
 import Card from '../components/Card.js'
 import Section from '../components/Section.js'
 import PopupWithForm from '../components/PopupWithForm.js'
@@ -72,18 +71,18 @@ addCardValidator.enableValidation()
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
-    renderCard(data)
+    console.log('this is the new card popup', data)
+    //create card using the data
+    //cardSection.addItem(card)
+    const card = createCard(data)
+    cardSection.addItem(card)
     addCardPopup.close()
+    console.log('help')
   },
 })
 
 addCardPopup.setEventListeners()
 
-profileEditButton.addEventListener('click', () => {
-  profileNameInput.value = profileTitle.textContent
-  profileDescriptionInput.value = profileDescription.textContent
-  openModal(profileEditModal)
-})
 const userInfoPopup = new PopupWithForm({
   popupSelector: '#edit-modal',
 
@@ -93,11 +92,17 @@ const userInfoPopup = new PopupWithForm({
 })
 userInfoPopup.setEventListeners()
 
+profileEditButton.addEventListener('click', () => {
+  profileNameInput.value = profileTitle.textContent
+  profileDescriptionInput.value = profileDescription.textContent
+  openModal(profileEditModal)
+})
+
 function createCard(item) {
   const card = new Card(
     {
       data: item,
-      handleFormSubmit: '.modal__image',
+      // handleFormSubmit: '.modal__image',
     },
     selectors.cardTemplate
   )
@@ -109,11 +114,13 @@ const cardSection = new Section(
     items: initialCards,
     renderer: (data) => {
       const card = createCard(data)
-      cardSection.additems(card)
+      console.log(card)
+      cardSection.addItem(card)
     },
   },
   selectors.cardSection
 )
+cardSection.renderItems() //This is what renders the cards
 /* -------------------------------------------------------------------------- */
 /*                               ADD CUSTOM CARD                              */
 /* -------------------------------------------------------------------------- */
@@ -134,20 +141,20 @@ const handleAddCard = (evt) => {
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation()
-  /* openModal(cardAddModal) */
+  console.log('herrloow')
   addCardPopup.open()
 })
 
 /* -------------------------------------------------------------------------- */
-/*                      CREATE CARD, RENDER CARD AND LOOP                     */
+/*                      DO NOT UNCOMMENT                     */
 /* -------------------------------------------------------------------------- */
 
-function renderCard(cardData) {
-  const card = new Card(cardData, '#card-template')
-  cardListEl.prepend(card.getView())
-}
+// function renderCard(cardData) {
+//   const card = new Card(cardData, '#card-template')
+//   cardListEl.prepend(card.getView())
+// }
 
-initialCards.forEach(renderCard)
+// initialCards.forEach(renderCard)
 /* -------------------------------------------------------------------------- */
 /*                                Close Buttons                               */
 /* -------------------------------------------------------------------------- */

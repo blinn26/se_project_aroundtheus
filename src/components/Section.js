@@ -1,10 +1,11 @@
 class Section {
-  constructor({ renderer }, containerSelector) {
+  constructor({ items, renderer }, containerSelector) {
     this._renderer = renderer
+    this._items = items
     this._container = document.querySelector(`.${containerSelector}`)
   }
-  renderItems(items) {
-    items.forEach((item) => {
+  renderItems() {
+    this._items.forEach((item) => {
       this._renderer(item)
     })
     // use this._renderer to create the elements for rendering

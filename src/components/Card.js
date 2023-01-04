@@ -4,7 +4,8 @@ import { openModal } from '../utils/utils.js'
 /* -------------------------------------------------------------------------- */
 
 class Card {
-  constructor(data, cardSelector) {
+  constructor({ data }, cardSelector) {
+    console.log(data)
     this._name = data.name
     this._link = data.link
     this._cardSelector = cardSelector
