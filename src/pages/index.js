@@ -95,6 +95,10 @@ profileEditButton.addEventListener('click', () => {
   openModal(profileEditModal)
 })
 
+/* -------------------------------------------------------------------------- */
+/*                            CREATE CARD FUNCTION                            */
+/* -------------------------------------------------------------------------- */
+
 function createCard(item) {
   const card = new Card(
     {
@@ -117,6 +121,10 @@ const cardSection = new Section(
   selectors.cardSection
 )
 cardSection.renderItems() //This is what renders the cards
+
+/* -------------------------------------------------------------------------- */
+/*        CARD MODAL TITLE AND LINK AND PROFILE OPEN AND CLOSE BUTTONS        */
+/* -------------------------------------------------------------------------- */
 
 const handleAddCard = (evt) => {
   evt.preventDefault()
@@ -141,6 +149,7 @@ addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
 cardAddModal.addEventListener('submit', handleAddCard)
 const previewCloseButton = previewModal.querySelector('#preview-modal-close')
 previewCloseButton.addEventListener('click', () => closeModal(previewModal))
+
 /* -------------------------------------------------------------------------- */
 /*                      DO NOT UNCOMMENT                                      */
 /* -------------------------------------------------------------------------- */

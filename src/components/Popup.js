@@ -5,7 +5,15 @@ class Popup {
     this._handleEscUp = this._handleEscUp.bind(this)
   }
 
-  _handleEscUp(evt) {}
+  _handleEscUp(evt) {
+    if (evt.key === 'Escape') {
+      this.close()
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*              EVENT LISTENERS FOR OPEN AND CLOSE CLICK AND ESC              */
+  /* -------------------------------------------------------------------------- */
 
   setEventListeners() {
     this._popupElement.addEventListener('click', (evt) => {
