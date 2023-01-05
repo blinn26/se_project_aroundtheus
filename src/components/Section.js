@@ -11,7 +11,7 @@ class Section {
     // use this._renderer to create the elements for rendering
   }
   addItem(element) {
-    this._container.append(element)
+    this._container.prepend(element)
   }
 }
 

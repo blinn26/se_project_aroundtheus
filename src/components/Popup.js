@@ -6,7 +6,7 @@ class Popup {
   }
 
   _handleEscUp(evt) {
-    evt.preventDefault()
+    /*  evt.preventDefault() */
 
     if (evt.which === 'Escape') {
       this.close()
