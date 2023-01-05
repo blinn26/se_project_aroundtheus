@@ -74,7 +74,6 @@ const addCardPopup = new PopupWithForm({
     const card = createCard(data)
     cardSection.addItem(card)
     addCardPopup.close()
-    console.log('help')
   },
 })
 
