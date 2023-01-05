@@ -5,7 +5,6 @@ export function _handleEscUp(evt) {
   if (evt.key === 'Escape') {
     const activePopup = document.querySelector('.modal_opened')
     closeModal(activePopup)
-    // closeModal(activePopup);
   }
 }
 

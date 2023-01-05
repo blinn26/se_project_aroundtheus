@@ -8,7 +8,6 @@ class Section {
     this._items.forEach((item) => {
       this._renderer(item)
     })
-    // use this._renderer to create the elements for rendering
   }
   addItem(element) {
     this._container.prepend(element)

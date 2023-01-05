@@ -71,9 +71,6 @@ addCardValidator.enableValidation()
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
-    console.log('this is the new card popup', data)
-    //create card using the data
-    //cardSection.addItem(card)
     const card = createCard(data)
     cardSection.addItem(card)
     addCardPopup.close()
@@ -102,7 +99,6 @@ function createCard(item) {
   const card = new Card(
     {
       data: item,
-      // handleFormSubmit: '.modal__image',
     },
     selectors.cardTemplate
   )
@@ -121,18 +117,12 @@ const cardSection = new Section(
   selectors.cardSection
 )
 cardSection.renderItems() //This is what renders the cards
-/* -------------------------------------------------------------------------- */
-/*                               ADD CUSTOM CARD                              */
-/* -------------------------------------------------------------------------- */
 
 const handleAddCard = (evt) => {
   evt.preventDefault()
   const name = evt.target.title.value
   const link = evt.target.link.value
-  renderCard({
-    name: name,
-    link: link,
-  })
+
   evt.target.reset()
 
   closeModal(cardAddModal)

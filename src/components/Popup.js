@@ -5,15 +5,7 @@ class Popup {
     this._handleEscUp = this._handleEscUp.bind(this)
   }
 
-  _handleEscUp(evt) {
-    /*  evt.preventDefault() */
-    /*
-    if (evt.which === 'Escape') {
-      console.log(131213123123123)
-      this.close()
-    }
-    */
-  }
+  _handleEscUp(evt) {}
 
   setEventListeners() {
     this._popupElement.addEventListener('click', (evt) => {
