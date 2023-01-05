@@ -133,7 +133,6 @@ const handleAddCard = (evt) => {
     name: name,
     link: link,
   })
-
   evt.target.reset()
 
   closeModal(cardAddModal)
@@ -141,7 +140,7 @@ const handleAddCard = (evt) => {
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation()
-  console.log('herrloow')
+  openModal(cardAddModal)
   addCardPopup.open()
 })
 
