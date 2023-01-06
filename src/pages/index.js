@@ -145,6 +145,6 @@ profileModalCloseButton.addEventListener('click', () => {
 })
 
 addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
-cardAddModal.addEventListener('submit', handleAddCard)
+/* cardAddModal.addEventListener('submit', handleAddCard) */
 const previewCloseButton = previewModal.querySelector('#preview-modal-close')
 previewCloseButton.addEventListener('click', () => closeModal(previewModal))
