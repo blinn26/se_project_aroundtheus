@@ -1,4 +1,3 @@
-import { _handleEscUp } from '../utils/constants.js'
 class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector)
@@ -16,7 +15,7 @@ class Popup {
   /* -------------------------------------------------------------------------- */
 
   setEventListeners() {
-    this._popupElement.addEventListener('click', (evt) => {
+    this._popupElement.addEventListener('mousedown', (evt) => {
       if (
         evt.target.classList.contains('modal') ||
         evt.target.classList.contains('closeModal')
@@ -28,7 +27,7 @@ class Popup {
 
   open() {
     this._popupElement.classList.add('modal_opened')
-    this._popupElement.addEventListener('keydown', this._handleEscUp)
+    document.addEventListener('keyup', this._handleEscUp)
   }
 
   close() {
