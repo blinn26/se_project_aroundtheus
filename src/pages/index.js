@@ -89,8 +89,9 @@ const userInfoPopup = new PopupWithForm({
 userInfoPopup.setEventListeners()
 
 profileEditButton.addEventListener('click', () => {
-  profileNameInput.value = profileTitle.textContent
-  profileDescriptionInput.value = profileDescription.textContent
+  // userInfo.getProfileInfo()
+  profileNameInput.value = userInfo.getProfileInfo().name
+  profileDescriptionInput.value = userInfo.getProfileInfo().description
   openModal(profileEditModal)
 })
 
