@@ -131,8 +131,6 @@ const handleAddCard = (evt) => {
   const name = evt.target.title.value
   const link = evt.target.link.value
 
-  /* evt.target.reset() */
-
   closeModal(cardAddModal)
 }
 
