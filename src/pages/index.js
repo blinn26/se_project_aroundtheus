@@ -69,7 +69,7 @@ addCardValidator.enableValidation()
 /* -------------------------------------------------------------------------- */
 
 const addPopupWithImage = new PopupWithImage('#preview-modal')
-
+addPopupWithImage.setEventListeners()
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
