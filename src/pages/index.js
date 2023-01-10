@@ -91,8 +91,9 @@ const userInfoPopup = new PopupWithForm({
 userInfoPopup.setEventListeners()
 
 profileEditButton.addEventListener('click', () => {
-  profileNameInput.value = userInfo.getProfileInfo().name
-  profileDescriptionInput.value = userInfo.getProfileInfo().description
+  const profileInfo = userInfo.getProfileInfo()
+  profileNameInput.value = profileInfo.name
+  profileDescriptionInput.value = profileInfo.description
 
   userInfoPopup.open()
 })
