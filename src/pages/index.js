@@ -3,7 +3,6 @@
 /* -------------------------------------------------------------------------- */
 import '../pages/index.css'
 import FormValidator from '../components/FormValidator.js'
-/* import { openModal, closeModal } from '../utils/utils.js' */
 import UserInfo from '../components/UserInfo.js'
 import { initialCards, config, selectors } from '../utils/constants.js'
 import Card from '../components/Card.js'
@@ -92,10 +91,9 @@ const userInfoPopup = new PopupWithForm({
 userInfoPopup.setEventListeners()
 
 profileEditButton.addEventListener('click', () => {
-  // userInfo.getProfileInfo()
   profileNameInput.value = userInfo.getProfileInfo().name
   profileDescriptionInput.value = userInfo.getProfileInfo().description
-  /* openModal(profileEditModal) */
+
   userInfoPopup.open()
 })
 
@@ -143,15 +141,6 @@ const handleAddCard = (evt) => {
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation()
-  /*   openModal(cardAddModal) */
+
   addCardPopup.open()
 })
-/* profileModalCloseButton.addEventListener('click', () => {
-  closeModal(profileEditModal)
-}) */
-
-/* addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal)) */
-/* cardAddModal.addEventListener('submit', handleAddCard) */
-/* const previewCloseButton = previewModal.querySelector('#preview-modal-close')
-previewCloseButton.addEventListener('click', () => closeModal(previewModal))
- */
