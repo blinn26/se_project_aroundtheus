@@ -1,13 +1,13 @@
-import { openModal } from '../utils/utils.js'
 /* -------------------------------------------------------------------------- */
 /*                            CONSTRUCTOR FOR CARDS                           */
 /* -------------------------------------------------------------------------- */
 
 class Card {
-  constructor({ data }, cardSelector) {
+  constructor({ data, handCardClick }, cardSelector) {
     this._name = data.name
     this._link = data.link
     this._cardSelector = cardSelector
+    this._handleCardClick = handCardClick
   }
 
   /* -------------------------------------------------------------------------- */
@@ -21,7 +21,12 @@ class Card {
 
     this._element
       .querySelector('.card__image')
-      .addEventListener('click', this._previewModalImage)
+      .addEventListener('click', () => {
+        this._handleCardClick({
+          name: this._name,
+          link: this._link,
+        })
+      })
 
     this._element
       .querySelector('.card__trash-button')
@@ -32,7 +37,7 @@ class Card {
   /*                           HANDLE AND GET TEMPLATE                          */
   /* -------------------------------------------------------------------------- */
 
-  _previewModalImage = () => {
+  /*   _previewModalImage = () => {
     const imageModal = document.querySelector('#preview-modal')
     const imageModalImage = imageModal.querySelector('.modal__image')
     imageModalImage.src = this._link
@@ -41,7 +46,7 @@ class Card {
     imagePreview.textContent = this._name
 
     openModal(imageModal)
-  }
+  } */
 
   _handleLikeIcon = () => {
     this._element

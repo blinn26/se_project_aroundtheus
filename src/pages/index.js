@@ -3,12 +3,13 @@
 /* -------------------------------------------------------------------------- */
 import '../pages/index.css'
 import FormValidator from '../components/FormValidator.js'
-import { openModal, closeModal } from '../utils/utils.js'
+/* import { openModal, closeModal } from '../utils/utils.js' */
 import UserInfo from '../components/UserInfo.js'
 import { initialCards, config, selectors } from '../utils/constants.js'
 import Card from '../components/Card.js'
 import Section from '../components/Section.js'
 import PopupWithForm from '../components/PopupWithForm.js'
+import PopupWithImage from '../components/PopupWithImage.js'
 
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
@@ -68,6 +69,8 @@ addCardValidator.enableValidation()
 /*                       BOTH POPUP MODALS AND PREVIEWS                       */
 /* -------------------------------------------------------------------------- */
 
+const addPopupWithImage = new PopupWithImage('#preview-modal')
+
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
   handleFormSubmit: (data) => {
@@ -92,7 +95,8 @@ profileEditButton.addEventListener('click', () => {
   // userInfo.getProfileInfo()
   profileNameInput.value = userInfo.getProfileInfo().name
   profileDescriptionInput.value = userInfo.getProfileInfo().description
-  openModal(profileEditModal)
+  /* openModal(profileEditModal) */
+  userInfoPopup.open()
 })
 
 /* -------------------------------------------------------------------------- */
@@ -103,6 +107,9 @@ function createCard(item) {
   const card = new Card(
     {
       data: item,
+      handCardClick: (data) => {
+        addPopupWithImage.open(data)
+      },
     },
     selectors.cardTemplate
   )
@@ -136,14 +143,15 @@ const handleAddCard = (evt) => {
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation()
-  openModal(cardAddModal)
+  /*   openModal(cardAddModal) */
   addCardPopup.open()
 })
-profileModalCloseButton.addEventListener('click', () => {
+/* profileModalCloseButton.addEventListener('click', () => {
   closeModal(profileEditModal)
-})
+}) */
 
-addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal))
+/* addModalCloseButton.addEventListener('click', () => closeModal(cardAddModal)) */
 /* cardAddModal.addEventListener('submit', handleAddCard) */
-const previewCloseButton = previewModal.querySelector('#preview-modal-close')
+/* const previewCloseButton = previewModal.querySelector('#preview-modal-close')
 previewCloseButton.addEventListener('click', () => closeModal(previewModal))
+ */
