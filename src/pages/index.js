@@ -4,11 +4,12 @@
 import './index.css'
 import FormValidator from '../components/FormValidator.js'
 import UserInfo from '../components/UserInfo.js'
-import { initialCards, config, selectors } from '../utils/constants.js'
+import { config, selectors } from '../utils/constants.js'
 import Card from '../components/Card.js'
 import Section from '../components/Section.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import PopupWithImage from '../components/PopupWithImage.js'
+import Api from '../utils/Api'
 
 /* -------------------------------------------------------------------------- */
 /*                               CARDS COMMANDS                               */
@@ -115,18 +116,20 @@ function createCard(item) {
   return card.getView()
 }
 
-const cardSection = new Section(
-  {
-    items: initialCards,
-    renderer: (data) => {
-      const card = createCard(data)
+Api.getInitialCards().then((initialCards) => {
+  const cardSection = new Section(
+    {
+      items: initialCards,
+      renderer: (data) => {
+        const card = createCard(data)
 
-      cardSection.addItem(card)
+        cardSection.addItem(card)
+      },
     },
-  },
-  selectors.cardSection
-)
-cardSection.renderItems() //This is what renders the cards
+    selectors.cardSection
+  )
+  cardSection.renderItems() //This is what renders the cards
+})
 
 /* -------------------------------------------------------------------------- */
 /*        CARD MODAL TITLE AND LINK AND PROFILE OPEN AND CLOSE BUTTONS        */
