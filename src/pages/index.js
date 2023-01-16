@@ -115,9 +115,9 @@ function createCard(item) {
   )
   return card.getView()
 }
-
+let cardSection
 Api.getInitialCards().then((initialCards) => {
-  const cardSection = new Section(
+  cardSection = new Section(
     {
       items: initialCards,
       renderer: (data) => {
