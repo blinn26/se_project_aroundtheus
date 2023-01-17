@@ -17,11 +17,30 @@ class Api {
     }
     // if the server returns an error, reject the promise
     return Promise.reject(`Error: ${res.status}`)
-    // ...
+    // ...written Promise here for Server response
   }
 
-  // other methods for working with the API
+  /* ------------------------------ PROFILE MODAL ----------------------------- */
+
+  // profile user in modal section user information name and description
+  async editUserProfile(data) {
+    const res = await fetch(`${this.baseUrl}/users/me`, {
+      method: 'PATCH',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.title,
+        about: data.description,
+      }),
+    })
+    if (res.ok) {
+      return res.json()
+    }
+    // if the server returns an error, reject the promise
+    return Promise.reject(`Error: ${res.status}`)
+    // ...
+  }
 }
+/* ---------------- CUSTOM URL AND GROUP CODE FOR PROJECT API --------------- */
 
 export default new Api({
   baseUrl: 'https://around.nomoreparties.co/v1/group-12',
@@ -30,31 +49,3 @@ export default new Api({
     'Content-Type': 'application/json',
   },
 })
-
-function getTasks() {
-  return fetch(baseUrl, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json()
-    }
-    return Promise.reject('Error')
-  })
-}
-
-function deleteTask(id) {
-  return fetch(baseUrl, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    method: 'DELETE',
-  }).then((res) => {
-    if (res.ok) {
-      return res.json()
-    }
-    return Promise.reject('Error')
-  })
-}
-//{name: "todo here"}
