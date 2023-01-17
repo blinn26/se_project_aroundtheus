@@ -45,7 +45,7 @@ function getTasks() {
 }
 
 function deleteTask(id) {
-  return fetch(`${baseUrl}/${id}`, {
+  return fetch(baseUrl, {
     headers: {
       'Content-Type': 'application/json',
     },
