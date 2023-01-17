@@ -15,31 +15,31 @@ import Api from '../utils/Api'
 /*                               CARDS COMMANDS                               */
 /* -------------------------------------------------------------------------- */
 
-const cardTemplate =
+/* const cardTemplate =
   document.querySelector('#card-template').content.firstElementChild
-const cardListEl = document.querySelector('.cards__list')
+const cardListEl = document.querySelector('.cards__list') */
 
 /* -------------------------------------------------------------------------- */
 /*           PROFILE BUTTONS PROFILE FORMS MODAL BUTTONS MODAL FORMS          */
 /* -------------------------------------------------------------------------- */
 
-const profileEditModal = document.querySelector('#edit-modal')
+/* const profileEditModal = document.querySelector('#edit-modal') */
 const cardAddModal = document.querySelector('#add-modal')
 const profileEditButton = document.querySelector('.profile__edit-button')
 const cardModalOpenButton = document.querySelector('.profile__add-button')
-const profileModalCloseButton = profileEditModal.querySelector(
+/* const profileModalCloseButton = profileEditModal.querySelector(
   '.modal__close-button'
-)
-const addModalCloseButton = cardAddModal.querySelector('.modal__close-button')
-const addCardSave = cardAddModal.querySelector(config.submitButtonSelector)
+) */
+/* const addModalCloseButton = cardAddModal.querySelector('.modal__close-button')
+const addCardSave = cardAddModal.querySelector(config.submitButtonSelector) */
 const profileModal = document.querySelector('.modal')
 const profileEditForm = profileModal.querySelector('.modal__form')
-const modalTitleForm = profileModal.querySelector('#modal__form-title')
+/* const modalTitleForm = profileModal.querySelector('#modal__form-title')
 const modalLinkForm = profileModal.querySelector('#modal__form-link')
 const previewModal = document.getElementById('preview-modal')
 const previewTextModal = document.querySelector('.modal__text ')
 const profileTitle = document.querySelector('.profile__title ')
-const profileDescription = document.querySelector('.profile__description')
+const profileDescription = document.querySelector('.profile__description') */
 const profileNameInput = profileEditForm.querySelector('.modal__input-line')
 const profileDescriptionInput = profileEditForm.querySelector(
   '.modal__input-description'
