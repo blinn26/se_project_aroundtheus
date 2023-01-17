@@ -1,10 +1,12 @@
 class Api {
+  /* ---------------------------- CONSTRUCTOR BUILD --------------------------- */
+
   constructor({ baseUrl, headers }) {
     this.baseUrl = baseUrl
     this.headers = headers
   }
 
-  getTodos() {}
+  /* ---------------------------------- CARDS --------------------------------- */
 
   async getInitialCards() {
     const res = await fetch(`${this.baseUrl}/cards`, {
@@ -29,16 +31,30 @@ export default new Api({
   },
 })
 
-// fetch('https://around.nomoreparties.co/v1/group-12/cards', {
-//   headers: {
-//     authorization: '32639fe4-4217-403a-b398-f7a909cc834a',
-//   },
-// })
-//   .then((res) => res.json())
-//   .then((result) => {
-//     console.log(result.length)
+function getTasks() {
+  return fetch(baseUrl, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json()
+    }
+    return Promise.reject('Error')
+  })
+}
 
-//     result.forEach((item) => {
-//       console.log(item.name)
-//     })
-//   })
+function deleteTask(id) {
+  return fetch(`${baseUrl}/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: 'DELETE',
+  }).then((res) => {
+    if (res.ok) {
+      return res.json()
+    }
+    return Promise.reject('Error')
+  })
+}
+//{name: "todo here"}
