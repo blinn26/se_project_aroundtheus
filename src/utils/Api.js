@@ -2,8 +2,8 @@ class Api {
   /* ---------------------------- CONSTRUCTOR BUILD --------------------------- */
 
   constructor({ baseUrl, headers }) {
-    this.baseUrl = baseUrl
-    this.headers = headers
+    this.baseUrl = baseUrl;
+    this.headers = headers;
   }
 
   /* ---------------------------------- CARDS --------------------------------- */
@@ -11,12 +11,12 @@ class Api {
   async getInitialCards() {
     const res = await fetch(`${this.baseUrl}/cards`, {
       headers: this.headers,
-    })
+    });
     if (res.ok) {
-      return res.json()
+      return res.json();
     }
     // if the server returns an error, reject the promise
-    return Promise.reject(`Error: ${res.status}`)
+    return Promise.reject(`Error: ${res.status}`);
     // ...written Promise here for Server response
   }
 
@@ -31,12 +31,12 @@ class Api {
         name: data.title,
         about: data.description,
       }),
-    })
+    });
     if (res.ok) {
-      return res.json()
+      return res.json();
     }
     // if the server returns an error, reject the promise
-    return Promise.reject(`Error: ${res.status}`)
+    return Promise.reject(`Error: ${res.status}`);
     // ...
   }
 }
@@ -48,4 +48,4 @@ export default new Api({
     authorization: '32639fe4-4217-403a-b398-f7a909cc834a',
     'Content-Type': 'application/json',
   },
-})
+});
