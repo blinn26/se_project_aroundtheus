@@ -27,7 +27,7 @@ export const initialCards = [
     name: 'Lago di Braies',
     link: 'https://code.s3.yandex.net/web-code/lago.jpg',
   },
-]
+];
 
 /* -------------------------------------------------------------------------- */
 /*           EXPORTING SELECTORS, BUTTONS, CLASSES, CARDS AND FORMS           */
@@ -42,10 +42,10 @@ export const config = {
   errorClass: 'modal__error-hidden',
   profileNameSelector: '.profile__title',
   profileDescriptionSelector: '.profile__description',
-}
+};
 
 export const selectors = {
   cardSection: '.cards__list',
   cardTemplate: '#card-template',
   cardModalAdd: 'add__modal',
-}
+};

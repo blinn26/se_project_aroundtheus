@@ -12,6 +12,6 @@ const presets = [
       corejs: '^3',
     },
   ],
-]
+];
 
-module.exports = { presets }
+module.exports = { presets };
