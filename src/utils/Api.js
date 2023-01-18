@@ -24,6 +24,7 @@ class Api {
 
   // profile user in modal section user information name and description
   async editUserProfile(data) {
+    console.log(test3);
     const res = await fetch(`${this.baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this.headers,
@@ -34,9 +35,11 @@ class Api {
     });
     if (res.ok) {
       return res.json();
+      console.log(test2);
     }
     // if the server returns an error, reject the promise
     return Promise.reject(`Error: ${res.status}`);
+    console.log(test);
     // ...
   }
 }
