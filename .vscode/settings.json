@@ -15,5 +15,7 @@
   "powermode.combo.timeout": 0,
   "powermode.explosions.backgroundMode": "image",
   "explorer.enableDragAndDrop": true,
-  "tabnine.disableFileRegex": []
+  "tabnine.disableFileRegex": [],
+  "editor.bracketPairColorization.enabled": false,
+  "editor.guides.highlightActiveBracketPair": false
 }
