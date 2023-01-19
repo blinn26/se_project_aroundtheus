@@ -4,7 +4,7 @@
 import './index.css';
 import FormValidator from '../components/FormValidator.js';
 import UserInfo from '../components/UserInfo.js';
-import { config, selectors } from '../utils/constants.js';
+import { config, initialCards, selectors } from '../utils/constants.js';
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -98,20 +98,26 @@ function createCard(item) {
   return card.getView();
 }
 let cardSection;
-Api.getInitialCards().then((initialCards) => {
-  cardSection = new Section(
-    {
-      items: initialCards,
-      renderer: (data) => {
-        const card = createCard(data);
 
-        cardSection.addItem(card);
+Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(
+  ([initialCards, user]) => {
+    userInfo.setProfileInfo('Ben Linn', 'Software Engineer');
+    cardSection = new Section(
+      {
+        items: initialCards,
+        renderer: (data) => {
+          const card = createCard(data);
+
+          cardSection.addItem(card);
+        },
       },
-    },
-    selectors.cardSection
-  );
-  cardSection.renderItems(); //This is what renders the cards
-});
+      selectors.cardSection
+    );
+    cardSection.renderItems(); //This is what renders the cards
+  }
+);
+//Api.getInitialCards().then((initialCards) => {
+//});
 
 /* -------------------------------------------------------------------------- */
 /*        CARD MODAL TITLE AND LINK AND PROFILE OPEN AND CLOSE BUTTONS        */

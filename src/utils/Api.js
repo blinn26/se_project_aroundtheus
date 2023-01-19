@@ -20,6 +20,10 @@ class Api {
     // ...written Promise here for Server response
   }
 
+  async getUserInfo() {
+    return null;
+  }
+
   /* ------------------------------ PROFILE MODAL ----------------------------- */
 
   // profile user in modal section user information name and description
