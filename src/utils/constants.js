@@ -2,7 +2,7 @@
 /*                            INTIAL CARDS DISPLAY                            */
 /* -------------------------------------------------------------------------- */
 
-export const initialCards = [
+/* export const initialCards = [
   {
     name: 'Yosemite Valley',
     link: 'https://code.s3.yandex.net/web-code/yosemite.jpg',
@@ -27,7 +27,7 @@ export const initialCards = [
     name: 'Lago di Braies',
     link: 'https://code.s3.yandex.net/web-code/lago.jpg',
   },
-];
+]; */
 
 /* -------------------------------------------------------------------------- */
 /*           EXPORTING SELECTORS, BUTTONS, CLASSES, CARDS AND FORMS           */

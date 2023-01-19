@@ -99,9 +99,11 @@ function createCard(item) {
 }
 let cardSection;
 
+/* ------------------------ PROFILE FOR USERINFO API ------------------------ */
+
 Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(
   ([initialCards, user]) => {
-    userInfo.setProfileInfo('Ben Linn', 'Software Engineer');
+    userInfo.setProfileInfo(user.name, user.about);
     cardSection = new Section(
       {
         items: initialCards,

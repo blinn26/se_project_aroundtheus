@@ -20,8 +20,17 @@ class Api {
     // ...written Promise here for Server response
   }
 
+  /* ---------------------------- PROFILE USER INFO --------------------------- */
+
   async getUserInfo() {
-    return null;
+    const res = await fetch(`${this.baseUrl}/users/me`, {
+      method: 'GET',
+      headers: this.headers,
+    });
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
   }
 
   /* ------------------------------ PROFILE MODAL ----------------------------- */
