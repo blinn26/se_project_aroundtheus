@@ -53,11 +53,14 @@ const addPopupWithImage = new PopupWithImage('#preview-modal');
 addPopupWithImage.setEventListeners();
 const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
+
   handleFormSubmit: (data) => {
-    const card = createCard(data);
-    cardSection.addItem(card);
-    Api.addNewCard(data);
-    addCardPopup.close();
+    Api.addNewCard(data).then((cardData) => {
+      const card = createCard(cardData);
+      cardSection.addItem(card);
+
+      addCardPopup.close();
+    });
   },
 });
 

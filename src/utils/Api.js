@@ -70,7 +70,30 @@ class Api {
 
     // ...
   }
+
+  async addLikeClick(data) {
+    const res = await fetch(`${this.baseUrl}/cards/likes/${data}`, {
+      method: 'PUT',
+      headers: this.headers,
+    });
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
+
+  async removeLikeClick(data) {
+    const res = await fetch(`${this.baseUrl}/cards/likes/${data}`, {
+      method: 'DELETE',
+      headers: this.headers,
+    });
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
 }
+
 /* ---------------- CUSTOM URL AND GROUP CODE FOR PROJECT API --------------- */
 
 export default new Api({
