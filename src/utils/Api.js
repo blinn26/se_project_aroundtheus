@@ -1,3 +1,5 @@
+import { data } from 'autoprefixer';
+
 class Api {
   /* ---------------------------- CONSTRUCTOR BUILD --------------------------- */
 
@@ -6,7 +8,7 @@ class Api {
     this.headers = headers;
   }
 
-  /* ---------------------------------- CARDS --------------------------------- */
+  /* ------------------------- INTIAL CARDS FROM HOST ------------------------- */
 
   async getInitialCards() {
     const res = await fetch(`${this.baseUrl}/cards`, {
@@ -18,6 +20,21 @@ class Api {
     // if the server returns an error, reject the promise
     return Promise.reject(`Error: ${res.status}`);
     // ...written Promise here for Server response
+  }
+
+  async addNewCard() {
+    const res = await fetch(`${this.baseUrl}/cards`, {
+      method: 'post',
+      headers: this.headers,
+      body: JSON.stringify({
+        name: data.name,
+        link: data.link,
+      }),
+    });
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
   }
 
   /* ---------------------------- PROFILE USER INFO --------------------------- */
