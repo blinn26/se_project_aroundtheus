@@ -66,7 +66,9 @@ const userInfoPopup = new PopupWithForm({
   popupSelector: '#edit-modal',
 
   handleFormSubmit: (data) => {
-    userInfo.setProfileInfo(data.name, data.description);
+    Api.editUserProfile(data).then((user) => {
+      userInfo.setProfileInfo(user.name, user.about);
+    });
   },
 });
 userInfoPopup.setEventListeners();
