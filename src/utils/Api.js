@@ -22,9 +22,9 @@ class Api {
     // ...written Promise here for Server response
   }
 
-  async addNewCard() {
+  async addNewCard(data) {
     const res = await fetch(`${this.baseUrl}/cards`, {
-      method: 'post',
+      method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
         name: data.name,

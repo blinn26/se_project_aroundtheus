@@ -56,6 +56,7 @@ const addCardPopup = new PopupWithForm({
   handleFormSubmit: (data) => {
     const card = createCard(data);
     cardSection.addItem(card);
+    Api.addNewCard(data);
     addCardPopup.close();
   },
 });
@@ -138,3 +139,5 @@ cardModalOpenButton.addEventListener('click', () => {
 
   addCardPopup.open();
 });
+
+// TODO: when user creates a card, card needs to be added in the beginning of the list, otherwise card is created but it's invisible
