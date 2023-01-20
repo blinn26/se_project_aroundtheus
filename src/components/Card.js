@@ -9,6 +9,7 @@ class Card {
   ) {
     this._name = data.name;
     this._link = data.link;
+    this._likes = data.likes;
     this._cardSelector = cardSelector;
     this._handleCardClick = handCardClick;
     this._handleLikeClick = handleLikeClick;
@@ -61,6 +62,14 @@ class Card {
     return cardEl;
   }
 
+  _updateLikesView() {
+    //decide if heart should be
+    //set the like count
+    console.log(this._likes);
+    this._element.querySelector('.card__like-count').textContent =
+      this._likes.length;
+  }
+
   /* -------------------------------------------------------------------------- */
   /*                           RETURN CARDS AND EXPORT                          */
   /* -------------------------------------------------------------------------- */
@@ -73,6 +82,7 @@ class Card {
       this._name;
     this._element.querySelector('.card__image').alt = this._name;
     this._setEventListeners();
+    this._updateLikesView();
 
     return this._element;
   }
