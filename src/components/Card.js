@@ -42,17 +42,6 @@ class Card {
   /*                           HANDLE AND GET TEMPLATE                          */
   /* -------------------------------------------------------------------------- */
 
-  /*   _previewModalImage = () => {
-    const imageModal = document.querySelector('#preview-modal')
-    const imageModalImage = imageModal.querySelector('.modal__image')
-    imageModalImage.src = this._link
-    imageModalImage.alt = this._name
-    const imagePreview = imageModal.querySelector('.modal__text')
-    imagePreview.textContent = this._name
-
-    openModal(imageModal)
-  } */
-
   _handleLikeIcon = () => {
     this._element
       .querySelector('.card__like-button')
