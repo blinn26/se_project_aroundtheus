@@ -96,6 +96,12 @@ function createCard(item) {
       handCardClick: (data) => {
         addPopupWithImage.open(data);
       },
+      handleLikeClick: (data) => {
+        Api.addLikeClick(data);
+      },
+      handleDeleteClick: (data) => {
+        Api.removeLikeClick(data);
+      },
     },
     selectors.cardTemplate
   );

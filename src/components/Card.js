@@ -3,11 +3,16 @@
 /* -------------------------------------------------------------------------- */
 
 class Card {
-  constructor({ data, handCardClick }, cardSelector) {
+  constructor(
+    { data, handCardClick, handleLikeClick, handleDeleteClick },
+    cardSelector
+  ) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._handleCardClick = handCardClick;
+    this._handleLikeClick = handleLikeClick;
+    this._handledDeleteClick = handleDeleteClick;
   }
 
   /* -------------------------------------------------------------------------- */
