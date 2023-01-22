@@ -14,6 +14,7 @@ class Card {
     this._handleCardClick = handCardClick;
     this._handleLikeClick = handleLikeClick;
     this._handledDeleteClick = handleDeleteClick;
+    this._id = data._id;
   }
 
   /* -------------------------------------------------------------------------- */
@@ -44,10 +45,16 @@ class Card {
   /* -------------------------------------------------------------------------- */
 
   _handleLikeIcon = () => {
-    this._element
+    /* this._element
       .querySelector('.card__like-button')
-      .classList.toggle('card__like-button_is-active');
+      .classList.toggle('card__like-button_is-active');/ */
     // like icon active
+    // TODO: import addLikeClick
+    /* addLikeClick(cardId)
+      .then((res) => {
+        // TODO: response includes the current state of the card (liked or not), AFTER server handled it, therefore you nbeed to update the heart icon's state AFTER you get the response from the server
+        res.status ? 
+      }) */
   };
 
   _handleDeleteCard = () => {
