@@ -45,17 +45,26 @@ class Card {
   /* -------------------------------------------------------------------------- */
 
   _handleLikeIcon = () => {
-    /* this._element
-      .querySelector('.card__like-button')
-      .classList.toggle('card__like-button_is-active');/ */
-    // like icon active
-    // TODO: import addLikeClick
-    /* addLikeClick(cardId)
-      .then((res) => {
-        // TODO: response includes the current state of the card (liked or not), AFTER server handled it, therefore you nbeed to update the heart icon's state AFTER you get the response from the server
-        res.status ? 
-      }) */
+    this._handleLikeClick(this._id).then(() => {
+      this._element
+
+        .querySelector('.card__like-button')
+        .classList.toggle('card__like-button_is-active');
+    });
   };
+  /* 
+  _handleLikeIcon() {
+    if (this._something()) {
+      this._handleCardClick.classList.add('card__like-button_is-active');
+    } else {
+      this._handleCardClick.classList.remove('card__like-button_is-active');
+    }
+    this._something.textContent = _something
+}
+
+return something  */
+
+  /* trying to figure out this add and remove heart thing */
 
   _handleDeleteCard = () => {
     this._element.remove();

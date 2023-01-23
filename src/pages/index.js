@@ -97,7 +97,7 @@ function createCard(item) {
         addPopupWithImage.open(data);
       },
       handleLikeClick: (data) => {
-        Api.addLikeClick(data);
+        return Api.addLikeClick(data);
       },
       handleDeleteClick: (data) => {
         Api.removeLikeClick(data);
