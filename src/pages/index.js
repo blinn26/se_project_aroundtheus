@@ -95,6 +95,7 @@ function createCard(item) {
   const card = new Card(
     {
       data: item,
+      userId: userId,
       handCardClick: (data) => {
         addPopupWithImage.open(data);
       },
