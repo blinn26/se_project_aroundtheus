@@ -2,6 +2,7 @@
     flex-direction: column;
     border-radius: 10px;
     width: 282px;
+
     display: flex;
     position: relative;
 }
@@ -48,8 +49,22 @@
     transition: 0.7s;
     width: 21px;
     height: 19px;
-    position: static;
-    left: 150px;
+
+}
+
+.card__like-count {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    width: 9px;
+    height: 13px;
+    color: #000000;
+    display: flex;
+    margin-left: 6px;
+
 }
 
 .card__like-button_is-active {
@@ -75,17 +90,7 @@
 
 }
 
-.card__like-count {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    text-align: center;
-    width: 9px;
-    height: 13px;
-    color: #000000;
-}
+
 
 .card__trash-button :hover {
     opacity: 0.5;
