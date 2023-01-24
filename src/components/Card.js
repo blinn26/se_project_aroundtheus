@@ -4,7 +4,7 @@
 
 class Card {
   constructor(
-    { data, handCardClick, handleLikeClick, handleDeleteClick },
+    { data, userId, handCardClick, handleLikeClick, handleDeleteClick },
     cardSelector
   ) {
     this._name = data.name;
@@ -15,6 +15,7 @@ class Card {
     this._handleLikeClick = handleLikeClick;
     this._handledDeleteClick = handleDeleteClick;
     this._id = data._id;
+    this._userId = userId;
   }
 
   /* -------------------------------------------------------------------------- */
@@ -44,12 +45,15 @@ class Card {
   /*                           HANDLE AND GET TEMPLATE                          */
   /* -------------------------------------------------------------------------- */
 
-  _handleLikeIcon = () => {
-    this._handleLikeClick(this._id).then(() => {
-      this._element
+  isLiked() {
+    return this._likes.some((like) => like._id === this._userId);
+  }
 
-        .querySelector('.card__like-button')
-        .classList.toggle('card__like-button_is-active');
+  _handleLikeIcon = () => {
+    this._handleLikeClick(this._id, this.isLiked()).then((data) => {
+      console.log(data);
+      this._likes = data.likes;
+      this._updateLikesView();
     });
   };
   /* 
@@ -84,6 +88,16 @@ return something  */
     console.log(this._likes);
     this._element.querySelector('.card__like-count').textContent =
       this._likes.length;
+
+    if (this.isLiked()) {
+      this._element
+        .querySelector('.card__like-button')
+        .classList.add('card__like-button_is-active');
+    } else {
+      this._element
+        .querySelector('.card__like-button')
+        .classList.remove('card__like-button_is-active');
+    }
   }
 
   /* -------------------------------------------------------------------------- */

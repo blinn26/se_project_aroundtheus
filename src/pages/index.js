@@ -33,6 +33,8 @@ const userInfo = new UserInfo({
   profileDescriptionSelector: config.profileDescriptionSelector,
 });
 
+let userId;
+
 /* -------------------------------------------------------------------------- */
 /*                  ENABLE FORMVALIDATION FROM FORMVALIDATOR                  */
 /* -------------------------------------------------------------------------- */
@@ -96,8 +98,8 @@ function createCard(item) {
       handCardClick: (data) => {
         addPopupWithImage.open(data);
       },
-      handleLikeClick: (data) => {
-        return Api.addLikeClick(data);
+      handleLikeClick: (id, isLiked) => {
+        return Api.updateCardLike(id, isLiked);
       },
       handleDeleteClick: (data) => {
         Api.removeLikeClick(data);
@@ -113,6 +115,7 @@ let cardSection;
 
 Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(
   ([initialCards, user]) => {
+    userId = user._id;
     userInfo.setProfileInfo(user.name, user.about);
     cardSection = new Section(
       {
