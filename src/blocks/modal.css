@@ -39,6 +39,16 @@
 
 }
 
+.modal__remove-container {
+    height: 181px;
+    height: 430px;
+    border-radius: 10px;
+    background: #ffffff;
+    position: relative;
+
+
+}
+
 .modal__container-transparent {
     background-color: transparent;
     height: auto;
