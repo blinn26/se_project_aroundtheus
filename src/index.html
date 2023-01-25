@@ -132,7 +132,7 @@
 
     <div class="modal" id="confirm-modal">
       <div class="modal__remove-container">
-        <button class="modal__close-button"></button>
+        <button class="modal__close-button" type="button"></button>
         <h2 class="modal__title">Are You Sure?</h2>
         <form class="modal__form" id="confirm-modal-delete">
           <button class="modal__confirm-delete-button" type="submit">Yes</button>
@@ -144,9 +144,9 @@
     <!--                       CHANGE THE PROFILE PICTURE                        -->
     <!-- ----------------------------------------------------------------------- -->
 
-    <div class="modal" id="change-profile-pic"></div>
+    <div class="modal" id="change-profile-pic">
     <div class="modal__change-pic"></div>
-    <button class="modal__close-buton">
+    <button class="modal__close-button" type="button"> </button>
       <h2 class="modal__title">Change Profile Picture</h2>
       <form class="modal__form" id="change-form-pic">
         <input
@@ -157,7 +157,9 @@
           id="new-pic"
           required
         />
+       
       </form>
+       </div>
       <!--
        <script type="module" src="./scripts/index.js" defer></script>
     --></button>

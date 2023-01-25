@@ -10,7 +10,7 @@ class Card {
     this._cardSelector = cardSelector;
     this._handleCardClick = handCardClick;
     this._handleLikeClick = handleLikeClick;
-    this._handledDeleteClick = handleDeleteClick;
+    this._handleDeleteClick = handleDeleteClick;
     this._id = data._id;
     this._userId = userId;
   }
@@ -62,7 +62,9 @@ return something  */
   /* trying to figure out this add and remove heart thing */
 
   _handleDeleteCard = () => {
-    this._element.remove();
+    console.log('hddddd');
+    this._handleDeleteClick(this._id);
+    // this._element.remove();
     // delete card
   };
   _getTemplate() {
@@ -73,7 +75,7 @@ return something  */
   _updateLikesView() {
     //decide if heart should be
     //set the like count
-    console.log(this._likes);
+    /* console.log(this._likes); */
     this._element.querySelector('.card__like-count').textContent = this._likes.length;
 
     if (this.isLiked()) {

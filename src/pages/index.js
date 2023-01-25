@@ -21,9 +21,7 @@ const cardModalOpenButton = document.querySelector('.profile__add-button');
 const profileModal = document.querySelector('.modal');
 const profileEditForm = profileModal.querySelector('.modal__form');
 const profileNameInput = profileEditForm.querySelector('.modal__input-line');
-const profileDescriptionInput = profileEditForm.querySelector(
-  '.modal__input-description'
-);
+const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description');
 /* -------------------------------------------------------------------------- */
 /*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
 /* -------------------------------------------------------------------------- */
@@ -79,6 +77,13 @@ const userInfoPopup = new PopupWithForm({
 });
 userInfoPopup.setEventListeners();
 
+const confirmModalPopup = new PopupWithForm({
+  popupSelector: '#confirm-modal',
+  handleFormSubmit: (data) => {
+    console.log(data);
+  },
+});
+console.log(confirmModalPopup);
 profileEditButton.addEventListener('click', () => {
   const profileInfo = userInfo.getProfileInfo();
   profileNameInput.value = profileInfo.name;
@@ -103,7 +108,9 @@ function createCard(item) {
         return Api.updateCardLike(id, isLiked);
       },
       handleDeleteClick: (data) => {
-        Api.removeLikeClick(data);
+        console.log(data);
+        confirmModalPopup.open();
+        // Api.removeLikeClick(data);
       },
     },
     selectors.cardTemplate
@@ -114,24 +121,22 @@ let cardSection;
 
 /* ------------------------ PROFILE FOR USERINFO API ------------------------ */
 
-Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(
-  ([initialCards, user]) => {
-    userId = user._id;
-    userInfo.setProfileInfo(user.name, user.about);
-    cardSection = new Section(
-      {
-        items: initialCards,
-        renderer: (data) => {
-          const card = createCard(data);
+Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(([initialCards, user]) => {
+  userId = user._id;
+  userInfo.setProfileInfo(user.name, user.about);
+  cardSection = new Section(
+    {
+      items: initialCards,
+      renderer: (data) => {
+        const card = createCard(data);
 
-          cardSection.addItem(card);
-        },
+        cardSection.addItem(card);
       },
-      selectors.cardSection
-    );
-    cardSection.renderItems(); //This is what renders the cards
-  }
-);
+    },
+    selectors.cardSection
+  );
+  cardSection.renderItems(); //This is what renders the cards
+});
 //Api.getInitialCards().then((initialCards) => {
 //});
 
