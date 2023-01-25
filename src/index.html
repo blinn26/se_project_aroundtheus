@@ -140,8 +140,27 @@
       </div>
     </div>
 
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                       CHANGE THE PROFILE PICTURE                        -->
+    <!-- ----------------------------------------------------------------------- -->
     <!--
        <script type="module" src="./scripts/index.js" defer></script>
     -->
+
+    <div class="modal" id="change-profile-pic"></div>
+    <div class="modal__change-pic"></div>
+    <button class="modal__close-buton">
+      <h2 class="modal__title">Change Profile Picture</h2>
+      <form class="modal__form" id="change-form-pic">
+        <input
+          class="modal__input modal__input-description"
+          name="link"
+          type="url"
+          placeholder="Image Url"
+          id="new-pic"
+          required
+        />
+      </form>
+    </button>
   </body>
 </html>
