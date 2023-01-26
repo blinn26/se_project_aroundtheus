@@ -22,7 +22,7 @@ const profileModal = document.querySelector('.modal');
 const profileEditForm = profileModal.querySelector(config.formSelector); // TODO: use this example
 const profileNameInput = profileEditForm.querySelector(config.modalInputLineSelector);
 const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description'); // TODO: reuse selector from config
-const profileAvatarImage = document.querySelector('.profile__image');
+const profileAvatarEditPencil = document.querySelector('.profile__image-button');
 /* -------------------------------------------------------------------------- */
 /*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
 /* -------------------------------------------------------------------------- */
@@ -94,13 +94,14 @@ confirmModalPopup.setEventListeners();
 const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
   handleFormSubmit: (link) => {
-    profileAvatarImage.src = link.url;
+    profileAvatarEditPencil.src = link.url;
     changeProfilePic.close();
   },
 });
 changeProfilePic.setEventListeners();
 
-profileAvatarImage.addEventListener('click', () => {
+profileAvatarEditPencil.addEventListener('click', () => {
+  console.log(profileAvatarEditPencil);
   changeProfilePic.open();
 });
 

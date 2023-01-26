@@ -18,6 +18,10 @@
     grid-gap: 9px 17px;
 }
 
+.profile__image-container {
+    position: relative;
+}
+
 .profile__edit-button {
     background: transparent url(../images/edit-button.svg) center no-repeat;
     height: 24px;
@@ -108,7 +112,14 @@
     position: absolute;
     height: 26px;
     width: 26px;
-    background: transparent url(../images/pencil.png)center no-repeat
+    background: transparent url(../images/pencil.png)center no-repeat;
+    border: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
 }
 
 
