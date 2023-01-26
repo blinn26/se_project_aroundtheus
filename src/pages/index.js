@@ -4,7 +4,7 @@
 import './index.css';
 import FormValidator from '../components/FormValidator.js';
 import UserInfo from '../components/UserInfo.js';
-import { config, initialCards, selectors } from '../utils/constants.js';
+import { config, selectors } from '../utils/constants.js';
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -77,13 +77,27 @@ const userInfoPopup = new PopupWithForm({
 });
 userInfoPopup.setEventListeners();
 
+//ARE YOU SURE POPUP CLOSE
+
 const confirmModalPopup = new PopupWithForm({
   popupSelector: '#confirm-modal',
   handleFormSubmit: (data) => {
     console.log(data);
+    confirmModalPopup.close();
   },
 });
 console.log(confirmModalPopup);
+
+//CHANGE PROFILE PICTURE
+
+const changeProfilePic = new PopupWithForm({
+  popupSelector: '#change-profile-pic',
+  handleFormSubmit: (link) => {
+    console.log(link);
+    changeProfilePic.close();
+  },
+});
+console.log(changeProfilePic);
 profileEditButton.addEventListener('click', () => {
   const profileInfo = userInfo.getProfileInfo();
   profileNameInput.value = profileInfo.name;
@@ -157,5 +171,3 @@ cardModalOpenButton.addEventListener('click', () => {
 
   addCardPopup.open();
 });
-
-// TODO: when user creates a card, card needs to be added in the beginning of the list, otherwise card is created but it's invisible

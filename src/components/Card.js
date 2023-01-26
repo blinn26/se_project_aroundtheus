@@ -47,25 +47,11 @@ class Card {
       this._updateLikesView();
     });
   };
-  /* 
-  _handleLikeIcon() {
-    if (this._something()) {
-      this._handleCardClick.classList.add('card__like-button_is-active');
-    } else {
-      this._handleCardClick.classList.remove('card__like-button_is-active');
-    }
-    this._something.textContent = _something
-}
-
-return something  */
-
-  /* trying to figure out this add and remove heart thing */
 
   _handleDeleteCard = () => {
     console.log('hddddd');
     this._handleDeleteClick(this._id);
     // this._element.remove();
-    // delete card
   };
   _getTemplate() {
     const cardEl = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
@@ -73,9 +59,6 @@ return something  */
   }
 
   _updateLikesView() {
-    //decide if heart should be
-    //set the like count
-    /* console.log(this._likes); */
     this._element.querySelector('.card__like-count').textContent = this._likes.length;
 
     if (this.isLiked()) {
