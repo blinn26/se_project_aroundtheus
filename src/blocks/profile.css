@@ -4,6 +4,7 @@
     padding-top: 40px;
     margin: auto;
     object-fit: contain;
+
 }
 
 .profile__info {
@@ -103,6 +104,12 @@
 
 }
 
+.profile__image-button {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    background: transparent url(../images/pencil.png)center no-repeat
+}
 
 
 @media screen and (max-width: 768px) {
