@@ -22,6 +22,7 @@ const profileModal = document.querySelector('.modal');
 const profileEditForm = profileModal.querySelector('.modal__form');
 const profileNameInput = profileEditForm.querySelector('.modal__input-line');
 const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description');
+const profileAvatarImage = document.querySelector('.profile__image');
 /* -------------------------------------------------------------------------- */
 /*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
 /* -------------------------------------------------------------------------- */
@@ -97,6 +98,11 @@ const changeProfilePic = new PopupWithForm({
     changeProfilePic.close();
   },
 });
+
+profileAvatarImage.addEventListener('click', () => {
+  changeProfilePic.open();
+});
+
 console.log(changeProfilePic);
 profileEditButton.addEventListener('click', () => {
   const profileInfo = userInfo.getProfileInfo();

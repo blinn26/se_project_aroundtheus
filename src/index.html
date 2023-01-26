@@ -149,14 +149,9 @@
       <button class="modal__close-button" type="button"></button>
       <h2 class="modal__title">Change Profile Picture</h2>
       <form class="modal__form" id="change-form-pic">
-        <input
-          class="modal__input modal__input-description"
-          name="link"
-          type="url"
-          placeholder="Image Url"
-          id="new-pic"
-          required
-        />
+        <input name="link" type="url" placeholder="Image Url" id="new-pic" required />
+        <span class="modal__error modal__error-hidden" id="link-input-error"></span>
+        <button class="modal__save-button modal__save-button-transparent" type="submit">Save</button>
       </form>
     </div>
   </body>
