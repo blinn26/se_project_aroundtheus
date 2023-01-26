@@ -19,9 +19,9 @@ const cardAddModal = document.querySelector('#add-modal');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const cardModalOpenButton = document.querySelector('.profile__add-button');
 const profileModal = document.querySelector('.modal');
-const profileEditForm = profileModal.querySelector('.modal__form');
-const profileNameInput = profileEditForm.querySelector('.modal__input-line');
-const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description');
+const profileEditForm = profileModal.querySelector(config.formSelector); // TODO: use this example
+const profileNameInput = profileEditForm.querySelector(config.modalInputLineSelector);
+const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description'); // TODO: reuse selector from config
 const profileAvatarImage = document.querySelector('.profile__image');
 /* -------------------------------------------------------------------------- */
 /*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
@@ -83,27 +83,27 @@ userInfoPopup.setEventListeners();
 const confirmModalPopup = new PopupWithForm({
   popupSelector: '#confirm-modal',
   handleFormSubmit: (data) => {
-    console.log(data);
+    // why do we need data?
     confirmModalPopup.close();
   },
 });
-console.log(confirmModalPopup);
+confirmModalPopup.setEventListeners();
 
 //CHANGE PROFILE PICTURE
 
 const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
   handleFormSubmit: (link) => {
-    console.log(link);
+    profileAvatarImage.src = link.url;
     changeProfilePic.close();
   },
 });
+changeProfilePic.setEventListeners();
 
 profileAvatarImage.addEventListener('click', () => {
   changeProfilePic.open();
 });
 
-console.log(changeProfilePic);
 profileEditButton.addEventListener('click', () => {
   const profileInfo = userInfo.getProfileInfo();
   profileNameInput.value = profileInfo.name;

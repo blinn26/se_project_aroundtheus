@@ -5,6 +5,7 @@
 export const config = {
   formSelector: '.modal__form',
   inputSelector: '.modal__input',
+  modalInputLineSelector: '.modal__input-line',
   submitButtonSelector: '.modal__save-button',
   inactiveButtonClass: 'modal__button-disabled',
   inputErrorClass: 'modal__input_type_error',
