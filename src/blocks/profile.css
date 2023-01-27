@@ -21,6 +21,7 @@
 
 .profile__image-container {
     position: relative;
+    margin: 0 30px 0 0;
 }
 
 .profile__edit-button {
@@ -105,7 +106,7 @@
     border-radius: 50%;
     object-fit: cover;
     background-position: center;
-    margin: 0 30px 0 0;
+
 
 
 }
@@ -221,7 +222,7 @@
 
     }
 
-    .profile__image {
+    .profile__image-container {
         margin: 0 0 26px 0;
     }
 }
