@@ -16,14 +16,14 @@ import Api from '../utils/Api';
 /* -------------------------------------------------------------------------- */
 
 const cardAddModal = document.querySelector('#add-modal');
-const profileEditButton = document.querySelector('.profile__edit-button');
-const cardModalOpenButton = document.querySelector('.profile__add-button');
-const profileModal = document.querySelector('.modal');
-const profileEditForm = profileModal.querySelector(config.formSelector); // TODO: use this example
-const profileNameInput = profileEditForm.querySelector(config.modalInputLineSelector);
-const profileDescriptionInput = profileEditForm.querySelector('.modal__input-description'); // TODO: reuse selector from config
-const profileAvatarEditPencil = document.querySelector('.profile__image-button');
-const profileImageChange = document.querySelector('.profile__image');
+const profileEditButton = document.querySelector(config.profileEditButtonSelector);
+const cardModalOpenButton = document.querySelector(config.profileAddButtonSelector);
+const profileModal = document.querySelector(config.profileModalSelector);
+const profileEditForm = profileModal.querySelector(config.formSelector);
+const profileNameInput = profileEditForm.querySelector(config.profilemodalInputLineSelector);
+const profileDescriptionInput = profileEditForm.querySelector(config.profileModalDescriptionSelector);
+const profileAvatarEditPencil = document.querySelector(config.profileAvatarPencilSelector);
+const profileImageChange = document.querySelector(config.profileAvatarImageSelector);
 /* -------------------------------------------------------------------------- */
 /*            PROFILESELECTOR AND PROFILEDESCRIPTION MODAL SELECTOR           */
 /* -------------------------------------------------------------------------- */
