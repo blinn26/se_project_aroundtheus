@@ -12,6 +12,7 @@ export const config = {
   errorClass: 'modal__error-hidden',
   profileNameSelector: '.profile__title',
   profileDescriptionSelector: '.profile__description',
+  profileModalDescriptionInput: '.modal__input-description',
 };
 
 export const selectors = {
