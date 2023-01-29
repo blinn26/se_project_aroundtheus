@@ -23,9 +23,6 @@
     position: relative;
     margin: 0 30px 0 0;
 
-
-
-
 }
 
 .profile__edit-button {
@@ -39,9 +36,6 @@
     cursor: pointer;
     transition: 0.6s;
     border-color: white;
-
-
-
 
 }
 
@@ -61,9 +55,6 @@
     transition: 0.8s;
     border: 2px solid white;
     border-radius: 2px;
-
-
-
 
 }
 
@@ -108,12 +99,6 @@
     object-fit: cover;
     background-position: center;
     background: rgba(0, 0, 0, 0.8);
-
-
-
-
-
-
 
 
 }
