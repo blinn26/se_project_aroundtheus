@@ -31,6 +31,7 @@ const profileImageChange = document.querySelector(config.profileAvatarImageSelec
 const userInfo = new UserInfo({
   profileNameSelector: config.profileNameSelector,
   profileDescriptionSelector: config.profileDescriptionSelector,
+  profileAvatarImageSelector: config.profileAvatarImageSelector,
 });
 
 let userId;
@@ -146,7 +147,8 @@ let cardSection;
 
 Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(([initialCards, user]) => {
   userId = user._id;
-  userInfo.setProfileInfo(user.name, user.about, user.avatar);
+  userInfo.setProfileInfo(user.name, user.about);
+  userInfo.setProfilePic(user.avatar);
   cardSection = new Section(
     {
       items: initialCards,
