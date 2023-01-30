@@ -35,8 +35,8 @@ class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  async deleteCard(cardID) {
-    const res = await fetch(`${this.baseUrl}/cards/${cardID}`, {
+  async deleteCard(id) {
+    const res = await fetch(`${this.baseUrl}/cards/${id}`, {
       method: 'DELETE',
       headers: this.headers,
     });
