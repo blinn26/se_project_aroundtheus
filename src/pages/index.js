@@ -162,6 +162,8 @@ Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(([initialCards, use
   );
   cardSection.renderItems(); //This is what renders the cards
 });
+/*  .catch((err) => console.log(err)); */
+
 //Api.getInitialCards().then((initialCards) => {
 //});
 
