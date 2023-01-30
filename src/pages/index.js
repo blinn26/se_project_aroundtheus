@@ -96,9 +96,11 @@ confirmModalPopup.setEventListeners();
 const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
   handleFormSubmit: (link) => {
-    profileImageChange.src = link.url;
-    console.log();
-    changeProfilePic.close();
+    Api.updateProfileImage({ avatar: link.url }).then(() => {
+      profileImageChange.src = link.url;
+      console.log();
+      changeProfilePic.close();
+    });
   },
 });
 changeProfilePic.setEventListeners();

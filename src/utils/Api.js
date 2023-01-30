@@ -79,6 +79,21 @@ class Api {
     }
     return Promise.reject(`Error: ${res.status}`);
   }
+
+  async updateProfileImage(data) {
+    const res = await fetch(`${this.baseUrl}/users/me/avatar`, {
+      method: 'PATCH',
+      headers: this.headers,
+      body: JSON.stringify({
+        avatar: data.avatar,
+      }),
+    });
+
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
 }
 
 /* ---------------- CUSTOM URL AND GROUP CODE FOR PROJECT API --------------- */
