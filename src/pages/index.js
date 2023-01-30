@@ -84,10 +84,6 @@ userInfoPopup.setEventListeners();
 
 const confirmModalPopup = new PopupWithForm({
   popupSelector: '#confirm-modal',
-  handleFormSubmit: (data) => {
-    // why do we need data?
-    confirmModalPopup.close();
-  },
 });
 confirmModalPopup.setEventListeners();
 
@@ -133,9 +129,15 @@ function createCard(item) {
       handleLikeClick: (id, isLiked) => {
         return Api.updateCardLike(id, isLiked);
       },
-      handleDeleteClick: (data) => {
-        console.log(data);
+      handleDeleteClick: (cardID) => {
         confirmModalPopup.open();
+        confirmModalPopup.setSubmitAction(() => {
+          Api.deleteCard(cardID).then(() => {
+            card.removeCard();
+            confirmModalPopup.close();
+          });
+        });
+
         // Api.removeLikeClick(data);
       },
     },

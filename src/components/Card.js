@@ -29,7 +29,9 @@ class Card {
       });
     });
 
-    this._element.querySelector('.card__trash-button').addEventListener('click', this._handleDeleteCard);
+    this._element
+      .querySelector('.card__trash-button')
+      .addEventListener('click', () => this._handleDeleteClick(this._id));
   }
 
   /* -------------------------------------------------------------------------- */
@@ -48,9 +50,9 @@ class Card {
     });
   };
 
-  _handleDeleteCard = () => {
+  removeCard = () => {
     console.log('hddddd');
-    this._handleDeleteClick(this._id);
+
     this._element.remove();
   };
   _getTemplate() {
