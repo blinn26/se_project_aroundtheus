@@ -51,7 +51,7 @@ class Card {
   _handleDeleteCard = () => {
     console.log('hddddd');
     this._handleDeleteClick(this._id);
-    // this._element.remove();
+    this._element.remove();
   };
   _getTemplate() {
     const cardEl = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
@@ -78,6 +78,7 @@ class Card {
     this._element.querySelector('.card__image').src = this._link;
     this._element.querySelector('.card__description-list').textContent = this._name;
     this._element.querySelector('.card__image').alt = this._name;
+    /* this._handleDeleteCard = this._element.querySelector('.card__trash-button'); */
     this._setEventListeners();
     this._updateLikesView();
 
