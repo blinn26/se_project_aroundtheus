@@ -12,6 +12,14 @@ class PopupWithForm extends Popup {
     this._handleFormSubmit = action;
   }
 
+  setLoading(isLoading) {
+    if (isLoading) {
+      this._popupElement.querySelector('.modal__save-button').textContent = 'Saving...';
+    } else {
+      this._popupElement.querySelector('.modal__save-button').textContent = 'Save';
+    }
+  }
+
   _getInputValues() {
     const inputs = this._modalForm.querySelectorAll('.modal__input'); //TODO: reuse selector from config
 

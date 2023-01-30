@@ -58,11 +58,13 @@ const addCardPopup = new PopupWithForm({
   popupSelector: '#add-modal',
 
   handleFormSubmit: (data) => {
+    addCardPopup.setLoading(true);
     Api.addNewCard(data).then((cardData) => {
       const card = createCard(cardData);
       cardSection.addItem(card);
 
       addCardPopup.close();
+      addCardPopup.setLoading(false);
     });
   },
 });
