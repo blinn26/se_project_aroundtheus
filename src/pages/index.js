@@ -64,7 +64,7 @@ const addCardPopup = new PopupWithForm({
       cardSection.addItem(card);
 
       addCardPopup.close();
-      addCardPopup.setLoading(false);
+      addCardPopup.setLoading(false, 'Create');
     });
   },
 });
@@ -75,8 +75,10 @@ const userInfoPopup = new PopupWithForm({
   popupSelector: '#edit-modal',
 
   handleFormSubmit: (data) => {
+    userInfoPopup.setLoading(true);
     Api.editUserProfile(data).then((user) => {
       userInfo.setProfileInfo(user.name, user.about);
+      userInfoPopup.setLoading(false, 'Save');
     });
   },
 });
@@ -94,9 +96,11 @@ confirmModalPopup.setEventListeners();
 const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
   handleFormSubmit: (link) => {
+    changeProfilePic.setLoading(true);
     Api.updateProfileImage({ avatar: link.url }).then(() => {
       profileImageChange.src = link.url;
       console.log();
+      changeProfilePic.setLoading(false, 'Save');
       changeProfilePic.close();
     });
   },
