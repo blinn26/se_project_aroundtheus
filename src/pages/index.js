@@ -59,13 +59,17 @@ const addCardPopup = new PopupWithForm({
 
   handleFormSubmit: (data) => {
     addCardPopup.setLoading(true);
-    Api.addNewCard(data).then((cardData) => {
-      const card = createCard(cardData);
-      cardSection.addItem(card);
+    Api.addNewCard(data)
+      .then((cardData) => {
+        const card = createCard(cardData);
+        cardSection.addItem(card);
 
-      addCardPopup.close();
-      addCardPopup.setLoading(false, 'Create');
-    });
+        addCardPopup.close();
+        addCardPopup.setLoading(false, 'Create');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 
@@ -76,10 +80,14 @@ const userInfoPopup = new PopupWithForm({
 
   handleFormSubmit: (data) => {
     userInfoPopup.setLoading(true);
-    Api.editUserProfile(data).then((user) => {
-      userInfo.setProfileInfo(user.name, user.about);
-      userInfoPopup.setLoading(false, 'Save');
-    });
+    Api.editUserProfile(data)
+      .then((user) => {
+        userInfo.setProfileInfo(user.name, user.about);
+        userInfoPopup.setLoading(false, 'Save');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 userInfoPopup.setEventListeners();
@@ -97,12 +105,17 @@ const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
   handleFormSubmit: (link) => {
     changeProfilePic.setLoading(true);
-    Api.updateProfileImage({ avatar: link.url }).then(() => {
-      profileImageChange.src = link.url;
-      console.log();
-      changeProfilePic.setLoading(false, 'Save');
-      changeProfilePic.close();
-    });
+    Api.updateProfileImage({ avatar: link.url })
+      .then(() => {
+        profileImageChange.src = link.url;
+
+        changeProfilePic.setLoading(false, 'Save');
+
+        changeProfilePic.close();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 });
 changeProfilePic.setEventListeners();
