@@ -1,4 +1,4 @@
-# Project 3: Around The U.S.
+# Project 9: Around The U.S.
 
 ### Overview
 
@@ -17,6 +17,8 @@
 - UserInfo
 - Popups
 - Utils
+- API
+ 
   
 
 **Description Functionality**
@@ -24,7 +26,7 @@
 Responsive design,overflowing text and Introduction to JavaScript.
 
 **Technologies and Techniques Used**
-Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and More.
+Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and API Interactions.
 
 **Figma**
 
