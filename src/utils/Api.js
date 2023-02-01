@@ -6,18 +6,17 @@ class Api {
     this.headers = headers;
   }
 
+  _checkResponse(res) {
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+  }
+
   /* ------------------------- INTIAL CARDS FROM HOST ------------------------- */
 
   async getInitialCards() {
     const res = await fetch(`${this.baseUrl}/cards`, {
       headers: this.headers,
     });
-    if (res.ok) {
-      return res.json();
-    }
-    // if the server returns an error, reject the promise
-    return Promise.reject(`Error: ${res.status}`);
-    // ...written Promise here for Server response
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* ----------------------------- NEW CARD ADDING ---------------------------- */
@@ -31,10 +30,7 @@ class Api {
         link: data.link,
       }),
     });
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* ------------------------- DELETE A CARD FROM API ------------------------- */
@@ -44,10 +40,7 @@ class Api {
       method: 'DELETE',
       headers: this.headers,
     });
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* ---------------------------- PROFILE USER INFO --------------------------- */
@@ -57,10 +50,7 @@ class Api {
       method: 'GET',
       headers: this.headers,
     });
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* ------------------------------ PROFILE MODAL ----------------------------- */
@@ -75,13 +65,7 @@ class Api {
         about: data.description,
       }),
     });
-    if (res.ok) {
-      return res.json();
-    }
-    // if the server returns an error, reject the promise
-    return Promise.reject(`Error: ${res.status}`);
-
-    // ...
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* --------------------- CARD LIKE BUTTON OR HEART LIKE --------------------- */
@@ -91,10 +75,7 @@ class Api {
       method: isLiked ? 'DELETE' : 'PUT',
       headers: this.headers,
     });
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
+    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
   }
 
   /* ------------------ PROFILE IMAGE INSIDE CIRCLE IN HEADER ----------------- */
