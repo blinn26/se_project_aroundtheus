@@ -20,6 +20,8 @@ class Api {
     // ...written Promise here for Server response
   }
 
+  /* ----------------------------- NEW CARD ADDING ---------------------------- */
+
   async addNewCard(data) {
     const res = await fetch(`${this.baseUrl}/cards`, {
       method: 'POST',
@@ -34,6 +36,8 @@ class Api {
     }
     return Promise.reject(`Error: ${res.status}`);
   }
+
+  /* ------------------------- DELETE A CARD FROM API ------------------------- */
 
   async deleteCard(id) {
     const res = await fetch(`${this.baseUrl}/cards/${id}`, {
@@ -80,6 +84,8 @@ class Api {
     // ...
   }
 
+  /* --------------------- CARD LIKE BUTTON OR HEART LIKE --------------------- */
+
   async updateCardLike(id, isLiked) {
     const res = await fetch(`${this.baseUrl}/cards/likes/${id}`, {
       method: isLiked ? 'DELETE' : 'PUT',
@@ -90,6 +96,8 @@ class Api {
     }
     return Promise.reject(`Error: ${res.status}`);
   }
+
+  /* ------------------ PROFILE IMAGE INSIDE CIRCLE IN HEADER ----------------- */
 
   async updateProfileImage(data) {
     const res = await fetch(`${this.baseUrl}/users/me/avatar`, {

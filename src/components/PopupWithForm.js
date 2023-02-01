@@ -7,6 +7,7 @@ class PopupWithForm extends Popup {
     this._modalForm = this._popupElement.querySelector('.modal__form');
     this._handleFormSubmit = handleFormSubmit;
   }
+  /* ------------------ SETTING UP ACTION AND HANDLE SUBMITS ------------------ */
 
   setSubmitAction(action) {
     this._handleFormSubmit = action;
@@ -20,8 +21,10 @@ class PopupWithForm extends Popup {
     }
   }
 
+  /* -------------------- GET INPUT  AND RESET FORM VALUES -------------------- */
+
   _getInputValues() {
-    const inputs = this._modalForm.querySelectorAll('.modal__input'); //TODO: reuse selector from config
+    const inputs = this._modalForm.querySelectorAll('.modal__input');
 
     const formValues = {};
 

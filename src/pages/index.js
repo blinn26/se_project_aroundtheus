@@ -34,6 +34,8 @@ const userInfo = new UserInfo({
   profileAvatarImageSelector: config.profileAvatarImageSelector,
 });
 
+/* ------------------------- USERID SETUP AND CALLED ------------------------ */
+
 let userId;
 
 /* -------------------------------------------------------------------------- */
@@ -92,14 +94,14 @@ const userInfoPopup = new PopupWithForm({
 });
 userInfoPopup.setEventListeners();
 
-//ARE YOU SURE POPUP CLOSE
+/* ------------------------ ARE YOU SURE POPUP CLOSE ------------------------ */
 
 const confirmModalPopup = new PopupWithForm({
   popupSelector: '#confirm-modal',
 });
 confirmModalPopup.setEventListeners();
 
-//CHANGE PROFILE PICTURE
+/* ------------------------- CHANGE PROFILE PICTURE ------------------------- */
 
 const changeProfilePic = new PopupWithForm({
   popupSelector: '#change-profile-pic',
@@ -119,6 +121,8 @@ const changeProfilePic = new PopupWithForm({
   },
 });
 changeProfilePic.setEventListeners();
+
+/* -------------------------- PROFILE AVATAR PENCIL ------------------------- */
 
 profileAvatarEditPencil.addEventListener('click', () => {
   console.log(profileAvatarEditPencil);

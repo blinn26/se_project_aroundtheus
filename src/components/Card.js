@@ -35,7 +35,7 @@ class Card {
   }
 
   /* -------------------------------------------------------------------------- */
-  /*                           HANDLE AND GET TEMPLATE                          */
+  /*                     CARDS HANDLE LIKED ICONS GET REMOVE                    */
   /* -------------------------------------------------------------------------- */
 
   isLiked() {
@@ -44,15 +44,12 @@ class Card {
 
   _handleLikeIcon = () => {
     this._handleLikeClick(this._id, this.isLiked()).then((data) => {
-      console.log(data);
       this._likes = data.likes;
       this._updateLikesView();
     });
   };
 
   removeCard = () => {
-    console.log('hddddd');
-
     this._element.remove();
   };
   _getTemplate() {
