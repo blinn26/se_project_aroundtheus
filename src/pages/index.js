@@ -125,7 +125,6 @@ changeProfilePic.setEventListeners();
 /* -------------------------- PROFILE AVATAR PENCIL ------------------------- */
 
 profileAvatarEditPencil.addEventListener('click', () => {
-  console.log(profileAvatarEditPencil);
   changeProfilePic.open();
 });
 
