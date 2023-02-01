@@ -103,8 +103,6 @@
 
 .profile__image-button {
     position: absolute;
-    height: 26px;
-    width: 26px;
     background: transparent url(../images/pencil.png)center no-repeat;
     border: none;
     cursor: pointer;
