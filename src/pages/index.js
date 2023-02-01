@@ -86,6 +86,7 @@ const userInfoPopup = new PopupWithForm({
       .then((user) => {
         userInfo.setProfileInfo(user.name, user.about);
         userInfoPopup.setLoading(false, 'Save');
+        userInfoPopup.close();
       })
       .catch((err) => {
         console.log(err);
