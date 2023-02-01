@@ -26,7 +26,7 @@
 }
 
 .profile__edit-button {
-    background: transparent url(../images/edit-button.svg) center no-repeat;
+    background: transparent url(../images/editbutton.svg) center no-repeat;
     height: 24px;
     width: 24px;
     grid-area: button;
