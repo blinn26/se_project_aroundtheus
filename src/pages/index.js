@@ -20,6 +20,7 @@ const profileEditButton = document.querySelector(config.profileEditButtonSelecto
 const cardModalOpenButton = document.querySelector(config.profileAddButtonSelector);
 const profileModal = document.querySelector(config.profileModalSelector);
 const profileEditForm = profileModal.querySelector(config.formSelector);
+const profileAvatarEl = document.querySelector(config.profileAvatarSelector);
 const profileNameInput = profileEditForm.querySelector(config.profilemodalInputLineSelector);
 const profileDescriptionInput = profileEditForm.querySelector(config.profileModalDescriptionSelector);
 const profileAvatarEditPencil = document.querySelector(config.profileAvatarPencilSelector);
@@ -46,9 +47,13 @@ const editFormValidator = new FormValidator(config, profileEditForm);
 
 const addCardValidator = new FormValidator(config, cardAddModal);
 
+const profileAvatarFormValidator = new FormValidator(config, profileAvatarEl);
+
 editFormValidator.enableValidation();
 
 addCardValidator.enableValidation();
+
+profileAvatarFormValidator.enableValidation();
 
 /* -------------------------------------------------------------------------- */
 /*                       BOTH POPUP MODALS AND PREVIEWS                       */

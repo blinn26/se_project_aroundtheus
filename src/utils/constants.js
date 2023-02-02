@@ -18,6 +18,7 @@ export const config = {
   profileEditButtonSelector: '.profile__edit-button',
   profileAvatarPencilSelector: '.profile__image-button',
   profileAvatarImageSelector: '.profile__image',
+  profileAvatarSelector: '#change-form-pic',
 };
 
 export const selectors = {
