@@ -159,15 +159,15 @@ function createCard(item) {
       },
       handleDeleteClick: (cardID) => {
         confirmModalPopup.open();
-        confirmModalPopup
-          .setSubmitAction(() => {
-            Api.deleteCard(cardID).then(() => {
+        confirmModalPopup.setSubmitAction(() => {
+          Api.deleteCard(cardID)
+            .then(() => {
               card.removeCard();
 
               confirmModalPopup.close();
-            });
-          })
-          .catch(() => (err) => console.log(err));
+            })
+            .catch(() => (err) => console.log(err));
+        });
 
         // Api.removeLikeClick(data);
       },

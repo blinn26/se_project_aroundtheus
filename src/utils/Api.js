@@ -16,7 +16,7 @@ class Api {
     const res = await fetch(`${this.baseUrl}/cards`, {
       headers: this.headers,
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* ----------------------------- NEW CARD ADDING ---------------------------- */
@@ -30,7 +30,7 @@ class Api {
         link: data.link,
       }),
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* ------------------------- DELETE A CARD FROM API ------------------------- */
@@ -40,7 +40,7 @@ class Api {
       method: 'DELETE',
       headers: this.headers,
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* ---------------------------- PROFILE USER INFO --------------------------- */
@@ -50,7 +50,7 @@ class Api {
       method: 'GET',
       headers: this.headers,
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* ------------------------------ PROFILE MODAL ----------------------------- */
@@ -65,7 +65,7 @@ class Api {
         about: data.description,
       }),
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* --------------------- CARD LIKE BUTTON OR HEART LIKE --------------------- */
@@ -75,7 +75,7 @@ class Api {
       method: isLiked ? 'DELETE' : 'PUT',
       headers: this.headers,
     });
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 
   /* ------------------ PROFILE IMAGE INSIDE CIRCLE IN HEADER ----------------- */
@@ -89,7 +89,7 @@ class Api {
       }),
     });
 
-    return res.ok ? res.json() : Promise.reject(`Err: ${res.status}`);
+    return this._checkResponse(res);
   }
 }
 
