@@ -151,7 +151,7 @@ function createCard(item) {
     {
       data: item,
       userId: userId,
-      handCardClick: (data) => {
+      handleCardClick: (data) => {
         addPopupWithImage.open(data);
       },
       handleLikeClick: (id, isLiked) => {
@@ -162,6 +162,7 @@ function createCard(item) {
         confirmModalPopup.setSubmitAction(() => {
           Api.deleteCard(cardID).then(() => {
             card.removeCard();
+
             confirmModalPopup.close();
           });
         });
@@ -192,24 +193,8 @@ Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(([initialCards, use
     },
     selectors.cardSection
   );
-  cardSection.renderItems(); //This is what renders the cards
+  cardSection.renderItems();
 });
-/*  .catch((err) => console.log(err)); */
-
-//Api.getInitialCards().then((initialCards) => {
-//});
-
-/* -------------------------------------------------------------------------- */
-/*        CARD MODAL TITLE AND LINK AND PROFILE OPEN AND CLOSE BUTTONS        */
-/* -------------------------------------------------------------------------- */
-
-const handleAddCard = (evt) => {
-  evt.preventDefault();
-  const name = evt.target.title.value;
-  const link = evt.target.link.value;
-
-  closeModal(cardAddModal);
-};
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation();
