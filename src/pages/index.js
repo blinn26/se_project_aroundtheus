@@ -131,6 +131,8 @@ changeProfilePic.setEventListeners();
 /* -------------------------- PROFILE AVATAR PENCIL ------------------------- */
 
 profileAvatarEditPencil.addEventListener('click', () => {
+  profileAvatarFormValidator.resetValidation();
+
   changeProfilePic.open();
 });
 

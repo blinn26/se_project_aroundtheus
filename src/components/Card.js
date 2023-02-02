@@ -43,10 +43,12 @@ class Card {
   }
 
   _handleLikeIcon = () => {
-    this._handleLikeClick(this._id, this.isLiked()).then((data) => {
-      this._likes = data.likes;
-      this._updateLikesView();
-    });
+    this._handleLikeClick(this._id, this.isLiked())
+      .then((data) => {
+        this._likes = data.likes;
+        this._updateLikesView();
+      })
+      .catch(() => (err) => console.log(err));
   };
 
   removeCard = () => {
