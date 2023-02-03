@@ -159,7 +159,7 @@ function createCard(item) {
     {
       data: item,
       userId: userId,
-      handleCardClick: (data) => {
+      handCardClick: (data) => {
         addPopupWithImage.open(data);
       },
       handleLikeClick: (id, isLiked) => {
