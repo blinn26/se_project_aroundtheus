@@ -72,10 +72,12 @@ const addCardPopup = new PopupWithForm({
         cardSection.addItem(card);
 
         addCardPopup.close();
-        addCardPopup.setLoading(false, 'Create');
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        addCardPopup.setLoading(false, 'Create');
       });
   },
 });
@@ -90,11 +92,14 @@ const userInfoPopup = new PopupWithForm({
     Api.editUserProfile(data)
       .then((user) => {
         userInfo.setProfileInfo(user.name, user.about);
-        userInfoPopup.setLoading(false, 'Save');
+
         userInfoPopup.close();
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        userInfoPopup.setLoading(false, 'Save');
       });
   },
 });
@@ -117,12 +122,13 @@ const changeProfilePic = new PopupWithForm({
       .then((data) => {
         userInfo.setProfilePic(data.avatar);
 
-        changeProfilePic.setLoading(false, 'Save');
-
         changeProfilePic.close();
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        changeProfilePic.setLoading(false, 'Save');
       });
   },
 });
@@ -170,8 +176,6 @@ function createCard(item) {
             })
             .catch(() => (err) => console.log(err));
         });
-
-        // Api.removeLikeClick(data);
       },
     },
     selectors.cardTemplate
