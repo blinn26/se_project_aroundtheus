@@ -114,8 +114,8 @@ const changeProfilePic = new PopupWithForm({
   handleFormSubmit: (link) => {
     changeProfilePic.setLoading(true);
     Api.updateProfileImage({ avatar: link.url })
-      .then(() => {
-        profileImageChange.src = link.url;
+      .then((data) => {
+        userInfo.setProfilePic(data.avatar);
 
         changeProfilePic.setLoading(false, 'Save');
 
@@ -182,23 +182,25 @@ let cardSection;
 
 /* ------------------------ PROFILE FOR USERINFO API ------------------------ */
 
-Promise.all([Api.getInitialCards(), Api.getUserInfo()]).then(([initialCards, user]) => {
-  userId = user._id;
-  userInfo.setProfileInfo(user.name, user.about);
-  userInfo.setProfilePic(user.avatar);
-  cardSection = new Section(
-    {
-      items: initialCards,
-      renderer: (data) => {
-        const card = createCard(data);
+Promise.all([Api.getInitialCards(), Api.getUserInfo()])
+  .then(([initialCards, user]) => {
+    userId = user._id;
+    userInfo.setProfileInfo(user.name, user.about);
+    userInfo.setProfilePic(user.avatar);
+    cardSection = new Section(
+      {
+        items: initialCards,
+        renderer: (data) => {
+          const card = createCard(data);
 
-        cardSection.addItem(card);
+          cardSection.addItem(card);
+        },
       },
-    },
-    selectors.cardSection
-  );
-  cardSection.renderItems();
-});
+      selectors.cardSection
+    );
+    cardSection.renderItems();
+  })
+  .catch(() => (err) => console.log(err));
 
 cardModalOpenButton.addEventListener('click', () => {
   addCardValidator.resetValidation();
