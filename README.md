@@ -6,6 +6,8 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/blinn26](https://github.com/blinn26)
 
+- 🎥 createdbybenlinn youtube link to project https://youtu.be/PMiJY5S8Bbo
+
 - 📫 How to contact me **Website https://createdbybenlinn.com or contact me at createdbybenlinn@gmail.com
 
 
