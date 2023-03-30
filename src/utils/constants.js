@@ -26,4 +26,3 @@ export const selectors = {
   cardTemplate: '#card-template',
   cardModalAdd: '#add-modal',
 };
-save new
