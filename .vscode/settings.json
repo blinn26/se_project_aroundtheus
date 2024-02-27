@@ -40,5 +40,14 @@
     "statusBar.foreground": "#ffffff",
     "statusBarItem.remoteForeground": "#ffffff"
   },
-  "cSpell.words": ["FORMVALIDATION", "FORMVALIDATOR", "PROFILEDESCRIPTION", "PROFILESELECTOR", "USERID"]
+  "cSpell.words": [
+    "caniuse",
+    "cssnano",
+    "FORMVALIDATION",
+    "FORMVALIDATOR",
+    "predeploy",
+    "PROFILEDESCRIPTION",
+    "PROFILESELECTOR",
+    "USERID"
+  ]
 }
