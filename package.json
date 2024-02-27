@@ -24,11 +24,12 @@
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.6.1",
     "postcss-loader": "7.0.1",
-    "webpack": "5.0.0",
+    "webpack": "^5.90.3",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.9.3"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001591",
     "core-js": "3.23.5"
   }
 }

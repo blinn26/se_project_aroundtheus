@@ -39,5 +39,6 @@
     "statusBar.debuggingForeground": "#ffffff",
     "statusBar.foreground": "#ffffff",
     "statusBarItem.remoteForeground": "#ffffff"
-  }
+  },
+  "cSpell.words": ["FORMVALIDATION", "FORMVALIDATOR", "PROFILEDESCRIPTION", "PROFILESELECTOR", "USERID"]
 }
