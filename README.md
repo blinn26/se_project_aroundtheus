@@ -17,7 +17,8 @@
 
 - 📫 How to reach me **createdbybenlinn@gmail.com**
 
-- 📄 Know about my experiences [https://regular-iris-625.notion.site/Resumes-9e160c9eaf5e4652901a40f867c395b4](https://regular-iris-625.notion.site/Resumes-9e160c9eaf5e4652901a40f867c395b4)
+- 📄 Know about my experiences
+  [https://regular-iris-625.notion.site/Resumes-9e160c9eaf5e4652901a40f867c395b4](https://regular-iris-625.notion.site/Resumes-9e160c9eaf5e4652901a40f867c395b4)
 
 - ⚡ Fun fact **I have two beautiful children and wife!!!**
 
@@ -36,9 +37,6 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=blinn26&show_icons=true&locale=en&layout=compact" alt="blinn26" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=blinn26&show_icons=true&locale=en" alt="blinn26" /></p>
-
-
-
 
 # Project 9: Around The U.S.
 
@@ -61,15 +59,14 @@
 - Popups
 - Utils
 - API
- 
-  
+- -
 
 **Description Functionality**
 
 Responsive design,overflowing text and Introduction to JavaScript.
 
-**Technologies and Techniques Used**
-Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and API Interactions.
+**Technologies and Techniques Used** Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and API
+Interactions.
 
 **Figma**
 
@@ -77,7 +74,8 @@ Responsive design, Figma software, BEM, Font-Face, Blocks, Nesting, Arrays and A
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more.
+Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
 **Github**
 
@@ -85,10 +83,13 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 **JavaScript**
 
-The pop up design of a log in feature is based on the implementations of JavaScript. Using containers, modal and scripts to intergrate this portion with our project!
+The pop up design of a log in feature is based on the implementations of JavaScript. Using containers, modal and scripts
+to intergrate this portion with our project!
 
-Now with JavaScript working with DOM and learning how to use JS in my HTML and CSS and combine them all together to get a better user experience!
+Now with JavaScript working with DOM and learning how to use JS in my HTML and CSS and combine them all together to get
+a better user experience!
 
-Form Validation introduced with FormValidator.js and validation.js to help the valitaty of the Card.js and utils.js work into the project.
+Form Validation introduced with FormValidator.js and validation.js to help the valitaty of the Card.js and utils.js work
+into the project.
 
 **Edited by Ben Linn**
